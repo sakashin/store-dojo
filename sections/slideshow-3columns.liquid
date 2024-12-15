@@ -1,0 +1,181 @@
+{{ 'section-slideshow-3columns.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size == 1 -%}
+  {% for block in section.blocks %}
+    {% liquid
+      assign image = block.settings.image
+      comment
+      assign image_sp = block.settings.image_sp
+      endcomment
+      assign link = block.settings.link
+    %}
+    {% if image != blank %}
+      <{% if link != blank %}a href="{{ link }}"{% else %}div{% endif %} class="slideshow-3columns__item swiper-slide itemcount_1">
+        <picture>
+          <source
+            media="(max-width: 699px)"
+            srcset="{{ image | image_url: width: '400x' }} 400w, {{ image | image_url: width: '600x' }} 600w, {{ image | image_url: width: '800x' }} 800w, {{ image | image_url: width: '1000x' }} 1000w"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+          >
+          <img class="slideshow-3columns__image" src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+        </picture>
+        {% comment %}
+        {% if image_sp != blank %}
+          <picture>
+            <source media="(min-width: 1024px)" srcset="{{ image | img_url: 'master' }}">
+            <source
+              media="(max-width: 699px)"
+              srcset="{{ image | image_url: width: '400x' }} 400w, {{ image | image_url: width: '600x' }} 600w, {{ image | image_url: width: '800x' }} 800w, {{ image | image_url: width: '1000x' }} 1000w"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+            >
+            <img class="slideshow-3columns__image" src="{{ image_sp | img_url: 'master' }}" alt="{{ image_sp.alt }}">
+          </picture>
+        {% else %}
+          <img class="slideshow-3columns__image" src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+        {% endif %}
+        {% endcomment %}
+      </{% if link != blank %}a{% else %}div{% endif %}>
+    {% endif %}
+  {% endfor %}
+{% elsif section.blocks.size > 1 %}
+  <div class="slideshow-3columns__section swiper">
+    <div class="slideshow-3columns__wrapper swiper-wrapper">
+      {% for block in section.blocks %}
+        {% liquid
+          assign image = block.settings.image
+          comment
+          assign image_sp = block.settings.image_sp
+          endcomment
+          assign link = block.settings.link
+        %}
+        {% if image != blank %}
+          <{% if link != blank %}a href="{{ link }}"{% else %}div{% endif %} class="slideshow-3columns__item swiper-slide">
+            <picture>
+              <source
+                media="(max-width: 699px)"
+                srcset="{{ image | image_url: width: '400x' }} 400w, {{ image | image_url: width: '600x' }} 600w, {{ image | image_url: width: '800x' }} 800w, {{ image | image_url: width: '1000x' }} 1000w"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+              <img class="slideshow-3columns__image" src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+            </picture>
+            {% comment %}
+            {% if image_sp != blank %}
+              <picture>
+                <source media="(min-width: 1024px)" srcset="{{ image | img_url: 'master' }}">
+                <source
+                  media="(max-width: 699px)"
+                  srcset="{{ image | image_url: width: '400x' }} 400w, {{ image | image_url: width: '600x' }} 600w, {{ image | image_url: width: '800x' }} 800w, {{ image | image_url: width: '1000x' }} 1000w"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                >
+                <img class="slideshow-3columns__image" src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+              </picture>
+            {% else %}
+              <img class="slideshow-3columns__image" src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}">
+            {% endif %}
+            {% endcomment %}
+          </{% if link != blank %}a{% else %}div{% endif %}>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="slideshow-3columns__pagination swiper-pagination"></div>
+  </div>
+{%- endif -%}
+
+<script>
+  let slide_autoDelay = {{ section.settings.slide_autoDelay | times: 1000 }}
+  const slider_section_slideshow_3columns = new Swiper(".slideshow-3columns__section", {
+    updateOnWindowResize: true,
+    loop: true,
+    speed: 500,
+    pagination: {
+      el: ".slideshow-3columns__pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: slide_autoDelay,
+    },
+    breakpoints: {
+      1024: {
+        initialSlide: 0,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 16,
+      },
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.slideshow_3columns.name",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay", "aside"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:sections.slideshow_3columns.auto_rotate_between_slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slide_autoDelay",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "t:sections.slideshow_3columns.cycle_speed",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.slideshow_3columns.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.slideshow_3columns.blocks.image.image",
+          "info": "t:sections.slideshow_3columns.blocks.image.image_info"
+        },
+        //{
+        //  "type": "image_picker",
+        //  "id": "image_sp",
+        //  "label": "t:sections.slideshow_3columns.blocks.image.image_sp",
+        //  "info": "t:sections.slideshow_3columns.blocks.image.image_sp_info"
+        //},
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.slideshow_3columns.blocks.image.url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.slideshow_3columns.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
