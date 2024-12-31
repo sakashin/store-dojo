@@ -46,6 +46,7 @@ product-info product-form form {
 }
 product-info product-form form .product-form__buttons {
   margin-inline: auto;
+  background-color: #1C75DE;
 }
 .product-grid .grid__item .card__information .published-at {
   color: #999;
