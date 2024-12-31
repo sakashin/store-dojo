@@ -1,0 +1,412 @@
+{% unless request.page_type == 'index' or request.page_type == 'cart' or request.page_type contains 'customers'  %}
+    <nav class="breadcrumb breadcrumb--floating" aria-label="パンくずリスト">
+        <div class="container">
+            <ol class="breadcrumb__list unstyled-list">
+                <li class="breadcrumb__list-item">
+                    <a href="{{ routes.root_url }}" class="smallcaps link-faded-reverse">ホーム</a>
+                </li>
+    {% case request.page_type %}
+        {% when "blog" %}
+            {% if current_tags %}
+                {% assign current_tag = current_tags[0] %}
+                <li class="breadcrumb__list-item">
+                    <a href="{{ shop.url }}{{ blog.url }}" class="smallcaps link-faded-reverse">{{ blog.title }}</a>
+                </li>
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ current_tag }}</span>
+                </li>
+            {% else %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ blog.title }}</span>
+                </li>
+            {% endif %}
+        {% when "article" %}
+                <li class="breadcrumb__list-item">
+                    <a href="{{ shop.url }}{{ blog.url }}" class="smallcaps link-faded-reverse">{{ blog.title }}</a>
+                </li>
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ article.title }}</span>
+                </li>
+        {% when "page" %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ page.title }}</span>
+                </li>
+        {% when "product" %}
+            {% assign product_parent_collection = product.metafields.custom.parent_collection.value %}
+            {% unless product_parent_collection == blank %}
+                {% comment %} #商品が親コレクションを持つ場合 {% endcomment %}
+                {% assign collection_parent_collection = product_parent_collection.metafields.custom.parent_collection.value %}
+                {% unless collection_parent_collection == blank %}
+                    {% comment %} #商品の親コレクションが親コレクションを持つ場合 {% endcomment %}
+                    {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
+                    {% unless collection_grand_parent_collection == blank %}
+                        {% comment %} #商品の親コレクションの親コレクションがさらに上の親コレクションを持つ場合 {% endcomment %}
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ collection_grand_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_grand_parent_collection.title }}</a>
+                        </li>
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ collection_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_parent_collection.title }}</a>
+                        </li>
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ product_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ product_parent_collection.title }}</a>
+                        </li>
+                    {% else %}
+                        {% comment %} #商品の親コレクションの親コレクションがこれ以上の親コレクションを持たない場合 {% endcomment %}
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ collection_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_parent_collection.title }}</a>
+                        </li>
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ product_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ product_parent_collection.title }}</a>
+                        </li>
+                    {% endunless %}
+                {% else %}
+                    {% comment %} #商品の親コレクションが親コレクションを持たない場合 {% endcomment %}
+                    <li class="breadcrumb__list-item">
+                        <a href="{{ shop.url }}{{ product_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ product_parent_collection.title }}</a>
+                    </li>
+                {% endunless %}
+            {% endunless %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps {% unless show_image %}link-faded-reverse{% endunless %}" aria-current="page">{{ product.title }}</span>
+                </li>
+        {% when "collection" %}
+            {% assign collection_parent_collection = collection.metafields.custom.parent_collection.value %}
+            {% unless collection_parent_collection == blank %}
+                {% comment %} #コレクションが親コレクションを持つ場合 {% endcomment %}
+                {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
+                {% unless collection_grand_parent_collection == blank %}
+                    {% assign collection_great_grand_parent_collection = collection_grand_parent_collection.metafields.custom.parent_collection.value %}
+                    {% comment %} #コレクションの親コレクションの親コレクションがこれ以上の親コレクションを持たない場合 {% endcomment %}
+                    <li class="breadcrumb__list-item">
+                        <a href="{{ shop.url }}{{ collection_grand_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_grand_parent_collection.title }}</a>
+                    </li>
+                    <li class="breadcrumb__list-item">
+                        <a href="{{ shop.url }}{{ collection_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_parent_collection.title }}</a>
+                    </li>
+                {% else %}
+                    {% comment %} #コレクションの親コレクションがこれ以上の親コレクションを持たない場合 {% endcomment %}
+                    <li class="breadcrumb__list-item">
+                        <a href="{{ shop.url }}{{ collection_parent_collection.url }}" class="smallcaps link-faded-reverse">{{ collection_parent_collection.title }}</a>
+                    </li>
+                {% endunless %}
+            {% endunless %}
+
+            {% comment %} #指定されたコレクションフィルターが適用されている場合：ここから {% endcomment %}
+            {% assign filter_labels = section.settings.filter_labels | strip | split: ',' %}
+            {% liquid
+                assign filter_params = nil
+                for filter_label in filter_labels
+                    for filter in collection.filters
+                        if filter.active_values.size > 0
+                            for active_value in filter.active_values
+                                if filter.param_name == filter_label
+                                    assign filter_params = filter_params | append: '&' | append: filter.label | append: ':' | append: filter.param_name | append: '=' | append: active_value.value
+                                endif
+                            endfor
+                        endif
+                    endfor
+                endfor
+            %}
+            {% unless filter_params == blank %}
+                {% comment %} #指定されたコレクションフィルターが１件以上アクティブな場合 {% endcomment %}
+                <li class="breadcrumb__list-item">
+                    <a href="{{ shop.url }}{{ collection.url }}" class="smallcaps link-faded-reverse">{{ collection.title }}</a>
+                </li>
+                {% assign filter_params = filter_params | remove_first: '&' | split: '&' %}
+                {% assign filter_key_and_values = nil %}
+                {% for filter_param in filter_params %}
+                    {% assign filter_key_label = filter_param | split: ':' | first %}{% comment %} カラー:Color=red {% endcomment %}
+                    {% assign filter_key_and_value = filter_param | split: ':' | last %}{% comment %} Color=red {% endcomment %}
+                    {% assign filter_key_and_values = filter_key_and_values | append: '&' | append: filter_key_and_value %}{% comment %} &filter.v.option.color=red&filter.v.option.size=5 {% endcomment %}
+                    {% assign filter_value = filter_key_and_value | split: '=' | last %}{% comment %} red {% endcomment %}
+                    {% if forloop.last %}
+                        {% comment %} #最後のパラメータの場合 {% endcomment %}
+                        <li class="breadcrumb__list-item">
+                            <span class="smallcaps link-faded-reverse" aria-current="page">{% if section.settings.show_filter_keyname %}{{ filter_key_label }}{{ section.settings.filter_separator }}{% endif %}{{ filter_value }}</span>
+                        </li>
+                    {% else %}
+                        {% comment %} #複数のパラメータが指定されており、最後のパラメータではない場合 {% endcomment %}
+                        <li class="breadcrumb__list-item">
+                            <a href="{{ shop.url }}{{ collection.url }}?{{ filter_key_and_values | remove_first: '&' }}" class="smallcaps link-faded-reverse">{% if section.settings.show_filter_keyname %}{{ filter_key_label }}{{ section.settings.filter_separator }}{% endif %}{{ filter_value }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% comment %} #フィルターパラメータが無い場合 {% endcomment %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ collection.title }}</span>
+                </li>
+            {% endunless %}
+            {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
+        {% when "policy" %}
+            {% if request.path == shop.privacy_policy.url %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ shop.privacy_policy.title }}</span>
+                </li>
+            {% elsif request.path == shop.refund_policy.url %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ shop.refund_policy.title }}</span>
+                </li>
+            {% elsif request.path == shop.shipping_policy.url %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ shop.shipping_policy.title }}</span>
+                </li>
+            {% elsif request.path == shop.terms_of_service.url %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ shop.terms_of_service.title }}</span>
+                </li>
+            {% elsif request.path == shop.legal_notice.url %}
+                <li class="breadcrumb__list-item">
+                    <span class="smallcaps link-faded-reverse" aria-current="page">{{ shop.legal_notice.title }}</span>
+                </li>
+            {% endif %}
+    {% endcase %}
+            </ol>
+        </div>
+    </nav>
+    
+	{% capture breadcrumb_entity_microdata %}
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "{{ shop.url }}"
+        }
+        {% case request.page_type %}
+            {% when "blog" %}
+                {% if current_tags %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ blog.title }}",
+            "item": "{{ shop.url }}{{ blog.url }}"
+        }
+        ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ current_tag }}",
+            "item": "{{ shop.url }}{{ blog.url }}/tagged/{{ current_tag }}"
+        }
+                {% else %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ blog.title }}",
+            "item": "{{ shop.url }}{{ blog.url }}"
+        }
+                {% endif %}
+        
+            {% when "article" %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ blog.title }}",
+            "item": "{{ shop.url }}{{ blog.url }}"
+        }, 
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ article.title }}",
+            "item": "{{ shop.url }}{{ article.url }}"
+        }
+            {% when "page" %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title }}",
+            "item": "{{ shop.url }}{{ page.url }}"
+        }
+            {% when "product" %}
+                {% assign step_count = 1 %}
+                {% unless product_parent_collection == blank %}
+                    {% unless collection_parent_collection == blank %}
+                        {% unless collection_grand_parent_collection == blank %}
+                            {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_grand_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_grand_parent_collection.url }}"
+        }
+                            {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_parent_collection.url }}"
+        }
+                            {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ product_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ product_parent_collection.url }}"
+        }
+                        {% else %}
+                            {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_parent_collection.url }}"
+        }
+                            {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ product_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ product_parent_collection.url }}"
+        }
+                        {% endunless %}
+                    {% else %}
+                        {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ product_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ product_parent_collection.url }}"
+        }
+                    {% endunless %}
+                {% endunless %}
+                {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ product.title }}",
+            "item": "{{ shop.url }}{{ product.url }}"
+        }
+            {% when "collection" %}
+                {% assign step_count = 1 %}
+                {% unless collection_parent_collection == blank %}
+                    {% unless collection_grand_parent_collection == blank %}
+                        {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_grand_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_grand_parent_collection.url }}"
+        }
+                        {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_parent_collection.url }}"
+        }
+                    {% else %}
+                        {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection_parent_collection.title }}",
+            "item": "{{ shop.url }}{{ collection_parent_collection.url }}"
+        }
+                    {% endunless %}
+                {% endunless %}
+                {% assign step_count = step_count | plus: 1 %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{{ collection.title }}",
+            "item": "{{ shop.url }}{{ collection.url }}"
+        }
+                {% unless filter_params == blank %}
+                    {% for filter_param in filter_params %}
+                        {% assign step_count = step_count | plus: 1 %}
+                        {% assign filter_key_name = filter_param | split: '=' | first | split: '.' | last %}
+                        {% assign filter_value = filter_param | split: '=' | last %}
+        ,{
+            "@type": "ListItem",
+            "position": {{ step_count }},
+            "name": "{% if section.settings.show_filter_keyname %}{{ filter_key_name }}{{ section.settings.filter_separator }}{% endif %}{{ filter_value }}",
+            "item": "{{ shop.url }}{{ collection.url }}?{{ filter_params | slice: 0, forloop.index | join: "&" }}"
+        }
+                    {% endfor %}
+                {% endunless %}
+            {% when "policy" %}
+                {% if request.path == shop.privacy_policy.url %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ shop.privacy_policy.title }}",
+            "item": "{{ shop.url }}{{ shop.privacy_policy.url }}"
+        }
+                {% elsif request.path == shop.refund_policy.url %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ shop.refund_policy.title }}",
+            "item": "{{ shop.url }}{{ shop.refund_policy.url }}"
+        }
+                {% elsif request.path == shop.shipping_policy.url %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ shop.shipping_policy.title }}",
+            "item": "{{ shop.url }}{{ shop.shipping_policy.url }}"
+        }
+                {% elsif request.path == shop.terms_of_service.url %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ shop.terms_of_service.title }}",
+            "item": "{{ shop.url }}{{ shop.terms_of_service.url }}"
+        }
+                {% elsif request.path == shop.legal_notice.url %}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ shop.legal_notice.title }}",
+            "item": "{{ shop.url }}{{ shop.legal_notice.url }}"
+        }
+                {% endif %}
+        {% endcase %}
+        ]
+    {% endcapture %}
+    {% if breadcrumb_entity_microdata != blank %}
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        {{ breadcrumb_entity_microdata }}
+        }
+        </script>
+    {% endif %}
+{% endunless %}
+
+{% schema %}
+{
+    "name": "パンくずリスト",
+    "tag": "section",
+    "enabled_on": {
+        "groups": ["header"]
+    },
+    "settings": [
+        {
+            "type": "text",
+            "id": "filter_labels",
+            "label": "パンくずリストに表示するフィルターラベル",
+            "info": "コレクションページのパンくずリストにフィルターを表示する場合、ラベルをカンマで区切って入力してください。（例：filter.v.option.color,filter.v.option.size）"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_filter_keyname",
+            "label": "パンくずリストにフィルターキー名を表示",
+            "default": false
+        },
+        {
+            "type": "text",
+            "id": "filter_separator",
+            "label": "フィルター区切り文字",
+            "default": ":",
+            "info": "パンくずリストにフィルターのキー名をフィルター値と一緒に表示する場合、この区切り文字が使用されます。"
+        },
+    ],
+    "presets": [
+      {
+        "name": "パンくずリスト"
+      }
+    ]
+}
+{% endschema %}
+    
