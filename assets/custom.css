@@ -26,6 +26,9 @@ product-info .page-width {
 product-info .page-width {
   padding: 2rem;
 }
+.product-grid .grid__item .card__information .published-at {
+  font-size: 0.9em;
+}
 @media screen and (min-width: 990px) {
     header.header {
         padding-top: 10px;
