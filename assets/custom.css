@@ -41,6 +41,12 @@ product-info .product__summary {
 product-info .buy-buttons-wrapper {
   text-align: center;
 }
+product-info product-form form {
+  text-align: center;
+}
+product-info product-form form button {
+  margin-inline: auto;
+}
 .product-grid .grid__item .card__information .published-at {
   color: #999;
   font-size: .8em;
