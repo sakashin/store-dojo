@@ -39,9 +39,7 @@ product-info .product__summary {
   word-break: break-all;
 }
 product-info .buy-buttons-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  text-align: center;
 }
 .product-grid .grid__item .card__information .published-at {
   color: #999;
