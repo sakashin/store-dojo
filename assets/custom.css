@@ -48,7 +48,6 @@ product-info product-form form .product-form__buttons {
   margin-inline: auto;
 }
 product-info product-form form .product-form__buttons button {
-  background-color: #1C75DE;
   padding: 1rem;
 }
 product-info product-form form .product-form__buttons button:after {
