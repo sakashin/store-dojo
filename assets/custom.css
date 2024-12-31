@@ -49,7 +49,7 @@ product-info product-form form .product-form__buttons {
 }
 product-info product-form form .product-form__buttons button {
   background-color: #1C75DE;
-  padding-block: .2rem;
+  padding: 1rem;
 }
 product-info product-form form .product-form__buttons button:after {
   box-shadow: none;
