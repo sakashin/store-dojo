@@ -16,5 +16,7 @@ header {
     header.header {
         padding-top: 10px;
         padding-bottom: 10px;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 }
