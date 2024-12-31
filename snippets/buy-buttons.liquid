@@ -84,12 +84,13 @@
           >
             <span>
               {%- if product.selected_or_first_available_variant == null -%}
-                {{ 'products.product.unavailable' | t }}<br>（カートに追加する）
+                {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
+              <br>（カートに追加する）
             </span>
             {%- render 'loading-spinner' -%}
           </button>
