@@ -1,9 +1,10 @@
-body {
-    background: var(--gradient-background);
-}
+
 sticky-header {
     background: transparent;
     padding: 16px;
+}
+.section-header.shopify-section-group-header-group {
+    background: var(--gradient-background);
 }
 header {
     padding: 10px 1rem;
