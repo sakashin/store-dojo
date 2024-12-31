@@ -72,7 +72,7 @@ product-info product-form form .product-form__buttons button:after {
     margin-bottom: 2rem;
 }
 .cart__footer-wrapper:last-child .cart-content .cart__footer {
-    padding-bottom: 2rem;
+    padding-bottom: 0;
 }
 
 
