@@ -22,7 +22,8 @@ header.header:not(.drawer-menu).page-width {
     background-color: transparent !important;
 }
 .product-grid .grid__item,
-product-info .page-width {
+product-info .page-width,
+page-content.page-width {
   background-color: #FFF;
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
