@@ -22,7 +22,7 @@ header {
         padding-bottom: 10px;
     }
     header.header:not(.drawer-menu).page-width {
-        padding-left: 3rem;
-        padding-right: 3rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
