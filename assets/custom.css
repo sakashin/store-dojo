@@ -40,7 +40,8 @@ product-info .product__summary {
 }
 product-info .buy-buttons-wrapper {
   display: flex;
-   justify-content: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .product-grid .grid__item .card__information .published-at {
   color: #999;
