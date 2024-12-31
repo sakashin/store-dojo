@@ -33,7 +33,7 @@ product-info .page-width,
   border-top-right-radius: 1rem 1rem !important;
 }
 product-info .page-width {
-  padding: 2rem;
+  padding: 3rem;
 }
 product-info .product__summary {
   
@@ -55,5 +55,8 @@ product-info .product__summary {
 @media screen and (max-width: 989px) {
     product-info .page-width {
       margin-inline: 1.6rem;
+    }
+    product-info .page-width {
+      padding: 2rem;
     }
 }
