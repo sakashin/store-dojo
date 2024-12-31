@@ -29,9 +29,18 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "breadcrumb_gpWAwk": {
+      "type": "breadcrumb",
+      "settings": {
+        "filter_labels": "",
+        "show_filter_keyname": false,
+        "filter_separator": ":"
+      }
     }
   },
   "order": [
-    "header"
+    "header",
+    "breadcrumb_gpWAwk"
   ]
 }
