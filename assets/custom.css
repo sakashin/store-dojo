@@ -13,16 +13,6 @@ header {
 .header-wrapper {
     background-color: transparent !important;
 }
-@media screen and (min-width: 990px) {
-    header.header {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    header.header:not(.drawer-menu).page-width {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
 .product-grid .grid__item,
 product-info .page-width {
   background-color: #FFF;
@@ -35,4 +25,14 @@ product-info .page-width {
 }
 product-info .page-width {
   padding: 2rem;
+}
+@media screen and (min-width: 990px) {
+    header.header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    header.header:not(.drawer-menu).page-width {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
