@@ -44,7 +44,7 @@ product-info .product__summary {
   margin-bottom: 1rem;
 }
 .page-content {
-  padding: 2rem;
+  padding: 3rem;
 }
 .page-content h1 {
   font-size: calc(var(--font-heading-scale)* 3rem);
@@ -56,7 +56,7 @@ product-info .product__summary {
     product-info .page-width {
       margin-inline: 1.6rem;
     }
-    product-info .page-width {
+    .page-content {
       padding: 2rem;
     }
 }
