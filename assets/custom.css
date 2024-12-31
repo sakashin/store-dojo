@@ -3,6 +3,7 @@ body {
 }
 sticky-header {
     background: transparent;
+    padding: 10px;
 }
 header {
     padding: 10px 3rem 10px 3rem;
