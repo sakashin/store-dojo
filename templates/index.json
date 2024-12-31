@@ -9,6 +9,48 @@
  */
 {
   "sections": {
+    "rich_text_QYHJbk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LpKkXk": {
+          "type": "heading",
+          "settings": {
+            "heading": "STORE DOJOについて",
+            "heading_size": "h2"
+          }
+        },
+        "text_CAQxMY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>現役Shopifyデベロッパーが運営する、カスタマイズに特化した実践TIPSサイト。日々の開発・運用経験から得た、テーマカスタマイズ、Liquid開発、Shopify Flow活用、アプリ連携、管理画面設定などの知見を共有。デザインと収益化の両立を実現する具体的な実装方法を、ストアオーナーからデベロッパーまでの幅広い方々にお届けします。</p>"
+          }
+        },
+        "button_EwN4XU": {
+          "type": "button",
+          "settings": {
+            "button_label": "ボタンのラベル",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_LpKkXk",
+        "text_CAQxMY",
+        "button_EwN4XU"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "slideshow_3columns_4mFbqe": {
       "type": "slideshow-3columns",
       "blocks": {
@@ -58,6 +100,7 @@
     }
   },
   "order": [
+    "rich_text_QYHJbk",
     "slideshow_3columns_4mFbqe",
     "all-products"
   ]
