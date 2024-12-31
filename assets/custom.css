@@ -4,7 +4,7 @@ body {
 sticky-header {
     background: transparent;
 }
-header {
+header.page-width {
     padding: 10px 3rem 10px 3rem;
     margin: 10px;
     box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
