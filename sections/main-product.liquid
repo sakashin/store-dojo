@@ -200,7 +200,7 @@
               {%- when 'summary' -%}
                 {%- if product.metafields.custom.summary != blank -%}
                   <div class="product__summary" {{ block.shopify_attributes }}>
-                    {{ product.metafields.custom.summary }}
+                    {{ product.metafields.custom.summary | newline_to_br }}
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
@@ -677,7 +677,7 @@
     </div>
     {%- if product.description != blank -%}
       <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-        {{ product.description | newline_to_br }}
+        {{ product.description }}
       </div>
     {%- endif -%}
     <div class="buy-buttons-wrapper">
