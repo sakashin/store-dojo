@@ -675,7 +675,12 @@
         </section>
       </div>
     </div>
-
+    {%- if product.description != blank -%}
+      <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+        {{ product.description }}
+      </div>
+    {%- endif -%}
+    
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
