@@ -311,7 +311,17 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
+      {% if 
+          request.path == '/policies/refund-policy' 
+          or request.path contains '/policies/privacy-policy' 
+          or request.path contains '/policies/terms-of-service' 
+          or request.path contains '/policies/shipping-policy'
+          or request.path contains '/policies/contact-information'
+          or request.path contains '/policies/subscription-policy' %}
+        {% section 'policies' %}
+      {% else %}
+        {{ content_for_layout }}
+      {% endif %}
     </main>
 
     {% sections 'footer-group' %}
