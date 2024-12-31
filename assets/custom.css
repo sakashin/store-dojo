@@ -27,7 +27,9 @@ product-info .page-width {
   padding: 2rem;
 }
 .product-grid .grid__item .card__information .published-at {
-  font-size: 0.9em;
+  color: #999;
+  font-size: .8em;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 990px) {
     header.header {
