@@ -46,6 +46,9 @@ product-info .product__summary {
 .page-content {
   padding: 2rem;
 }
+.page-content h1 {
+  font-size: 2rem;
+}
 @media screen and (max-width: 989px) {
     product-info .page-width {
       margin-inline: 1.6rem;
