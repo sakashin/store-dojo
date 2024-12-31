@@ -12,3 +12,9 @@ header {
     border-radius: 100px;
     max-width: 100%;
 }
+@media screen and (min-width: 990px) {
+    .header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
