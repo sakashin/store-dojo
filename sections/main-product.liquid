@@ -681,6 +681,7 @@
       </div>
     {%- endif -%}
     <div class="buy-buttons-wrapper">
+      <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
       {%- render 'buy-buttons',
         block: block,
         product: product,
@@ -688,7 +689,6 @@
         section_id: section.id,
         show_pickup_availability: true
       -%}
-      <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
     </div>
     
     {% render 'product-media-modal', variant_images: variant_images %}
