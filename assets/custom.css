@@ -71,6 +71,9 @@ product-info product-form form .product-form__buttons button:after {
 .cart-content .main-page-title {
     margin-bottom: 2rem;
 }
+.cart__footer-wrapper:last-child .cart__footer {
+    padding-bottom: 2rem;
+}
 
 @media screen and (max-width: 989px) {
     product-info .page-width {
