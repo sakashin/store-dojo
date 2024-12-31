@@ -61,6 +61,7 @@ product-info .buy-buttons-wrapper {
 @media screen and (max-width: 989px) {
     product-info .page-width {
       margin-inline: 1.6rem;
+      padding: 2rem;
     }
     .page-content {
       padding: 2rem;
