@@ -1,4 +1,4 @@
-{% unless request.page_type == 'index' or request.page_type == 'cart' or request.page_type contains 'customers'  %}
+{% unless request.page_type == 'index' or request.page_type contains 'customers'  %}
     <nav class="breadcrumb breadcrumb--floating page-width" aria-label="パンくずリスト">
         <div class="container">
             <ol class="breadcrumb__list unstyled-list">
@@ -138,7 +138,7 @@
                 </li>
             {% endunless %}
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
-        {% when "cart" %}カート
+        {% when "cart" %}
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ page.title }}</span>
             </li>
