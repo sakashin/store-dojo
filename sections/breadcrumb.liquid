@@ -138,6 +138,10 @@
                 </li>
             {% endunless %}
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
+        {% when "cart" %}
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ page.title }}</span>
+            </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
                 <li class="breadcrumb__list-item">
