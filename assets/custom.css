@@ -23,13 +23,9 @@ header {
         padding-right: 4rem;
     }
 }
-.product-grid .grid__item {
+.product-grid .grid__item,
+product-info .page-width{
   background-color: #FFF;
   border-radius: 16px;
   box-shadow: 2px 4px 12px #00000014;
-}
-product-info .page-width {
-  background-color: #FFF;
-  border-radius: 16px;
-  box-shadow: 2px 4px 12px #00000014;  
 }
