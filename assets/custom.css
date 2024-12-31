@@ -75,6 +75,7 @@ product-info product-form form .product-form__buttons button:after {
     padding-bottom: 2rem;
 }
 
+
 @media screen and (max-width: 989px) {
     product-info .page-width {
       margin-inline: 1.6rem;
