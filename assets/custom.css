@@ -49,7 +49,9 @@ product-info product-form form .product-form__buttons {
 }
 product-info product-form form .product-form__buttons button {
   background-color: #1C75DE;
-  border: 1px solid #1C75DE;
+}
+product-info product-form form .product-form__buttons button:after {
+  box-shadow: none;
 }
 .product-grid .grid__item .card__information .published-at {
   color: #999;
