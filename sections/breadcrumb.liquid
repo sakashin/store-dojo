@@ -140,7 +140,7 @@
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
         {% when "cart" %}
             <li class="breadcrumb__list-item">
-                <span class="smallcaps link-faded-reverse" aria-current="page">カート{{ cart.title }}</span>
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'cart.title' | t }}</span>
             </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
