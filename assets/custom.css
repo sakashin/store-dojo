@@ -26,6 +26,6 @@ header {
 .product-grid .grid__item,
 product-info .page-width{
   background-color: #FFF;
-  border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
