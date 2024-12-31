@@ -902,6 +902,9 @@ summary::-webkit-details-marker {
   max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
   flex-grow: 1;
   flex-shrink: 0;
+  background-color: #FFF;
+  border-radius: 16px;
+  box-shadow: 2px 4px 12px #00000014;
 }
 
 @media screen and (min-width: 750px) {
@@ -2343,7 +2346,7 @@ input[type='checkbox'] {
 .header-wrapper {
   display: block;
   position: relative;
-  background-color: rgb(var(--color-background));
+  background-color: #FFFFFF !important;
 }
 
 .header-wrapper--border-bottom {
