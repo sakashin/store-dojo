@@ -145,7 +145,7 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          <div class="published-at">{{ card_product.metafields.custom.published_at | date: '%Y.%m.%d' }}</div>
+          <div class="published-at">{%- unless card_product.metafields.custom.published_at == blank -%}{{ card_product.metafields.custom.published_at | date: '%Y.%m.%d' }}{%- else -%}&nbsp;{%- endunless -%}</div>
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
