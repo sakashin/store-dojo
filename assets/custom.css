@@ -41,6 +41,6 @@ product-info .page-width {
 }
 @media screen and (max-width: 989px) {
     product-info .page-width {
-      margin-inline: 2rem;
+      margin-inline: 1.6rem;
     }
 }
