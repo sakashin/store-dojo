@@ -58,13 +58,16 @@ product-info product-form form .product-form__buttons button:after {
   font-size: .8em;
   margin-bottom: 1rem;
 }
-.page-content {
+.page-content,
+.cart-content{
   padding: 3rem;
 }
-.page-content h1 {
+.page-content h1,
+.cart-content h1 {
   font-size: calc(var(--font-heading-scale)* 3rem);
 }
-.page-content .main-page-title {
+.page-content .main-page-title,
+.cart-content .main-page-title {
     margin-bottom: 2rem;
 }
 
