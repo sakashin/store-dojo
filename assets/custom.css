@@ -33,3 +33,6 @@ product-info .page-width {
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
 }
+product-info .page-width {
+  padding: 2rem;
+}
