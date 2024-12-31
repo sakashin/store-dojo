@@ -1,1 +1,64 @@
-{"sections":{"slideshow_3columns_4mFbqe":{"type":"slideshow-3columns","blocks":{"image_zMzMm3":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg","link":""}}},"block_order":["image_zMzMm3"],"settings":{"autoplay":true,"slide_autoDelay":5}},"all-products":{"type":"featured-collection","settings":{"title":"特集コレクション","heading_size":"h2","description":"","show_description":true,"description_style":"subtitle","collection":"all","products_to_show":24,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"portrait","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"1","swipe_on_mobile":true,"padding_top":24,"padding_bottom":24}}},"order":["slideshow_3columns_4mFbqe","all-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_3columns_4mFbqe": {
+      "type": "slideshow-3columns",
+      "blocks": {
+        "image_zMzMm3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zMzMm3"
+      ],
+      "settings": {
+        "autoplay": true,
+        "slide_autoDelay": 5
+      }
+    },
+    "all-products": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "特集コレクション",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": true,
+        "description_style": "subtitle",
+        "collection": "all",
+        "products_to_show": 24,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "slideshow_3columns_4mFbqe",
+    "all-products"
+  ]
+}
