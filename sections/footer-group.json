@@ -13,6 +13,17 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_information_dncWgC": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_dncWgC"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
