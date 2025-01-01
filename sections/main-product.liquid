@@ -675,12 +675,12 @@
         </section>
       </div>
     </div>
-    <div class="divider"></div>
     {%- if product.metafields.custom.main-contents != blank -%}
       <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
         {{ product.metafields.custom.main-contents }}
       </div>
     {%- endif -%}
+    <div class="divider"></div>
     <div class="buy-buttons-wrapper">
       <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
       {%- render 'buy-buttons',
