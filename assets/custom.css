@@ -80,7 +80,7 @@ product-info product-form form .product-form__buttons button:after {
 }
 .page-content,
 .cart-content{
-  padding: 6rem;
+  padding: 6rem 6rem 12rem;
 }
 .page-content h1,
 .cart-content h1 {
