@@ -24,7 +24,7 @@ header.header:not(.drawer-menu).page-width {
 .mega-menu__content {
   border: none;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 100px !important;
+  border-radius: 20px !important;
 }
 
 .product-grid .grid__item,
