@@ -215,6 +215,13 @@
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
+              {%- when 'related-post' -%}
+                {%- if product.metafields.custom.related_post != blank -%}
+                  <div class="" {{ block.shopify_attributes }}>
+                    <a href="{{ product.metafields.custom.related_post }}">{{ 'general.social.links.twitter' | t }}関連ポスト</a>
+                  </div>
+                {%- endif -%}
+                {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
