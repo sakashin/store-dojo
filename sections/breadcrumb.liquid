@@ -144,7 +144,7 @@
             </li>
         {% when "customers/login" %}
             <li class="breadcrumb__list-item">
-                <span class="smallcaps link-faded-reverse" aria-current="page">{{ customer.login.title }}</span>
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.login_page.title' | t }}</span>
             </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
