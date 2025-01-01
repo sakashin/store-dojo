@@ -20,20 +20,20 @@
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
-        "buttons": {
-          "type": "buttons",
-          "settings": {}
-        },
         "custom_liquid_6F9DfY": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": ""
+            "custom_liquid": "<p>次のチェックアウト画面でご入力頂くご購入者様情報は匿名でも問題ありません。</p>"
           }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
         }
       },
       "block_order": [
-        "buttons",
-        "custom_liquid_6F9DfY"
+        "custom_liquid_6F9DfY",
+        "buttons"
       ],
       "settings": {
         "color_scheme": "scheme-1",
