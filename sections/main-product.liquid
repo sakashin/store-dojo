@@ -90,7 +90,7 @@
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'published_at' -%}
-                <div class="published-at">{%- unless product.metafields.custom.published_at == blank -%}公開日：{{ product.metafields.custom.published_at | date: '%Y.%m.%d' }}{%- unless product.metafields.custom.updated_at == blank -%}（更新日：{{ product.metafields.custom.updated_at | date: '%Y.%m.%d' }}）{%- endunless -%}{%- else -%}&nbsp;{%- endunless -%}</div>
+                <div class="published-at">{%- unless product.metafields.custom.published_at == blank -%}公開日：{{ product.metafields.custom.published_at | date: '%Y.%m.%d' }}{%- unless product.metafields.custom.updated_at == blank -%}（最終更新日：{{ product.metafields.custom.updated_at | date: '%Y.%m.%d' }}）{%- endunless -%}{%- else -%}&nbsp;{%- endunless -%}</div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
