@@ -74,7 +74,9 @@ product-info product-form form .product-form__buttons button:after {
 .cart__footer-wrapper:last-child .cart-content .cart__footer {
     padding-bottom: 0;
 }
-
+.cart-content:not(has:button#checkout) {
+  display: none;
+}
 
 @media screen and (max-width: 989px) {
     product-info .page-width {
