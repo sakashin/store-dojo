@@ -161,6 +161,13 @@
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.account.title' | t }}</span>
             </li>
+        {% when "customers/addresses" %}
+            <li class="breadcrumb__list-item">
+                <a href="{{ shop.url }}{{ routes.account_url }}" class="smallcaps link-faded-reverse">{{ 'customer.account.title' | t }}</a>
+            </li>
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.addresses.title' | t }}</span>
+            </li>
         {% when "customers/order" %}
             <li class="breadcrumb__list-item">
                 <a href="{{ shop.url }}{{ routes.account_url }}" class="smallcaps link-faded-reverse">{{ 'customer.account.title' | t }}</a>
