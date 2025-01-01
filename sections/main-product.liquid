@@ -218,7 +218,7 @@
               {%- when 'related-post' -%}
                 {%- if product.metafields.custom.related_post != blank -%}
                   <div class="" {{ block.shopify_attributes }}>
-                    <a href="{{ product.metafields.custom.related_post }}">{{ 'general.social.links.twitter' | t }}関連ポスト</a>
+                    <a href="{{ product.metafields.custom.related_post }}">{{- 'icon-twitter.svg' | inline_asset_content -}}関連ポスト</a>
                   </div>
                 {%- endif -%}
                 {{ block.settings.custom_liquid }}
