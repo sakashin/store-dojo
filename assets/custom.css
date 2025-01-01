@@ -109,6 +109,6 @@ product-info product-form form .product-form__buttons button:after {
     }
     .page-content,
     .cart-content{
-      padding: 3rem;
+      padding: 3rem 3rem 6rem;
     }
 }
