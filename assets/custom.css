@@ -60,7 +60,8 @@ product-info product-form form .product-form__buttons button:after {
   margin-bottom: 1rem;
 }
 
-.page-width:has(.page-content) {
+.page-width:has(.page-content),
+.page-width:has(.cart-content) {
   padding: 0;
 }
 .page-content,
