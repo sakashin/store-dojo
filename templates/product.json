@@ -19,11 +19,16 @@
         "description_rjbc4F": {
           "type": "description",
           "settings": {}
+        },
+        "related_post_FJXiJ9": {
+          "type": "related-post",
+          "settings": {}
         }
       },
       "block_order": [
         "title",
-        "description_rjbc4F"
+        "description_rjbc4F",
+        "related_post_FJXiJ9"
       ],
       "settings": {
         "enable_sticky_info": true,
