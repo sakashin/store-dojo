@@ -74,7 +74,7 @@ product-info .related-post .list-social__link {
     padding: 1.1rem;
     color: rgb(var(--color-foreground));
 }
-product-info .related-post .link, .customer a {
+product-info .related-post .list-social__link a {
     cursor: pointer;
     display: inline-block;
     border: none;
