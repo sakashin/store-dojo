@@ -89,6 +89,10 @@ product-info product-form form .product-form__buttons button:after {
       margin-inline: 1.6rem;
       padding: 2rem;
     }
+    .page-width:has(.page-content),
+    .page-width:has(.cart-content) {
+      padding: 2rem;
+    }
     .page-content {
       padding: 2rem;
     }
