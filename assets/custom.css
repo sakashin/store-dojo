@@ -90,7 +90,9 @@ product-info product-form form .product-form__buttons button:after {
 .is-empty .cart-content:has(button#checkout) {
   display: none;
 }
-
+.page-content h2 {
+  border-top: .5px dashed #CCC;
+}
 
 @media screen and (max-width: 989px) {
     product-info .page-width {
