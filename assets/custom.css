@@ -74,7 +74,7 @@ product-info product-form form .product-form__buttons button:after {
 .cart__footer-wrapper:last-child .cart-content .cart__footer {
     padding-bottom: 0;
 }
-is-empty .cart-content {
+.is-empty .cart-content:has(button#checkout) {
   display: none;
 }
 
