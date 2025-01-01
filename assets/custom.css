@@ -21,6 +21,11 @@ header.header:not(.drawer-menu).page-width {
 .header-wrapper {
     background-color: transparent !important;
 }
+.mega-menu__content {
+  border: none;
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
+}
+
 .product-grid .grid__item,
 product-info .page-width,
 .page-width .page-content,
