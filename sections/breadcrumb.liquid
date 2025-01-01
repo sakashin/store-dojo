@@ -157,6 +157,13 @@
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.account.title' | t }}</span>
             </li>
+        {% when "customers/order" %}
+            <li class="breadcrumb__list-item">
+                <a href="{{ shop.url }}{{ routes.account_url }}" class="smallcaps link-faded-reverse">{{ 'customer.account.title' | t }}</a>
+            </li>
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.order.title' | t }}</span>
+            </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
                 <li class="breadcrumb__list-item">
