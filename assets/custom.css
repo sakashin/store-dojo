@@ -77,7 +77,7 @@ product-info product-form form .product-form__buttons button:after {
 }
 .page-content h1,
 .cart-content h1 {
-  font-size: calc(var(--font-heading-scale)* 3rem);
+  font-size: calc(var(--font-heading-scale)* 2.5rem);
 }
 .page-content .main-page-title,
 .cart-content .main-page-title {
