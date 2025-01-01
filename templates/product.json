@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "published_at_FjDyKF": {
+          "type": "published_at",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -26,6 +30,7 @@
         }
       },
       "block_order": [
+        "published_at_FjDyKF",
         "title",
         "description_rjbc4F",
         "related_post_FJXiJ9"
