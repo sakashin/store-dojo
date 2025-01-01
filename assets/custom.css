@@ -72,8 +72,7 @@ product-info .related-post .list-social__link {
     align-items: center;
     display: flex;
     padding: 1rem;
-    color: rgb(var(--color-foreground));
-    background-color: #CCC;
+    background-color: #EEE;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
