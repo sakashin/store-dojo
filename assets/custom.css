@@ -50,6 +50,10 @@ product-info .page-width,
 product-info .page-width {
   padding: 3rem;
 }
+product-info .published-at {
+  font-size: .8em;
+  color: #999;
+}
 product-info .product__summary {
   word-break: break-all;
 }
