@@ -101,7 +101,8 @@ product-info product-form form .product-form__buttons button:after {
     .page-width:has(.cart-content) {
       margin-inline: 1.6rem;
     }
-    .page-content {
+    .page-content,
+    .cart-content{
       padding: 2rem;
     }
 }
