@@ -98,7 +98,7 @@ product-info product-form form .product-form__buttons button:after {
   display: none;
 }
 
-.page-content:is(.account,.order) {
+.page-content :is(.account,.order) {
     padding-left: 0;
     padding-right: 0;
 }
