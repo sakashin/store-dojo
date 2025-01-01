@@ -71,7 +71,7 @@ product-info product-form form .product-form__buttons button:after {
 product-info .related-post .list-social__link {
     align-items: center;
     display: flex;
-    padding: 1rem;
+    padding: .5rem 1rem;
     background-color: #EEE;
     border-radius: 8px;
     cursor: pointer;
