@@ -43,6 +43,8 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {%- when 'custom_liquid' -%}
+              {{ block.settings.custom_liquid }}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div>
