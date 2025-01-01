@@ -19,10 +19,18 @@
           "settings": {
             "show_social": false
           }
+        },
+        "link_list_haKde3": {
+          "type": "link_list",
+          "settings": {
+            "heading": "クイックリンク",
+            "menu": "footer"
+          }
         }
       },
       "block_order": [
-        "brand_information_dncWgC"
+        "brand_information_dncWgC",
+        "link_list_haKde3"
       ],
       "settings": {
         "color_scheme": "scheme-1",
