@@ -1,3 +1,6 @@
+div.divider:empty {
+  display: block;
+}
 
 sticky-header {
     background: transparent;
