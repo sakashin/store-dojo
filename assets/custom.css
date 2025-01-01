@@ -92,7 +92,8 @@ product-info product-form form .product-form__buttons button:after {
 }
 .page-content h2 {
   border-top: .5px dashed #CCC;
-  padding-block-start: 0.83em;
+  margin-block-start: 0;
+  padding-block-start: 1.6em;
 }
 
 @media screen and (max-width: 989px) {
