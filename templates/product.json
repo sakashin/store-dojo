@@ -20,24 +20,15 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "summary_efTxxN": {
-          "type": "summary",
+        "description_rjbc4F": {
+          "type": "description",
           "settings": {}
         }
       },
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_apJBn3",
-        "buy_buttons",
-        "summary_efTxxN"
+        "description_rjbc4F"
       ],
       "settings": {
         "enable_sticky_info": true,
