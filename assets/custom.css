@@ -103,6 +103,6 @@ product-info product-form form .product-form__buttons button:after {
     }
     .page-content,
     .cart-content{
-      padding: 2rem;
+      padding: 3rem;
     }
 }
