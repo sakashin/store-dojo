@@ -692,6 +692,7 @@
         {{ product.metafields.custom.main-contents }}
       </div>
     {%- endif -%}
+    {%- if product.metafields.custom.is_purchasable -%}
     <div class="divider"></div>
     <div class="buy-buttons-wrapper">
       <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
@@ -703,6 +704,7 @@
         show_pickup_availability: true
       -%}
     </div>
+    {%- endif -%}
     
     {% render 'product-media-modal', variant_images: variant_images %}
 
