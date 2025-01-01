@@ -59,6 +59,10 @@ product-info product-form form .product-form__buttons button:after {
   font-size: .8em;
   margin-bottom: 1rem;
 }
+
+.page-width:has(.page-content) {
+  padding: 0;
+}
 .page-content,
 .cart-content{
   padding: 3rem;
@@ -77,6 +81,7 @@ product-info product-form form .product-form__buttons button:after {
 .is-empty .cart-content:has(button#checkout) {
   display: none;
 }
+
 
 @media screen and (max-width: 989px) {
     product-info .page-width {
