@@ -23,10 +23,17 @@
         "buttons": {
           "type": "buttons",
           "settings": {}
+        },
+        "custom_liquid_6F9DfY": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
         }
       },
       "block_order": [
-        "buttons"
+        "buttons",
+        "custom_liquid_6F9DfY"
       ],
       "settings": {
         "color_scheme": "scheme-1",
