@@ -142,9 +142,9 @@
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ cart.title }}</span>
             </li>
-        {% when "customers" %}
+        {% when "login" %}
             <li class="breadcrumb__list-item">
-                <span class="smallcaps link-faded-reverse" aria-current="page">aa{{ customer.title }}</span>
+                <span class="smallcaps link-faded-reverse" aria-current="page">aa{{ login.title }}</span>
             </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
