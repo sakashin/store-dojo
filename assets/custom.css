@@ -3,7 +3,7 @@ div.divider:empty {
 }
 div.divider {
   border-top: .5px dashed #CCC;
-  margin-block: 3rem;
+  margin-block: 4rem;
 }
 
 sticky-header {
