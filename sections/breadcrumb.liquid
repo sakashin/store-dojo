@@ -142,6 +142,13 @@
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ cart.title }}</span>
             </li>
+        {% when "customers/register" %}
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.login_page.title' | t }}</span>
+            </li>
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.register.title' | t }}</span>
+            </li>
         {% when "customers/login" %}
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'customer.login_page.title' | t }}</span>
