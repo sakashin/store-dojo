@@ -1,6 +1,10 @@
 div.divider:empty {
   display: block;
 }
+div.divider {
+  border-top: .5px dashed #CCC;
+  margin-block: 3rem;
+}
 
 sticky-header {
     background: transparent;
@@ -92,11 +96,6 @@ product-info product-form form .product-form__buttons button:after {
 }
 .is-empty .cart-content:has(button#checkout) {
   display: none;
-}
-.page-content h2 {
-  border-top: .5px dashed #CCC;
-  margin-block-start: 0;
-  padding-block-start: 1.6em;
 }
 
 @media screen and (max-width: 989px) {
