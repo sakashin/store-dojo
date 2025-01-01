@@ -81,7 +81,8 @@ product-info product-form form .product-form__buttons button:after {
 }
 .page-content .main-page-title,
 .cart-content .main-page-title {
-    margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 .cart__footer-wrapper:last-child .cart-content .cart__footer {
     padding-bottom: 0;
