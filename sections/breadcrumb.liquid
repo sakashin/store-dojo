@@ -1,4 +1,4 @@
-{% unless request.page_type == 'index' or request.page_type contains 'customers'  %}
+{% unless request.page_type == 'index'  %}
     <nav class="breadcrumb breadcrumb--floating page-width" aria-label="パンくずリスト">
         <div class="container">
             <ol class="breadcrumb__list unstyled-list">
@@ -141,6 +141,10 @@
         {% when "cart" %}
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ cart.title }}</span>
+            </li>
+        {% when "customers" %}
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ page.title }}</span>
             </li>
         {% when "policy" %}
             {% if request.path == shop.privacy_policy.url %}
