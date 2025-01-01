@@ -139,7 +139,7 @@
             {% endunless %}
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
         {% when "cart" %}
-            <li class="breadcrumb__list-item">
+            <li class="breadcrumb__list-item">{{ customer_login_link }}
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ cart.title }}</span>
             </li>
         {% when "customers/login" %}
