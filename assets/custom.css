@@ -7,7 +7,7 @@ header {
     padding: 10px 1rem;
     box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
     background: #fff;
-    border-radius: 30px;
+    border-radius: 36px;
     max-width: 100%;
 }
 header.header {
@@ -24,7 +24,7 @@ header.header:not(.drawer-menu).page-width {
 .mega-menu__content {
   border: none;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 30px !important;
+  border-radius: 36px !important;
 }
 
 .product-grid .grid__item,
