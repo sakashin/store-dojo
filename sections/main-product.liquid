@@ -679,6 +679,38 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'product_tags' -%}
+                {%- if product.tags.size > 0 -%}
+                  <ul class="product-tags">
+                  {%- for tag in product.tags -%}
+                    {%- for i in (1..10) -%}
+                      {%- assign show_tag_ = 'show_tag_' | append: i -%}
+                      {%- assign tag_ = 'tag_' | append: i -%}
+                      {%- assign tag_font_color = 'tag_' | append: i | append: '_fontcolor' -%}
+                      {%- assign tag_bg_color = 'tag_' | append: i | append: '_bgcolor' -%}
+                      {%- if block.settings[show_tag_] and block.settings[tag_] == tag -%}
+                        <li style="color: {{ block.settings[tag_font_color] }}; background-color: {{ block.settings[tag_bg_color] }};">
+                          {{ tag }}
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endfor -%}
+                  </ul>
+                  <style>
+                    .product-tags {
+                      display: flex;
+                      flex-wrap: wrap;
+                      list-style: none;
+                      padding: 0;
+                      margin: 0;
+                      gap: {{ block.settings.tag_gap }}px;
+                    }
+                    .product-tags li {
+                      list-style: none;
+                      padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px;
+                    }
+                  </style>              
+                {%- endif -%}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
