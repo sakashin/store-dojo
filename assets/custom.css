@@ -35,6 +35,10 @@ header.header:not(.drawer-menu).page-width {
   top: 94% !important;
 }
 
+footer {
+  margin-top: 4rem;
+}
+
 .product-grid .grid__item,
 product-info .page-width,
 .page-width .page-content,
