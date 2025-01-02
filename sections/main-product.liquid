@@ -854,7 +854,7 @@
  height: auto;
  touch-action: none;
  transform-origin: center;
- cursor: grab;
+ cursor: move;
 }
 
 .viewer-content img:active {
@@ -923,8 +923,21 @@ class ImageViewer {
    
    // マウスイベント
    this.content.addEventListener('mousedown', e => this.handleStart(e));
-   document.addEventListener('mousemove', e => this.handleMove(e));
+   document.addEventListener('mousemove', e => {
+     if (this.isDragging) {
+       e.preventDefault();
+       this.handleMove(e);
+     }
+   });
    document.addEventListener('mouseup', () => this.handleEnd());
+
+   // ホイールスクロール
+   this.content.addEventListener('wheel', e => {
+     e.preventDefault();
+     this.translateX -= e.deltaX;
+     this.translateY -= e.deltaY;
+     this.updateImagePosition();
+   });
  }
 
  handleStart(e) {
@@ -938,7 +951,6 @@ class ImageViewer {
 
  handleMove(e) {
    if (!this.isDragging) return;
-   e.preventDefault();
    
    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
@@ -946,13 +958,19 @@ class ImageViewer {
    this.translateX = clientX - this.startX;
    this.translateY = clientY - this.startY;
    
-   requestAnimationFrame(() => {
-     this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px)`;
-   });
+   this.updateImagePosition();
  }
 
  handleEnd() {
    this.isDragging = false;
+ }
+
+ updateImagePosition() {
+   requestAnimationFrame(() => {
+     if (this.currentImage) {
+       this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px)`;
+     }
+   });
  }
 
  open(img) {
@@ -964,7 +982,7 @@ class ImageViewer {
    
    this.translateX = 0;
    this.translateY = 0;
-   this.currentImage.style.transform = 'translate(0, 0)';
+   this.updateImagePosition();
  }
 
  close() {
