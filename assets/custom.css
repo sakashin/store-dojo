@@ -172,18 +172,18 @@ product-info .product__info-container .product-tags,
   margin: 1rem 0 .5rem;
   gap: 8px;
 }
-product-info .product__info-wrapper .product-tags .product-tags,
+product-info .product__info-container .product-tags,
 .product-grid .grid__item .card__information .card-tags .product-tags {
   padding-left: 0;
 }
-product-info .product__info-container .product-tags .product-tags li,
+product-info .product__info-container .product-tags li,
 .product-grid .grid__item .card__information .card-tags .product-tags li {
   list-style: none;
   padding: 1px 8px 2px;
   border-radius: 4px;
   font-size: 11px;
 }
-product-info .product__info-container .product-tags .product-tags li a,
+product-info .product__info-container .product-tags li a,
 .product-grid .grid__item .card__information .card-tags .product-tags li a  {
   text-decoration: none;
   color: inherit;
