@@ -140,7 +140,6 @@ product-info .product-main-contents .link-card .content p {
   position: relative;
   border: 1px dashed #CCC;
   border-radius: 8px;
-  padding: 0 1rem 1rem;
 }
 .bought-codes::after {
   content: '';
@@ -159,6 +158,7 @@ product-info .product-main-contents .link-card .content p {
 }
 .bought-codes h2 {
   margin-top: 0;
+  background-color: #EEE;
 }
 @media screen and (max-width: 989px) {
   product-info .product-main-contents .link-card {
