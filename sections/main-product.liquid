@@ -815,6 +815,8 @@
   </div>
 </product-info>
 
+{%- comment -%} 画像ズーム処理：ここから {%- endcomment -%}
+
 <div class="image-viewer">
  <button class="close-button" aria-label="閉じる">
    <span></span><span></span>
@@ -823,6 +825,10 @@
 </div>
 
 <style>
+.zoomable-image {
+ cursor: zoom-in;
+}
+
 .image-viewer {
  display: none;
  position: fixed;
@@ -854,7 +860,7 @@
  height: auto;
  touch-action: none;
  transform-origin: center;
- cursor: zoom-in;
+ cursor: zoom-out;
 }
 
 .viewer-content img.dragging {
@@ -972,6 +978,13 @@ class ImageViewer {
      this.translateY -= e.deltaY;
      this.updateImagePosition();
    });
+
+   // ズームアウト時のクリック
+   this.content.addEventListener('click', e => {
+     if (e.target === this.currentImage) {
+       this.close();
+     }
+   });
  }
 
  updateImagePosition() {
@@ -1009,6 +1022,8 @@ class ImageViewer {
 
 new ImageViewer();
 </script>
+
+{%- comment -%} 画像ズーム処理：ここまで {%- endcomment -%}
 
 {% schema %}
 {
