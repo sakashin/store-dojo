@@ -745,7 +745,7 @@
       {%- assign bought_tag = 'bought:' | append: product.id -%}
       {%- unless customer.tags contains bought_tag -%}
       <div class="buy-buttons-wrapper">
-        <p>ご購入（すべて¥0です）いただくと、コードサンプルをご覧いただけるようになります。</p>
+        <p>ご購入（すべて¥0です）いただくと、サンプルコードをご覧いただけるようになります。</p>
         {%- render 'buy-buttons',
           block: block,
           product: product,
