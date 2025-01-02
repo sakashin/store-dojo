@@ -95,6 +95,9 @@ product-info .product-main-contents {
   width: 800px;
   margin: 0 auto;
 }
+product-info .product-main-contents img {
+  width: 100%;
+}
 product-info .product-main-contents .link-card {
  border: 1px solid #ddd;
  border-radius: 8px;
