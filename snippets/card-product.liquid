@@ -568,11 +568,10 @@
             </span>
           {%- endif -%}
         </div>
-        card_product.tags:{{ card_product.tags }}
         {%- if card_product.tags.size > 0 -%}
         <div class="card-tags">
           <ul class="product-tags" {{ block.shopify_attributes }}>
-          {%- for tag in product.tags -%}
+          {%- for tag in card_product.tags -%}
             {%- case tag -%}
               {%- when 'オンラインツール' -%}
                 <li style="color: #ffffff; background-color: #95bf46;">{{ tag }}</li>
