@@ -689,9 +689,9 @@
         </section>
       </div>
     </div>
-    {%- if product.metafields.custom.main-contents != blank -%}
+    {%- if product.description != blank -%}
       <div class="product-main-contents" {{ block.shopify_attributes }}>
-        {{ product.metafields.custom.main-contents }}
+        {{ product.description }}
       </div>
     {%- endif -%}
     {%- if product.metafields.custom.is_purchasable -%}
