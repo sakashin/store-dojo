@@ -242,3 +242,40 @@ product-info .product__info-container .product-tags li a,
     padding: 3rem 3rem 6rem;
   }
 }
+
+/* code */
+.code-block {
+ counter-reset: line;
+ background: #f4f4f4;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ padding: 0;
+ margin: 1em 0;
+ overflow: auto;
+}
+
+.code-block code {
+ display: block;
+ padding: 0.5em 0 0.5em 3.5em;
+ position: relative;
+ line-height: 1.2;
+}
+
+.code-block .line {
+ display: block;
+ position: relative;
+ line-height: 1.2;
+}
+
+.code-block .line:before {
+ counter-increment: line;
+ content: counter(line);
+ position: absolute;
+ left: -3em;
+ width: 2.5em;
+ text-align: right;
+ color: #888;
+ border-right: 1px solid #ddd;
+ padding-right: 0.5em;
+}
+
