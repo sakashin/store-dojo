@@ -730,7 +730,7 @@
                     {%- when 'オンラインツール' -%}
                       <li style="color: #ffffff; background-color: #7ABE7A;">{{ parent_collection_handle }}</li>
                     {%- when 'product-management' -%}
-                      <li style="color: #ffffff; background-color: #7ABEB2;">{{ parent_collection_name }}</li>
+                      <li style="color: #ffffff; background-color: #7ABEB2;"><a href="{{ shop.url }}collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a></li>
                   {%- endcase -%}
                   </ul>
                   <style>
