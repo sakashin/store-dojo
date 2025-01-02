@@ -816,11 +816,47 @@
 </product-info>
 
 <div class="image-viewer">
-  <div class="close-button"></div>
-  <div class="viewer-content"></div>
+ <button class="close-button" aria-label="閉じる">
+   <span></span>
+   <span></span>
+ </button>
+ <div class="viewer-content"></div>
 </div>
+
 <style>
-/* 閉じるボタンのスタイルを修正 */
+.image-viewer {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.9);
+ z-index: 1000;
+}
+
+.image-viewer.active {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.viewer-content {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+
+.viewer-content img {
+ width: 120%;
+ height: auto;
+ touch-action: none;
+ transform-origin: center;
+}
+
 .close-button {
  position: fixed;
  top: 16px;
@@ -831,101 +867,99 @@
  border-radius: 50%;
  z-index: 1001;
  cursor: pointer;
- /* 追加: ×マークの表示 */
- display: flex;
- align-items: center;
- justify-content: center;
+ border: none;
+ padding: 0;
 }
 
-.close-button::before,
-.close-button::after {
- content: '';
+.close-button span {
  position: absolute;
  width: 24px;
  height: 2px;
  background: #000;
+ left: 50%;
+ top: 50%;
 }
 
-.close-button::before {
- transform: rotate(45deg);
+.close-button span:first-child {
+ transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.close-button::after {
- transform: rotate(-45deg);
-}
-
-/* 画像を大きく表示するために修正 */
-.viewer-content img {
- width: 120%; /* 画面幅より大きく */
- max-width: none;
- height: auto;
- touch-action: none;
- transform-origin: center;
+.close-button span:last-child {
+ transform: translate(-50%, -50%) rotate(-45deg);
 }
 </style>
+
 <script>
 class ImageViewer {
-  constructor() {
-    this.viewer = document.querySelector('.image-viewer');
-    this.content = document.querySelector('.viewer-content');
-    this.closeButton = document.querySelector('.close-button');
-    this.currentImage = null;
-    this.isDragging = false;
-    this.startX = 0;
-    this.startY = 0;
-    this.translateX = 0;
-    this.translateY = 0;
+ constructor() {
+   this.viewer = document.querySelector('.image-viewer');
+   this.content = document.querySelector('.viewer-content');
+   this.closeButton = document.querySelector('.close-button');
+   this.currentImage = null;
+   this.isDragging = false;
+   this.startX = 0;
+   this.startY = 0;
+   this.translateX = 0;
+   this.translateY = 0;
 
-    this.initEvents();
-  }
+   this.initEvents();
+ }
 
-  initEvents() {
-    document.querySelectorAll('.zoomable-image').forEach(img => {
-      img.addEventListener('click', () => this.open(img));
-    });
+ initEvents() {
+   document.querySelectorAll('.zoomable-image').forEach(img => {
+     img.addEventListener('click', () => this.open(img));
+   });
 
-    this.closeButton.addEventListener('click', () => this.close());
+   this.closeButton.addEventListener('click', () => this.close());
+   this.content.addEventListener('touchstart', this.handleTouchStart.bind(this));
+   this.content.addEventListener('touchmove', this.handleTouchMove.bind(this));
+   this.content.addEventListener('touchend', this.handleTouchEnd.bind(this));
+ }
 
-    this.content.addEventListener('touchstart', e => {
-      this.isDragging = true;
-      this.startX = e.touches[0].clientX - this.translateX;
-      this.startY = e.touches[0].clientY - this.translateY;
-    });
+ handleTouchStart(e) {
+   this.isDragging = true;
+   this.startX = e.touches[0].clientX - this.translateX;
+   this.startY = e.touches[0].clientY - this.translateY;
+ }
 
-    this.content.addEventListener('touchmove', e => {
-      if (!this.isDragging) return;
-      e.preventDefault();
-      
-      this.translateX = e.touches[0].clientX - this.startX;
-      this.translateY = e.touches[0].clientY - this.startY;
-      
-      this.currentImage.style.transform = 
-        `translate(${this.translateX}px, ${this.translateY}px)`;
-    });
+ handleTouchMove(e) {
+   if (!this.isDragging) return;
+   e.preventDefault();
+   
+   this.translateX = e.touches[0].clientX - this.startX;
+   this.translateY = e.touches[0].clientY - this.startY;
+   
+   requestAnimationFrame(() => {
+     this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px)`;
+   });
+ }
 
-    this.content.addEventListener('touchend', () => {
-      this.isDragging = false;
-    });
-  }
+ handleTouchEnd() {
+   this.isDragging = false;
+ }
 
-  open(img) {
-    this.currentImage = img.cloneNode(true);
-    this.content.innerHTML = '';
-    this.content.appendChild(this.currentImage);
-    this.viewer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+ open(img) {
+   this.currentImage = img.cloneNode(true);
+   this.content.innerHTML = '';
+   this.content.appendChild(this.currentImage);
+   this.viewer.classList.add('active');
+   document.body.style.overflow = 'hidden';
+   
+   // リセット
+   this.translateX = 0;
+   this.translateY = 0;
+   this.currentImage.style.transform = 'translate(0, 0)';
+ }
 
-  close() {
-    this.viewer.classList.remove('active');
-    this.content.innerHTML = '';
-    document.body.style.overflow = '';
-    this.translateX = 0;
-    this.translateY = 0;
-  }
+ close() {
+   this.viewer.classList.remove('active');
+   this.content.innerHTML = '';
+   document.body.style.overflow = '';
+   this.translateX = 0;
+   this.translateY = 0;
+ }
 }
 
-// 初期化
 new ImageViewer();
 </script>
 
