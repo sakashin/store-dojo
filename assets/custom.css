@@ -112,10 +112,10 @@ product-info .product-main-contents .link-card img {
  margin-right: 2rem;
 }
 product-info .product-main-contents .link-card .content {
-  font-size: .9em;
+  font-size: .8em;
 }
 product-info .product-main-contents .link-card .content h2 {
-  font-size: calc(var(--font-heading-scale)* 2rem);
+  font-size: 2rem;
   margin: 0;
 }
 product-info .product-main-contents .link-card .content p {
