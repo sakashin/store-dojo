@@ -139,6 +139,7 @@ product-info .product-main-contents .link-card .content p {
 .bought-codes {
   position: relative;
   border: 1px solid #EEE;
+  padding: 1rem;
 }
 .bought-codes::after {
   content: '';
