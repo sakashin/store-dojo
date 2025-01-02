@@ -20,6 +20,10 @@
           "type": "title",
           "settings": {}
         },
+        "parent_collection_KkzwNU": {
+          "type": "parent_collection",
+          "settings": {}
+        },
         "product_tags_k9tnNY": {
           "type": "product_tags",
           "settings": {
@@ -52,6 +56,7 @@
       "block_order": [
         "published_at_FjDyKF",
         "title",
+        "parent_collection_KkzwNU",
         "product_tags_k9tnNY",
         "share_PVpaaF",
         "summary_yrRjbb"
