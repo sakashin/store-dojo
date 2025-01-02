@@ -170,6 +170,9 @@ product-info .product-main-contents .link-card .content p {
     margin-inline: 1.6rem;
     padding: 2rem 2rem 4rem;
   }
+  product-info .product-main-contents {
+    width: 100%;
+  }
   .page-width:has(.page-content),
   .page-width:has(.cart-content) {
     margin-inline: 1.6rem;
