@@ -26,6 +26,22 @@
             "share_label": "共有"
           }
         },
+        "product_tags_k9tnNY": {
+          "type": "product_tags",
+          "settings": {
+            "tag_padding_top": 1,
+            "tag_padding_side": 5,
+            "tag_gap": 2,
+            "show_tag_1": false,
+            "tag_1": "",
+            "tag_1_fontcolor": "",
+            "tag_1_bgcolor": "",
+            "show_tag_2": false,
+            "tag_2": "",
+            "tag_2_fontcolor": "",
+            "tag_2_bgcolor": ""
+          }
+        },
         "summary_yrRjbb": {
           "type": "summary",
           "settings": {}
@@ -35,6 +51,7 @@
         "published_at_FjDyKF",
         "title",
         "share_PVpaaF",
+        "product_tags_k9tnNY",
         "summary_yrRjbb"
       ],
       "settings": {
