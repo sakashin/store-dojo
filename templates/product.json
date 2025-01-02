@@ -16,6 +16,10 @@
           "type": "published_at",
           "settings": {}
         },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
         "product_tags_k9tnNY": {
           "type": "product_tags",
           "settings": {
@@ -34,10 +38,6 @@
             "tag_2_bgcolor": ""
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
         "share_PVpaaF": {
           "type": "share",
           "settings": {
@@ -51,8 +51,8 @@
       },
       "block_order": [
         "published_at_FjDyKF",
-        "product_tags_k9tnNY",
         "title",
+        "product_tags_k9tnNY",
         "share_PVpaaF",
         "summary_yrRjbb"
       ],
