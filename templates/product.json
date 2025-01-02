@@ -24,24 +24,6 @@
           "type": "parent_collection",
           "settings": {}
         },
-        "product_tags_k9tnNY": {
-          "type": "product_tags",
-          "settings": {
-            "tag_padding_top": 1,
-            "tag_padding_side": 12,
-            "tag_font_size": 14,
-            "tag_radius": 5,
-            "tag_gap": 2,
-            "show_tag_1": true,
-            "tag_1": "オンラインツール",
-            "tag_1_fontcolor": "#ffffff",
-            "tag_1_bgcolor": "#7abe7a",
-            "show_tag_2": true,
-            "tag_2": "Shopify TIPS",
-            "tag_2_fontcolor": "#ffffff",
-            "tag_2_bgcolor": "#7abeb2"
-          }
-        },
         "share_PVpaaF": {
           "type": "share",
           "settings": {
@@ -57,7 +39,6 @@
         "published_at_FjDyKF",
         "title",
         "parent_collection_KkzwNU",
-        "product_tags_k9tnNY",
         "share_PVpaaF",
         "summary_yrRjbb"
       ],
