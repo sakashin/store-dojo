@@ -858,7 +858,6 @@
 </product-info>
 
 {%- comment -%} 画像ズーム処理：ここから {%- endcomment -%}
-
 <div class="image-viewer">
  <button class="close-button" aria-label="閉じる">
    <span></span><span></span>
@@ -903,6 +902,12 @@
  touch-action: manipulation;
  transform-origin: center;
  cursor: zoom-out;
+}
+
+@media screen and (max-width: 989px) {
+  .viewer-content img {
+    width: 250%;
+  }
 }
 
 .viewer-content img.dragging {
@@ -1033,12 +1038,20 @@ class ImageViewer {
      }
    });
 
-   // ホイールスクロールでのズーム
+   // ホイールイベントの処理
    this.content.addEventListener('wheel', e => {
-     e.preventDefault();
-     const delta = -e.deltaY * 0.01;
-     this.scale = Math.min(Math.max(0.5, this.scale + delta), 4);
-     this.updateImagePosition();
+     // Ctrlキーが押されている場合はズーム
+     if (e.ctrlKey) {
+       e.preventDefault();
+       const delta = -e.deltaY * 0.01;
+       this.scale = Math.min(Math.max(0.5, this.scale + delta), 4);
+       this.updateImagePosition();
+     } else {
+       // 通常のスクロール
+       this.translateX -= e.deltaX;
+       this.translateY -= e.deltaY;
+       this.updateImagePosition();
+     }
    });
 
    this.content.addEventListener('click', e => {
@@ -1094,7 +1107,6 @@ class ImageViewer {
 
 new ImageViewer();
 </script>
-
 {%- comment -%} 画像ズーム処理：ここまで {%- endcomment -%}
 
 {% schema %}
