@@ -102,6 +102,9 @@ product-info .product-main-contents .link-card h2 {
   font-size: calc(var(--font-heading-scale)* 2rem);
   margin: 0;
 }
+product-info .product-main-contents .link-card p {
+  margin: 0;
+}
 product-info .product-main-contents .link-card a {
  display: flex;
  text-decoration: none;
