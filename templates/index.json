@@ -40,12 +40,12 @@
     "all-products": {
       "type": "featured-collection",
       "settings": {
-        "title": "特集コレクション",
+        "title": "新着",
         "heading_size": "h2",
         "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "tips",
+        "collection": "shopify-tips",
         "products_to_show": 24,
         "columns_desktop": 3,
         "full_width": false,
