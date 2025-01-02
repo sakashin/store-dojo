@@ -136,6 +136,21 @@ product-info .product-main-contents .link-card .content h2 {
 product-info .product-main-contents .link-card .content p {
   margin-block: .5rem;
 }
+.bought-codes::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+}
 @media screen and (max-width: 989px) {
   product-info .product-main-contents .link-card {
     padding: .8rem;
