@@ -742,6 +742,8 @@
     {%- endif -%}
     {%- if product.metafields.custom.is_purchasable -%}
       <div class="divider"></div>
+      {%- assign bought_tag = 'bought:' | append: product.id -%}
+      {%- unless customer.tags contains bought_tag -%}
       <div class="buy-buttons-wrapper">
         <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
         {%- render 'buy-buttons',
@@ -752,9 +754,12 @@
           show_pickup_availability: true
         -%}
       </div>
-      <div class="codes">
+      {%- endunless -%}
+      <div class="bought-codes">
         {{ product.metafields.custom.protected_code }}
       </div>
+      {%- unless customer.tags contains bought_tag -%}
+      {%- endunless -%}
     {%- endif -%}
     {%- if product.metafields.custom.related_post != blank -%}
       <div class="divider"></div>
