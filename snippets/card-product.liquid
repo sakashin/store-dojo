@@ -161,6 +161,20 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+            
+          {%- if card_product.tags.size > 0 -%}
+          <div class="card-tags">
+            <ul class="product-tags" {{ block.shopify_attributes }}>
+            {%- for tag in card_product.tags -%}
+              {%- case tag -%}
+                {%- when 'オンラインツール' -%}
+                  <li style="color: #ffffff; background-color: #95bf46;">{{ tag }}</li>
+              {%- endcase -%}
+            {%- endfor -%}
+            </ul>
+          </div>
+          {%- endif -%}
+          
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -203,19 +217,6 @@
                   {{ 'accessibility.total_reviews' | t -}}
                 </span>
               </p>
-            {%- endif -%}
-            
-            {%- if card_product.tags.size > 0 -%}
-            <div class="card-tags">
-              <ul class="product-tags" {{ block.shopify_attributes }}>
-              {%- for tag in card_product.tags -%}
-                {%- case tag -%}
-                  {%- when 'オンラインツール' -%}
-                    <li style="color: #ffffff; background-color: #95bf46;">{{ tag }}</li>
-                {%- endcase -%}
-              {%- endfor -%}
-              </ul>
-            </div>
             {%- endif -%}
 
             {%- comment -%}
