@@ -150,8 +150,6 @@ product-info .product-main-contents .link-card .content p {
   position: relative;
 }
 .bought-codes h2 span {
-  position: absolute;
-  right: 0;
   font-size: 11px;
   padding: .5rem 1rem;
   background-color: #0076DF;
