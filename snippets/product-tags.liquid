@@ -1,0 +1,12 @@
+
+target_product:{{ target_product }}
+<ul class="product-tags" {{ block.shopify_attributes }}>
+{%- assign parent_collection_name = collections[product.metafields.custom.parent_collection].title -%}
+{%- assign parent_collection_handle = collections[product.metafields.custom.parent_collection].handle -%}
+{%- case parent_collection_handle -%}
+  {%- when 'オンラインツール' -%}
+    <li style="color: #ffffff; background-color: #7ABE7A;">{{ parent_collection_handle }}</li>
+  {%- when 'product-management' -%}
+    <li style="color: #ffffff; background-color: #7ABEB2;"><a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a></li>
+{%- endcase -%}
+</ul> 
