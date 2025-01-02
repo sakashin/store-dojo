@@ -711,6 +711,9 @@
                       border-radius: {{ block.settings.tag_radius }}px;
                       font-size: {{ block.settings.tag_font_size }}px;
                     }
+                    .product-tags li a  {
+                      text-decoration: none;
+                    }
                     @media screen and (max-width: 989px) {
                       .product-tags li {
                         font-size: {{ block.settings.tag_font_size | times: 0.8 | round: 0 }}px;
