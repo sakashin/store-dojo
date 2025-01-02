@@ -854,10 +854,10 @@
  height: auto;
  touch-action: none;
  transform-origin: center;
- cursor: move;
+ cursor: zoom-in;
 }
 
-.viewer-content img:active {
+.viewer-content img.dragging {
  cursor: grabbing;
 }
 
@@ -900,11 +900,10 @@ class ImageViewer {
    this.content = document.querySelector('.viewer-content');
    this.closeButton = document.querySelector('.close-button');
    this.currentImage = null;
-   this.isDragging = false;
-   this.startX = 0;
-   this.startY = 0;
    this.translateX = 0;
    this.translateY = 0;
+   this.lastMouseX = 0;
+   this.lastMouseY = 0;
 
    this.initEvents();
  }
@@ -917,19 +916,54 @@ class ImageViewer {
    this.closeButton.addEventListener('click', () => this.close());
    
    // タッチイベント
-   this.content.addEventListener('touchstart', e => this.handleStart(e));
-   this.content.addEventListener('touchmove', e => this.handleMove(e));
-   this.content.addEventListener('touchend', () => this.handleEnd());
+   this.content.addEventListener('touchstart', e => {
+     const touch = e.touches[0];
+     this.lastMouseX = touch.clientX;
+     this.lastMouseY = touch.clientY;
+   });
    
+   this.content.addEventListener('touchmove', e => {
+     e.preventDefault();
+     const touch = e.touches[0];
+     const deltaX = touch.clientX - this.lastMouseX;
+     const deltaY = touch.clientY - this.lastMouseY;
+     
+     this.translateX += deltaX;
+     this.translateY += deltaY;
+     
+     this.lastMouseX = touch.clientX;
+     this.lastMouseY = touch.clientY;
+     
+     this.updateImagePosition();
+   });
+
    // マウスイベント
-   this.content.addEventListener('mousedown', e => this.handleStart(e));
-   document.addEventListener('mousemove', e => {
-     if (this.isDragging) {
+   this.content.addEventListener('mousemove', e => {
+     if (e.buttons === 1) {
        e.preventDefault();
-       this.handleMove(e);
+       const deltaX = e.clientX - this.lastMouseX;
+       const deltaY = e.clientY - this.lastMouseY;
+       
+       if (this.lastMouseX !== 0) {
+         this.translateX += deltaX;
+         this.translateY += deltaY;
+         this.updateImagePosition();
+       }
+       
+       this.lastMouseX = e.clientX;
+       this.lastMouseY = e.clientY;
+       
+       if (this.currentImage) {
+         this.currentImage.classList.add('dragging');
+       }
+     } else {
+       this.lastMouseX = 0;
+       this.lastMouseY = 0;
+       if (this.currentImage) {
+         this.currentImage.classList.remove('dragging');
+       }
      }
    });
-   document.addEventListener('mouseup', () => this.handleEnd());
 
    // ホイールスクロール
    this.content.addEventListener('wheel', e => {
@@ -938,31 +972,6 @@ class ImageViewer {
      this.translateY -= e.deltaY;
      this.updateImagePosition();
    });
- }
-
- handleStart(e) {
-   this.isDragging = true;
-   const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-   const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-   
-   this.startX = clientX - this.translateX;
-   this.startY = clientY - this.translateY;
- }
-
- handleMove(e) {
-   if (!this.isDragging) return;
-   
-   const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-   const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-   
-   this.translateX = clientX - this.startX;
-   this.translateY = clientY - this.startY;
-   
-   this.updateImagePosition();
- }
-
- handleEnd() {
-   this.isDragging = false;
  }
 
  updateImagePosition() {
@@ -982,6 +991,8 @@ class ImageViewer {
    
    this.translateX = 0;
    this.translateY = 0;
+   this.lastMouseX = 0;
+   this.lastMouseY = 0;
    this.updateImagePosition();
  }
 
@@ -991,6 +1002,8 @@ class ImageViewer {
    document.body.style.overflow = '';
    this.translateX = 0;
    this.translateY = 0;
+   this.lastMouseX = 0;
+   this.lastMouseY = 0;
  }
 }
 
