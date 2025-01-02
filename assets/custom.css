@@ -171,6 +171,9 @@ product-info .product-main-contents .link-card .content p {
   margin: 0;
   gap: 8px;
 }
+.product-grid .grid__item .card__information .card-tags .product-tags {
+  margin-left: 0;
+}
 .product-grid .grid__item .card__information .card-tags .product-tags li {
   list-style: none;
   padding: 2px 4px 3px;
