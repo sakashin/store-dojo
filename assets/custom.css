@@ -48,6 +48,7 @@ product-info .page-width,
   border-top-right-radius: 1rem 1rem !important;
 }
 product-info .page-width {
+  margin-inline: 1.6rem;
   padding: 3rem;
 }
 product-info .published-at {
