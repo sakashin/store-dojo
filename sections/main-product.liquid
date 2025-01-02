@@ -756,7 +756,7 @@
       </div>
       {%- endunless -%}
       <div class="bought-codes">
-        <h3>{{ product.metafields.custom.protected_code.name }}</h3>
+        <h3>{{ product.metafields.custom.protected_code | json }}</h3>
         {{ product.metafields.custom.protected_code }}
       </div>
       {%- unless customer.tags contains bought_tag -%}
