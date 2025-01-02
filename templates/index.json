@@ -12,7 +12,7 @@
     "all-products": {
       "type": "featured-collection",
       "settings": {
-        "title": "新着",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": true,
