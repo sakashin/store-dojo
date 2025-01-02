@@ -159,6 +159,8 @@ product-info .product-main-contents .link-card .content p {
 .bought-codes h2 {
   margin-top: 0;
   background-color: #EEE;
+  text-align: center;
+  padding: .5rem auto 1rem;
 }
 @media screen and (max-width: 989px) {
   product-info .product-main-contents .link-card {
