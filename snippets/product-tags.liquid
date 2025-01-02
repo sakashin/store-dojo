@@ -3,8 +3,12 @@
 {%- assign parent_collection_handle = collections[target_product.metafields.custom.parent_collection].handle -%}
 {%- case parent_collection_handle -%}
   {%- when 'product-management' -%}
-    <li style="color: #ffffff; background-color: #7ABEB2;"><a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a></li>
+    <li style="color: #ffffff; background-color: #7ABEB2;">
+      <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
+    </li>
   {%- when 'オンラインツール' -%}
-    <li style="color: #ffffff; background-color: #7ABE7A;">{{ parent_collection_handle }}</li>
+    <li style="color: #ffffff; background-color: #7ABEB2;">
+      <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
+    </li>
 {%- endcase -%}
 </ul> 
