@@ -759,7 +759,7 @@
         <h2>サンプルコード</h2>
         <div class="codes">{{ product.metafields.custom.protected_code }}</div>
       </div>
-      customer.tags:{{ customer.tags }}
+      customer.tags:{{ customer.tags }} / bought_tag:{{ bought_tag }}
       {%- unless customer.tags contains bought_tag -%}
       <style>
         .bought-codes {
