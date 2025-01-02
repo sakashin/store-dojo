@@ -260,8 +260,8 @@ product-info .product__info-container .product-tags li a,
 
 @media screen and (max-width: 989px) {
   header.header:not(.drawer-menu).page-width {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
   }
   h1 {
     font-size: calc(var(--font-heading-scale)* 2.4rem);
