@@ -124,7 +124,27 @@ product-info .product-main-contents .link-card .content p {
   margin-block: .5rem;
 }
 @media screen and (max-width: 989px) {
-  
+  product-info .product-main-contents .link-card {
+    padding: .8rem;
+    line-height: 1.4;
+  }
+  product-info .product-main-contents .link-card a {
+    padding: .5rem;
+  }
+  product-info .product-main-contents .link-card img {
+   width: 50px;
+   height: 50px;
+   margin-right: 1rem;
+  }
+  product-info .product-main-contents .link-card .content {
+    font-size: .8em;
+  }
+  product-info .product-main-contents .link-card .content h2 {
+    font-size: 1.6rem;
+  }
+  product-info .product-main-contents .link-card .content p {
+    margin-block: .5rem;
+  }
 }
 
 .product-grid .grid__item .card__information .published-at {
