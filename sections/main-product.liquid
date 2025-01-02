@@ -732,32 +732,7 @@
                     {%- when 'product-management' -%}
                       <li style="color: #ffffff; background-color: #7ABEB2;"><a href="/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a></li>
                   {%- endcase -%}
-                  </ul>
-                  <style>
-                    .product-tags {
-                      display: flex;
-                      flex-wrap: wrap;
-                      list-style: none;
-                      padding: 0;
-                      margin: 0;
-                      gap: 4px;
-                    }
-                    .product-tags li {
-                      list-style: none;
-                      padding: 1px 8px 2px;
-                      border-radius: 4px;
-                      font-size: 14px;
-                    }
-                    .product-tags li a  {
-                      text-decoration: none;
-                      color: inherit;
-                    }
-                    @media screen and (max-width: 989px) {
-                      .product-tags li {
-                        font-size: 12px;
-                      }
-                    }
-                  </style>  
+                  </ul> 
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
