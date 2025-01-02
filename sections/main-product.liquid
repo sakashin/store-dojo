@@ -2137,6 +2137,87 @@
       "type": "summary",
       "name": "サマリー",
       "limit": 1
+    },
+    {
+      "type": "product_tags",
+      "name": "商品タグ",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "tag_padding_top",
+          "label": "タグの上下余白余白（px）",
+          "min": 1,
+          "max": 10,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "tag_padding_side",
+          "label": "タグの左右余白余白（px）",
+          "min": 1,
+          "max": 20,
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "tag_gap",
+          "label": "タグ間余白（px）",
+          "min": 1,
+          "max": 10,
+          "default": 2
+        },
+        {
+          "type": "header",
+          "content": "表示タグ1"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tag_1",
+          "label": "表示タグ1を表示する",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "tag_1",
+          "label": "表示タグ1の対象タグ"
+        },
+        {
+          "type": "color",
+          "id": "tag_1_fontcolor",
+          "label": "表示タグ1の文字色"
+        },
+        {
+          "type": "color",
+          "id": "tag_1_bgcolor",
+          "label": "表示タグ1の背景色"
+        },
+        {
+          "type": "header",
+          "content": "表示タグ2"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tag_2",
+          "label": "表示タグ2を表示する",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "tag_2",
+          "label": "表示タグ2の対象タグ"
+        },
+        {
+          "type": "color",
+          "id": "tag_2_fontcolor",
+          "label": "表示タグ2の文字色"
+        },
+        {
+          "type": "color",
+          "id": "tag_2_bgcolor",
+          "label": "表示タグ2の背景色"
+        }
+      ]
     }
   ],
   "settings": [
