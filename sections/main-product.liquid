@@ -707,7 +707,7 @@
                     }
                     .product-tags li {
                       list-style: none;
-                      padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px;
+                      padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px {{ block.settings.tag_padding_top | plus: 1 }}px;
                       border-radius: {{ block.settings.tag_radius }}px;
                       font-size: {{ block.settings.tag_font_size }}px;
                     }
