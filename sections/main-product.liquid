@@ -752,6 +752,9 @@
           show_pickup_availability: true
         -%}
       </div>
+      <div class="codes">
+        {{ product.metafields.custom.protected_code }}
+      </div>
     {%- endif -%}
     {%- if product.metafields.custom.related_post != blank -%}
       <div class="divider"></div>
