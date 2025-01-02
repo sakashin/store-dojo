@@ -856,13 +856,17 @@
 }
 
 .viewer-content img {
- width: 120%;
+ width: 100%;
  height: auto;
  touch-action: none;
  transform-origin: center;
  cursor: zoom-out;
 }
-
+@media screen and (max-width: 989px) {
+  .viewer-content img {
+     width: 300%;
+  }
+}
 .viewer-content img.dragging {
  cursor: grabbing;
 }
