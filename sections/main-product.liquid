@@ -745,7 +745,7 @@
       {%- assign bought_tag = 'bought:' | append: product.id -%}
       {%- unless customer.tags contains bought_tag -%}
       <div class="buy-buttons-wrapper">
-        <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
+        <p>ご購入（すべて¥0です）いただくと、コードサンプルをご覧いただけるようになります。</p>
         {%- render 'buy-buttons',
           block: block,
           product: product,
@@ -756,7 +756,7 @@
       </div>
       {%- endunless -%}
       <div class="bought-codes">
-        <h3>{{ product.metafields.custom.protected_code.definitions | json }}</h3>
+        <h3>コードサンプル</h3>
         {{ product.metafields.custom.protected_code }}
       </div>
       {%- unless customer.tags contains bought_tag -%}
