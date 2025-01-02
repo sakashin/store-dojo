@@ -148,6 +148,7 @@ product-info .product-main-contents .link-card .content p {
   text-align: center;
   padding: .5rem 0 1rem;
   position: relative;
+  display: flex;
 }
 .bought-codes h2 span {
   font-size: 11px;
