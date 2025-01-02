@@ -168,7 +168,7 @@ product-info .product-main-contents .link-card .content p {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 1rem 0 .5rem;
   gap: 8px;
 }
 .product-grid .grid__item .card__information .card-tags .product-tags {
