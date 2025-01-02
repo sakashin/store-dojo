@@ -817,8 +817,7 @@
 
 <div class="image-viewer">
  <button class="close-button" aria-label="閉じる">
-   <span></span>
-   <span></span>
+   <span></span><span></span>
  </button>
  <div class="viewer-content"></div>
 </div>
@@ -855,6 +854,11 @@
  height: auto;
  touch-action: none;
  transform-origin: center;
+ cursor: grab;
+}
+
+.viewer-content img:active {
+ cursor: grabbing;
 }
 
 .close-button {
@@ -911,30 +915,43 @@ class ImageViewer {
    });
 
    this.closeButton.addEventListener('click', () => this.close());
-   this.content.addEventListener('touchstart', this.handleTouchStart.bind(this));
-   this.content.addEventListener('touchmove', this.handleTouchMove.bind(this));
-   this.content.addEventListener('touchend', this.handleTouchEnd.bind(this));
+   
+   // タッチイベント
+   this.content.addEventListener('touchstart', e => this.handleStart(e));
+   this.content.addEventListener('touchmove', e => this.handleMove(e));
+   this.content.addEventListener('touchend', () => this.handleEnd());
+   
+   // マウスイベント
+   this.content.addEventListener('mousedown', e => this.handleStart(e));
+   document.addEventListener('mousemove', e => this.handleMove(e));
+   document.addEventListener('mouseup', () => this.handleEnd());
  }
 
- handleTouchStart(e) {
+ handleStart(e) {
    this.isDragging = true;
-   this.startX = e.touches[0].clientX - this.translateX;
-   this.startY = e.touches[0].clientY - this.translateY;
+   const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+   const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+   
+   this.startX = clientX - this.translateX;
+   this.startY = clientY - this.translateY;
  }
 
- handleTouchMove(e) {
+ handleMove(e) {
    if (!this.isDragging) return;
    e.preventDefault();
    
-   this.translateX = e.touches[0].clientX - this.startX;
-   this.translateY = e.touches[0].clientY - this.startY;
+   const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+   const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+   
+   this.translateX = clientX - this.startX;
+   this.translateY = clientY - this.startY;
    
    requestAnimationFrame(() => {
      this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px)`;
    });
  }
 
- handleTouchEnd() {
+ handleEnd() {
    this.isDragging = false;
  }
 
@@ -945,7 +962,6 @@ class ImageViewer {
    this.viewer.classList.add('active');
    document.body.style.overflow = 'hidden';
    
-   // リセット
    this.translateX = 0;
    this.translateY = 0;
    this.currentImage.style.transform = 'translate(0, 0)';
