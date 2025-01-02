@@ -138,9 +138,9 @@ product-info .product-main-contents .link-card .content p {
 }
 .bought-codes {
   position: relative;
-  border: 1px dashed #DDD;
+  border: 1px dashed #CCC;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
 }
 .bought-codes::after {
   content: '';
