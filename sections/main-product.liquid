@@ -694,19 +694,20 @@
       </div>
     {%- endif -%}
     {%- if product.metafields.custom.is_purchasable -%}
-    <div class="divider"></div>
-    <div class="buy-buttons-wrapper">
-      <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
-      {%- render 'buy-buttons',
-        block: block,
-        product: product,
-        product_form_id: product_form_id,
-        section_id: section.id,
-        show_pickup_availability: true
-      -%}
-    </div>
+      <div class="divider"></div>
+      <div class="buy-buttons-wrapper">
+        <p>ご購入（すべて¥0です）いただくと、より詳細なソースコードをご覧いただけるようになります。</p>
+        {%- render 'buy-buttons',
+          block: block,
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: true
+        -%}
+      </div>
     {%- endif -%}
     {%- if product.metafields.custom.related_post != blank -%}
+      <div class="divider"></div>
       <div class="related-post" {{ block.shopify_attributes }}>
         <a href="{{ product.metafields.custom.related_post }}" class="list-social__link link">
           <span class="svg-wrapper">
