@@ -20,10 +20,6 @@
           "type": "title",
           "settings": {}
         },
-        "related_post_FJXiJ9": {
-          "type": "related-post",
-          "settings": {}
-        },
         "share_PVpaaF": {
           "type": "share",
           "settings": {
@@ -38,7 +34,6 @@
       "block_order": [
         "published_at_FjDyKF",
         "title",
-        "related_post_FJXiJ9",
         "share_PVpaaF",
         "summary_yrRjbb"
       ],
