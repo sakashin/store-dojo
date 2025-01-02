@@ -94,6 +94,26 @@ product-info .related-post .list-social__link {
 product-info .product-main-contents {
   
 }
+product-info .product-main-contents .link-card {
+ border: 1px solid #ddd;
+ border-radius: 8px;
+}
+product-info .product-main-contents .link-card a {
+ display: flex;
+ text-decoration: none;
+ color: inherit;
+ padding: 1rem;
+ align-items: center;
+}
+product-info .product-main-contents .link-card img {
+ width: 120px;
+ height: 120px;
+ object-fit: cover;
+ margin-right: 2rem;
+}
+@media screen and (max-width: 989px) {
+  
+}
 
 .product-grid .grid__item .card__information .published-at {
   color: #999;
