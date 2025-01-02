@@ -150,6 +150,7 @@ product-info .product-main-contents .link-card .content p {
   position: relative;
   display: flex;
   justify-content: center;
+  
 }
 .bought-codes h2 span {
   display: inline-block;
@@ -158,6 +159,8 @@ product-info .product-main-contents .link-card .content p {
   background-color: #0076DF;
   border-radius: 4px;
   color: #FFF;
+  height: max-content;
+  margin-left: 1rem;
 }
 .bought-codes .codes {
   padding: 2rem;
