@@ -104,22 +104,23 @@ product-info .product-main-contents img {
   border: 1px solid #ccc;
 }
 product-info .product-main-contents .link-card {
- border: 1px solid #ddd;
- border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 1.6rem;
 }
 product-info .product-main-contents .link-card a {
- display: flex;
- text-decoration: none;
- color: inherit;
- padding: 1rem;
- align-items: center;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  align-items: center;
 }
 product-info .product-main-contents .link-card img {
- width: 90px;
- height: 90px;
- object-fit: cover;
- margin-right: 2rem;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-right: 2rem;
+  border: none;
 }
 product-info .product-main-contents .link-card .content {
   font-size: .8em;
