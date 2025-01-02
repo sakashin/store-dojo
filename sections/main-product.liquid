@@ -681,7 +681,7 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'product_tags' -%}
                 {%- if product.tags.size > 0 -%}
-                  <ul class="product-tags">
+                  <ul class="product-tags" {{ block.shopify_attributes }}>
                   {%- for tag in product.tags -%}
                     {%- for i in (1..10) -%}
                       {%- assign show_tag_ = 'show_tag_' | append: i -%}
