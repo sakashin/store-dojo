@@ -816,124 +816,94 @@
 </product-info>
 
 <div class="image-viewer">
- <div class="viewer-content"></div>
+  <div class="close-button"></div>
+  <div class="viewer-content"></div>
 </div>
-<script type="module">
-class ImageViewer {
-  constructor() {
-    this.viewer = document.querySelector('.image-viewer');
-    this.content = document.querySelector('.viewer-content');
-    this.currentImage = null;
-    this.isZoomed = false;
-    this.startX = 0;
-    this.startY = 0;
-    this.initX = 0;
-    this.initY = 0;
+<script>
+  class ImageViewer {
+    constructor() {
+      this.viewer = document.querySelector('.image-viewer');
+      this.content = document.querySelector('.viewer-content');
+      this.closeButton = document.querySelector('.close-button');
+      this.currentImage = null;
+      
+      this.position = { x: 0, y: 0 };
+      this.start = { x: 0, y: 0 };
 
-    this.initializeViewer();
-  }
+      this.initializeViewer();
+    }
 
-  initializeViewer() {
-    // 記事内の画像にクリックイベントを追加
-    document.querySelectorAll('.zoomable-image').forEach(img => {
-      img.addEventListener('click', () => this.openViewer(img));
-    });
+    initializeViewer() {
+      document.querySelectorAll('.zoomable-image').forEach(img => {
+        img.addEventListener('click', () => this.openViewer(img));
+      });
 
-    // ビューワーのイベントリスナー
-    this.viewer.addEventListener('click', (e) => {
-      if (e.target === this.viewer) this.closeViewer();
-    });
+      this.closeButton.addEventListener('click', () => this.closeViewer());
+      
+      this.content.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+      this.content.addEventListener('touchmove', (e) => this.handleTouchMove(e));
+      this.content.addEventListener('touchend', () => this.handleTouchEnd());
+    }
 
-    this.content.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-    this.content.addEventListener('touchmove', (e) => this.handleTouchMove(e));
-    this.content.addEventListener('touchend', () => this.handleTouchEnd());
-  }
+    openViewer(img) {
+      this.currentImage = img.cloneNode();
+      this.content.innerHTML = '';
+      this.content.appendChild(this.currentImage);
+      this.viewer.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      this.currentImage.onload = () => {
+        this.centerImage();
+      };
+    }
 
-  openViewer(img) {
-    this.currentImage = img.cloneNode();
-    this.content.innerHTML = '';
-    this.content.appendChild(this.currentImage);
-    this.viewer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+    centerImage() {
+      const viewerRect = this.viewer.getBoundingClientRect();
+      const imgRect = this.currentImage.getBoundingClientRect();
+      
+      this.position.x = (viewerRect.width - imgRect.width) / 2;
+      this.position.y = (viewerRect.height - imgRect.height) / 2;
+      this.updateImagePosition();
+    }
 
-  closeViewer() {
-    this.viewer.classList.remove('active');
-    this.content.innerHTML = '';
-    document.body.style.overflow = '';
-    this.isZoomed = false;
-  }
+    closeViewer() {
+      this.viewer.classList.remove('active');
+      this.content.innerHTML = '';
+      document.body.style.overflow = '';
+      this.position = { x: 0, y: 0 };
+    }
 
-  handleTouchStart(e) {
-    const touch = e.touches[0];
-    this.startX = touch.clientX;
-    this.startY = touch.clientY;
-    this.initX = this.content.offsetLeft;
-    this.initY = this.content.offsetTop;
-  }
+    handleTouchStart(e) {
+      const touch = e.touches[0];
+      this.start = { 
+        x: touch.clientX - this.position.x,
+        y: touch.clientY - this.position.y
+      };
+    }
 
-  handleTouchMove(e) {
-    if (!this.isZoomed) return;
-    e.preventDefault();
-    
-    const touch = e.touches[0];
-    const deltaX = touch.clientX - this.startX;
-    const deltaY = touch.clientY - this.startY;
-    
-    this.content.style.transform = `translate(${this.initX + deltaX}px, ${this.initY + deltaY}px)`;
-  }
+    handleTouchMove(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      
+      this.position = {
+        x: touch.clientX - this.start.x,
+        y: touch.clientY - this.start.y
+      };
+      
+      this.updateImagePosition();
+    }
 
-  handleTouchEnd() {
-    if (this.isZoomed) {
-      this.initX = this.content.offsetLeft;
-      this.initY = this.content.offsetTop;
+    handleTouchEnd() {
+      // 境界チェックと位置の補正をここに追加できます
+    }
+
+    updateImagePosition() {
+      this.currentImage.style.transform = 
+        `translate(${this.position.x}px, ${this.position.y}px)`;
     }
   }
-}
 
-// スタイル
-const styles = `
-.image-viewer {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-}
-
-.image-viewer.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.viewer-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.viewer-content img {
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-}
-
-.zoomable-image {
-  cursor: zoom-in;
-}
-`;
-
-// スタイルを適用
-const styleSheet = document.createElement('style');
-styleSheet.textContent = styles;
-document.head.appendChild(styleSheet);
-
-// 初期化
-new ImageViewer();
+  new ImageViewer();
 </script>
 
 {% schema %}
