@@ -690,7 +690,7 @@
                       {%- assign tag_bg_color = 'tag_' | append: i | append: '_bgcolor' -%}
                       {%- if block.settings[show_tag_] and block.settings[tag_] == tag -%}
                         <li style="color: {{ block.settings[tag_font_color] }}; background-color: {{ block.settings[tag_bg_color] }};">
-                          {{ tag }}
+                          <a href="{{ shop.url }}/collections/tips?filter.p.tag={{ tag }}">{{ tag }}</a>
                         </li>
                       {%- endif -%}
                     {%- endfor -%}
