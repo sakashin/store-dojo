@@ -168,6 +168,7 @@
             {%- endif -%}
             {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
+                {% comment %} 
                 {%- if localization.available_countries and localization.available_countries.size > 1 -%}
                   <localization-form>
                     {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
@@ -180,6 +181,7 @@
                     {%- endform -%}
                   </localization-form>
                 {% endif %}
+                {% endcomment %}
 
                 {%- if localization.available_languages and localization.available_languages.size > 1 -%}
                   <localization-form>
