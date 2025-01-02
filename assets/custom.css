@@ -148,6 +148,9 @@ product-info .product-main-contents .link-card .content p {
   text-align: center;
   padding: .5rem 0 1rem;
 }
+.bought-codes .codes {
+  padding: 2rem;
+}
 @media screen and (max-width: 989px) {
   product-info .product-main-contents .link-card {
     padding: .8rem;
@@ -169,6 +172,9 @@ product-info .product-main-contents .link-card .content p {
   }
   product-info .product-main-contents .link-card .content p {
     margin-block: .5rem;
+  }
+  .bought-codes .codes {
+    padding: 1rem;
   }
 }
 
