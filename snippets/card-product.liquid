@@ -164,16 +164,7 @@
             
           {%- unless card_product.metafields.custom.parent_collection == blank -%}
           <div class="card-tags">
-            <ul class="product-tags" {{ block.shopify_attributes }}>
-              {%- assign parent_collection_name = collections[card_product.metafields.custom.parent_collection].title -%}
-              {%- assign parent_collection_handle = collections[card_product.metafields.custom.parent_collection].handle -%}
-              {%- case parent_collection_handle -%}
-                {%- when 'オンラインツール' -%}
-                  <li style="color: #ffffff; background-color: #7ABE7A;">{{ parent_collection_handle }}</li>
-                {%- when 'product-management' -%}
-                  <li style="color: #ffffff; background-color: #7ABEB2;"><a href="/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a></li>
-              {%- endcase -%}
-            </ul>
+            {%- render 'product-tags', target_product: card_product -%}
           </div>
           {%- endunless -%}
           
