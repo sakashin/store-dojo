@@ -30,8 +30,8 @@
             "share_label": "共有"
           }
         },
-        "description_rjbc4F": {
-          "type": "description",
+        "summary_yrRjbb": {
+          "type": "summary",
           "settings": {}
         }
       },
@@ -40,7 +40,7 @@
         "title",
         "related_post_FJXiJ9",
         "share_PVpaaF",
-        "description_rjbc4F"
+        "summary_yrRjbb"
       ],
       "settings": {
         "enable_sticky_info": false,
