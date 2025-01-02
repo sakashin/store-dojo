@@ -31,6 +31,8 @@
           "settings": {
             "tag_padding_top": 1,
             "tag_padding_side": 12,
+            "tag_font_size": 14,
+            "tag_radius": 5,
             "tag_gap": 2,
             "show_tag_1": true,
             "tag_1": "オンラインツール",
@@ -62,7 +64,7 @@
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": false,
