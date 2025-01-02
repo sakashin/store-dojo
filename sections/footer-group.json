@@ -32,9 +32,7 @@
         "brand_information_dncWgC",
         "link_list_haKde3"
       ],
-      "custom_css": [
-        "{margin-top: 6rem;}"
-      ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
