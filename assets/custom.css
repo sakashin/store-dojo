@@ -98,13 +98,6 @@ product-info .product-main-contents .link-card {
  border: 1px solid #ddd;
  border-radius: 8px;
 }
-product-info .product-main-contents .link-card h2 {
-  font-size: calc(var(--font-heading-scale)* 2rem);
-  margin: 0;
-}
-product-info .product-main-contents .link-card p {
-  margin: 0;
-}
 product-info .product-main-contents .link-card a {
  display: flex;
  text-decoration: none;
@@ -117,6 +110,13 @@ product-info .product-main-contents .link-card img {
  height: 120px;
  object-fit: cover;
  margin-right: 2rem;
+}
+product-info .product-main-contents .link-card .content h2 {
+  font-size: calc(var(--font-heading-scale)* 2rem);
+  margin: 0;
+}
+product-info .product-main-contents .link-card .content p {
+  margin: 0;
 }
 @media screen and (max-width: 989px) {
   
