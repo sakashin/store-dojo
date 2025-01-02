@@ -149,6 +149,7 @@ product-info .product-main-contents .link-card .content p {
   padding: .5rem 0 1rem;
   position: relative;
   display: flex;
+  justify-content: center;
 }
 .bought-codes h2 span {
   display: inline-block;
