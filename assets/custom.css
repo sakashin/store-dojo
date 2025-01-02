@@ -2,7 +2,7 @@ div.divider:empty {
   display: block;
 }
 div.divider {
-  border-top: .5px dashed #CCC;
+  border-top: 1px dashed #CCC;
   margin-block: 4rem;
 }
 
