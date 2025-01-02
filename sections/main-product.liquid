@@ -722,6 +722,42 @@
                     }
                   </style>              
                 {%- endif -%}
+              {%- when 'parent_collection' -%}
+                <ul class="product-tags" {{ block.shopify_attributes }}>
+                  {{ product.metafields.custom.parent_collection }}
+                  {%- case product.metafields.custom.parent_collection -%}
+                    {%- when 'オンラインツール' -%}
+                      <li style="color: #ffffff; background-color: #7ABE7A;">{{ tag }}</li>
+                    {%- when 'Shopify TIPS' -%}
+                      <li style="color: #ffffff; background-color: #7ABEB2;">{{ tag }}</li>
+                  {%- endcase -%}
+                  </ul>
+                  <style>
+                    .product-tags {
+                      display: flex;
+                      flex-wrap: wrap;
+                      list-style: none;
+                      padding: 0;
+                      margin: 0;
+                      gap: {{ block.settings.tag_gap }}px;
+                    }
+                    .product-tags li {
+                      list-style: none;
+                      padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px {{ block.settings.tag_padding_top | plus: 1 }}px;
+                      border-radius: {{ block.settings.tag_radius }}px;
+                      font-size: {{ block.settings.tag_font_size }}px;
+                    }
+                    .product-tags li a  {
+                      text-decoration: none;
+                      color: inherit;
+                    }
+                    @media screen and (max-width: 989px) {
+                      .product-tags li {
+                        font-size: {{ block.settings.tag_font_size | times: 0.8 | round: 0 }}px;
+                      }
+                    }
+                  </style>  
+              
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2479,6 +2515,11 @@ new ImageViewer();
           "label": "表示タグ2の背景色"
         }
       ]
+    },
+    {
+      "type": "parent_collection",
+      "name": "親コレクション",
+      "limit": 1
     }
   ],
   "settings": [
