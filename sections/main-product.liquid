@@ -820,160 +820,113 @@
   <div class="viewer-content"></div>
 </div>
 <style>
-  .article img {
-    max-width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
+.image-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
 
-  .image-viewer {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    touch-action: none;
-    overflow: hidden;
-  }
+.image-viewer.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .image-viewer.active {
-    display: block;
-  }
+.viewer-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .viewer-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+.viewer-content img {
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
 
-  .viewer-content img {
-    position: absolute;
-    width: auto;
-    height: auto;
-    max-width: none;
-    transform-origin: 0 0;
-  }
-
-  .close-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    z-index: 1001;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .close-button::before,
-  .close-button::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: #000;
-    transform: rotate(45deg);
-  }
-
-  .close-button::after {
-    transform: rotate(-45deg);
-  }
+.close-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  z-index: 1001;
+  cursor: pointer;
+}
 </style>
 <script>
-  class ImageViewer {
-    constructor() {
-      this.viewer = document.querySelector('.image-viewer');
-      this.content = document.querySelector('.viewer-content');
-      this.closeButton = document.querySelector('.close-button');
-      this.currentImage = null;
-      
-      this.position = { x: 0, y: 0 };
-      this.start = { x: 0, y: 0 };
+class ImageViewer {
+  constructor() {
+    this.viewer = document.querySelector('.image-viewer');
+    this.content = document.querySelector('.viewer-content');
+    this.closeButton = document.querySelector('.close-button');
+    this.currentImage = null;
+    this.isDragging = false;
+    this.startX = 0;
+    this.startY = 0;
+    this.translateX = 0;
+    this.translateY = 0;
 
-      this.initializeViewer();
-    }
-
-    initializeViewer() {
-      document.querySelectorAll('.zoomable-image').forEach(img => {
-        img.addEventListener('click', () => this.openViewer(img));
-      });
-
-      this.closeButton.addEventListener('click', () => this.closeViewer());
-      
-      this.content.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-      this.content.addEventListener('touchmove', (e) => this.handleTouchMove(e));
-      this.content.addEventListener('touchend', () => this.handleTouchEnd());
-    }
-
-    openViewer(img) {
-      this.currentImage = img.cloneNode();
-      this.content.innerHTML = '';
-      this.content.appendChild(this.currentImage);
-      this.viewer.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      
-      this.currentImage.onload = () => {
-        this.centerImage();
-      };
-    }
-
-    centerImage() {
-      const viewerRect = this.viewer.getBoundingClientRect();
-      const imgRect = this.currentImage.getBoundingClientRect();
-      
-      this.position.x = (viewerRect.width - imgRect.width) / 2;
-      this.position.y = (viewerRect.height - imgRect.height) / 2;
-      this.updateImagePosition();
-    }
-
-    closeViewer() {
-      this.viewer.classList.remove('active');
-      this.content.innerHTML = '';
-      document.body.style.overflow = '';
-      this.position = { x: 0, y: 0 };
-    }
-
-    handleTouchStart(e) {
-      const touch = e.touches[0];
-      this.start = { 
-        x: touch.clientX - this.position.x,
-        y: touch.clientY - this.position.y
-      };
-    }
-
-    handleTouchMove(e) {
-      e.preventDefault();
-      const touch = e.touches[0];
-      
-      this.position = {
-        x: touch.clientX - this.start.x,
-        y: touch.clientY - this.start.y
-      };
-      
-      this.updateImagePosition();
-    }
-
-    handleTouchEnd() {
-      // 境界チェックと位置の補正をここに追加できます
-    }
-
-    updateImagePosition() {
-      this.currentImage.style.transform = 
-        `translate(${this.position.x}px, ${this.position.y}px)`;
-    }
+    this.initEvents();
   }
 
-  new ImageViewer();
+  initEvents() {
+    document.querySelectorAll('.zoomable-image').forEach(img => {
+      img.addEventListener('click', () => this.open(img));
+    });
+
+    this.closeButton.addEventListener('click', () => this.close());
+
+    this.content.addEventListener('touchstart', e => {
+      this.isDragging = true;
+      this.startX = e.touches[0].clientX - this.translateX;
+      this.startY = e.touches[0].clientY - this.translateY;
+    });
+
+    this.content.addEventListener('touchmove', e => {
+      if (!this.isDragging) return;
+      e.preventDefault();
+      
+      this.translateX = e.touches[0].clientX - this.startX;
+      this.translateY = e.touches[0].clientY - this.startY;
+      
+      this.currentImage.style.transform = 
+        `translate(${this.translateX}px, ${this.translateY}px)`;
+    });
+
+    this.content.addEventListener('touchend', () => {
+      this.isDragging = false;
+    });
+  }
+
+  open(img) {
+    this.currentImage = img.cloneNode(true);
+    this.content.innerHTML = '';
+    this.content.appendChild(this.currentImage);
+    this.viewer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  close() {
+    this.viewer.classList.remove('active');
+    this.content.innerHTML = '';
+    document.body.style.overflow = '';
+    this.translateX = 0;
+    this.translateY = 0;
+  }
+}
+
+// 初期化
+new ImageViewer();
 </script>
 
 {% schema %}
