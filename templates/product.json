@@ -16,6 +16,16 @@
           "type": "published_at",
           "settings": {}
         },
+        "share_PVpaaF": {
+          "type": "share",
+          "settings": {
+            "share_label": "共有"
+          }
+        },
+        "related_post_FJXiJ9": {
+          "type": "related-post",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -23,24 +33,14 @@
         "description_rjbc4F": {
           "type": "description",
           "settings": {}
-        },
-        "related_post_FJXiJ9": {
-          "type": "related-post",
-          "settings": {}
-        },
-        "share_PVpaaF": {
-          "type": "share",
-          "settings": {
-            "share_label": "共有"
-          }
         }
       },
       "block_order": [
         "published_at_FjDyKF",
-        "title",
-        "description_rjbc4F",
+        "share_PVpaaF",
         "related_post_FJXiJ9",
-        "share_PVpaaF"
+        "title",
+        "description_rjbc4F"
       ],
       "settings": {
         "enable_sticky_info": false,
