@@ -131,16 +131,19 @@ product-info .product-main-contents {
 }
 
 @media screen and (max-width: 989px) {
-    product-info .page-width {
-      margin-inline: 1.6rem;
-      padding: 2rem;
-    }
-    .page-width:has(.page-content),
-    .page-width:has(.cart-content) {
-      margin-inline: 1.6rem;
-    }
-    .page-content,
-    .cart-content{
-      padding: 3rem 3rem 6rem;
-    }
+  h1 {
+    font-size: calc(var(--font-heading-scale)* 2rem);
+  }
+  product-info .page-width {
+    margin-inline: 1.6rem;
+    padding: 2rem;
+  }
+  .page-width:has(.page-content),
+  .page-width:has(.cart-content) {
+    margin-inline: 1.6rem;
+  }
+  .page-content,
+  .cart-content{
+    padding: 3rem 3rem 6rem;
+  }
 }
