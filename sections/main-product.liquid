@@ -900,15 +900,17 @@
 .viewer-content img {
  width: 100%;
  height: auto;
- touch-action: none;
+ touch-action: manipulation;
  transform-origin: center;
  cursor: zoom-out;
 }
+
 @media screen and (max-width: 989px) {
   .viewer-content img {
-     width: 250%;
+    width: 250%;
   }
 }
+
 .viewer-content img.dragging {
  cursor: grabbing;
 }
@@ -954,35 +956,61 @@ class ImageViewer {
    this.currentImage = null;
    this.translateX = 0;
    this.translateY = 0;
+   this.scale = 1;
    this.lastMouseX = 0;
    this.lastMouseY = 0;
+   this.lastDistance = 0;
    this.initEvents();
  }
+
  initEvents() {
    document.querySelectorAll('.zoomable-image').forEach(img => {
      img.addEventListener('click', () => this.open(img));
    });
+   
    this.closeButton.addEventListener('click', () => this.close());
+   
    // タッチイベント
    this.content.addEventListener('touchstart', e => {
-     const touch = e.touches[0];
-     this.lastMouseX = touch.clientX;
-     this.lastMouseY = touch.clientY;
+     if (e.touches.length === 2) {
+       // 2本指でのタッチ開始時の距離を記録
+       this.lastDistance = this.getDistance(e.touches[0], e.touches[1]);
+     } else if (e.touches.length === 1) {
+       const touch = e.touches[0];
+       this.lastMouseX = touch.clientX;
+       this.lastMouseY = touch.clientY;
+     }
    });
+
    this.content.addEventListener('touchmove', e => {
      e.preventDefault();
-     const touch = e.touches[0];
-     const deltaX = touch.clientX - this.lastMouseX;
-     const deltaY = touch.clientY - this.lastMouseY;
-     
-     this.translateX += deltaX;
-     this.translateY += deltaY;
-     
-     this.lastMouseX = touch.clientX;
-     this.lastMouseY = touch.clientY;
-     
-     this.updateImagePosition();
+     if (e.touches.length === 2) {
+       // ピンチズーム
+       const currentDistance = this.getDistance(e.touches[0], e.touches[1]);
+       const delta = currentDistance - this.lastDistance;
+       
+       // 距離の変化に基づいてスケールを調整
+       const scaleChange = delta * 0.01;
+       this.scale = Math.min(Math.max(0.5, this.scale + scaleChange), 4);
+       
+       this.lastDistance = currentDistance;
+       this.updateImagePosition();
+     } else if (e.touches.length === 1) {
+       // 1本指での移動
+       const touch = e.touches[0];
+       const deltaX = touch.clientX - this.lastMouseX;
+       const deltaY = touch.clientY - this.lastMouseY;
+       
+       this.translateX += deltaX;
+       this.translateY += deltaY;
+       
+       this.lastMouseX = touch.clientX;
+       this.lastMouseY = touch.clientY;
+       
+       this.updateImagePosition();
+     }
    });
+
    // マウスイベント
    this.content.addEventListener('mousemove', e => {
      if (e.buttons === 1) {
@@ -1010,27 +1038,37 @@ class ImageViewer {
        }
      }
    });
-   // ホイールスクロール
+
+   // ホイールスクロールでのズーム
    this.content.addEventListener('wheel', e => {
      e.preventDefault();
-     this.translateX -= e.deltaX;
-     this.translateY -= e.deltaY;
+     const delta = -e.deltaY * 0.01;
+     this.scale = Math.min(Math.max(0.5, this.scale + delta), 4);
      this.updateImagePosition();
    });
-   // ズームアウト時のクリック
+
    this.content.addEventListener('click', e => {
      if (e.target === this.currentImage) {
        this.close();
      }
    });
  }
+
+ // 2点間の距離を計算
+ getDistance(touch1, touch2) {
+   const dx = touch1.clientX - touch2.clientX;
+   const dy = touch1.clientY - touch2.clientY;
+   return Math.sqrt(dx * dx + dy * dy);
+ }
+
  updateImagePosition() {
    requestAnimationFrame(() => {
      if (this.currentImage) {
-       this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px)`;
+       this.currentImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
      }
    });
  }
+
  open(img) {
    this.currentImage = img.cloneNode(true);
    this.content.innerHTML = '';
@@ -1040,20 +1078,26 @@ class ImageViewer {
    
    this.translateX = 0;
    this.translateY = 0;
+   this.scale = 1;
    this.lastMouseX = 0;
    this.lastMouseY = 0;
+   this.lastDistance = 0;
    this.updateImagePosition();
  }
+
  close() {
    this.viewer.classList.remove('active');
    this.content.innerHTML = '';
    document.body.style.overflow = '';
    this.translateX = 0;
    this.translateY = 0;
+   this.scale = 1;
    this.lastMouseX = 0;
    this.lastMouseY = 0;
+   this.lastDistance = 0;
  }
 }
+
 new ImageViewer();
 </script>
 
