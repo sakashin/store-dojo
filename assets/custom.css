@@ -147,6 +147,13 @@ product-info .product-main-contents .link-card .content p {
   background-color: #EEE;
   text-align: center;
   padding: .5rem 0 1rem;
+  position: relative;
+}
+.bought-codes h2 span {
+  font-size: .8em;
+  padding: 1rem;
+  background-color: #0076DF;
+  color: #FFF;
 }
 .bought-codes .codes {
   padding: 2rem;
