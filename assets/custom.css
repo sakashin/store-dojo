@@ -97,7 +97,7 @@ product-info .product-main-contents {
 product-info .product-main-contents .link-card {
  border: 1px solid #ddd;
  border-radius: 8px;
-  padding: 2rem;
+  padding: 1.6rem;
 }
 product-info .product-main-contents .link-card a {
  display: flex;
@@ -107,8 +107,8 @@ product-info .product-main-contents .link-card a {
  align-items: center;
 }
 product-info .product-main-contents .link-card img {
- width: 120px;
- height: 120px;
+ width: 80px;
+ height: 80px;
  object-fit: cover;
  margin-right: 2rem;
 }
