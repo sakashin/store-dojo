@@ -183,6 +183,9 @@ product-info .product__info-container .product-tags li,
   border-radius: 4px;
   font-size: 11px;
 }
+product-info .product__info-container .product-tags li {
+  font-size: 13px;
+}
 product-info .product__info-container .product-tags li a,
 .product-grid .grid__item .card__information .card-tags .product-tags li a  {
   text-decoration: none;
