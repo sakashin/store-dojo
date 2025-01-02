@@ -910,24 +910,19 @@ class ImageViewer {
    this.translateY = 0;
    this.lastMouseX = 0;
    this.lastMouseY = 0;
-
    this.initEvents();
  }
-
  initEvents() {
    document.querySelectorAll('.zoomable-image').forEach(img => {
      img.addEventListener('click', () => this.open(img));
    });
-
    this.closeButton.addEventListener('click', () => this.close());
-   
    // タッチイベント
    this.content.addEventListener('touchstart', e => {
      const touch = e.touches[0];
      this.lastMouseX = touch.clientX;
      this.lastMouseY = touch.clientY;
    });
-   
    this.content.addEventListener('touchmove', e => {
      e.preventDefault();
      const touch = e.touches[0];
@@ -942,7 +937,6 @@ class ImageViewer {
      
      this.updateImagePosition();
    });
-
    // マウスイベント
    this.content.addEventListener('mousemove', e => {
      if (e.buttons === 1) {
@@ -970,7 +964,6 @@ class ImageViewer {
        }
      }
    });
-
    // ホイールスクロール
    this.content.addEventListener('wheel', e => {
      e.preventDefault();
@@ -978,7 +971,6 @@ class ImageViewer {
      this.translateY -= e.deltaY;
      this.updateImagePosition();
    });
-
    // ズームアウト時のクリック
    this.content.addEventListener('click', e => {
      if (e.target === this.currentImage) {
@@ -986,7 +978,6 @@ class ImageViewer {
      }
    });
  }
-
  updateImagePosition() {
    requestAnimationFrame(() => {
      if (this.currentImage) {
@@ -994,7 +985,6 @@ class ImageViewer {
      }
    });
  }
-
  open(img) {
    this.currentImage = img.cloneNode(true);
    this.content.innerHTML = '';
@@ -1008,7 +998,6 @@ class ImageViewer {
    this.lastMouseY = 0;
    this.updateImagePosition();
  }
-
  close() {
    this.viewer.classList.remove('active');
    this.content.innerHTML = '';
@@ -1019,7 +1008,6 @@ class ImageViewer {
    this.lastMouseY = 0;
  }
 }
-
 new ImageViewer();
 </script>
 
