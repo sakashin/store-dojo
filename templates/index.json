@@ -12,7 +12,7 @@
     "all-products": {
       "type": "featured-collection",
       "settings": {
-        "title": "",
+        "title": "最新TIPS",
         "heading_size": "h2",
         "description": "",
         "show_description": true,
