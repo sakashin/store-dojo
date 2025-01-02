@@ -52,7 +52,9 @@ product-info .page-width {
   padding: 3rem;
 }
 @media screen and (min-width: 1230px) {
-  margin-inline: auto;
+  product-info .page-width {
+    margin-inline: auto;
+  }
 }
 product-info .published-at {
   font-size: .9em;
