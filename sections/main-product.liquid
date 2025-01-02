@@ -740,13 +740,13 @@
                       list-style: none;
                       padding: 0;
                       margin: 0;
-                      gap: {{ block.settings.tag_gap }}px;
+                      gap: 4px;
                     }
                     .product-tags li {
                       list-style: none;
-                      padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px {{ block.settings.tag_padding_top | plus: 1 }}px;
-                      border-radius: {{ block.settings.tag_radius }}px;
-                      font-size: {{ block.settings.tag_font_size }}px;
+                      padding: 1px 8px 2px;
+                      border-radius: 4px;
+                      font-size: 12px;
                     }
                     .product-tags li a  {
                       text-decoration: none;
@@ -754,7 +754,7 @@
                     }
                     @media screen and (max-width: 989px) {
                       .product-tags li {
-                        font-size: {{ block.settings.tag_font_size | times: 0.8 | round: 0 }}px;
+                        font-size: 11px;
                       }
                     }
                   </style>  
