@@ -32,10 +32,10 @@
             "tag_1": "オンラインツール",
             "tag_1_fontcolor": "#ffffff",
             "tag_1_bgcolor": "#7abe7a",
-            "show_tag_2": false,
-            "tag_2": "",
-            "tag_2_fontcolor": "",
-            "tag_2_bgcolor": ""
+            "show_tag_2": true,
+            "tag_2": "Shopify TIPS",
+            "tag_2_fontcolor": "#ffffff",
+            "tag_2_bgcolor": "#7abeb2"
           }
         },
         "share_PVpaaF": {
