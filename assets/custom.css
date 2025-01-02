@@ -78,18 +78,21 @@ product-info product-form form .product-form__buttons button {
 product-info product-form form .product-form__buttons button:after {
   box-shadow: none;
 }
+product-info .related-post {
+  text-align: center;
+}
 product-info .related-post .list-social__link {
-    align-items: center;
-    display: flex;
-    padding: .5rem 1rem;
-    background-color: #EEE;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(var(--color-link));
-    font-size: 1.4rem;
-    font-family: inherit;
-    width: max-content;
+  align-items: center;
+  display: flex;
+  padding: .5rem 1rem;
+  background-color: #EEE;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(var(--color-link));
+  font-size: 1.4rem;
+  font-family: inherit;
+  width: max-content;
 }
 product-info .product-main-contents {
   width: 800px;
