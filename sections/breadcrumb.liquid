@@ -230,8 +230,6 @@
       }
       .breadcrumb__list-item {
         display: inline;
-        text-overflow: ellipsis;
-        max-width: 100px; /* 必要な幅に調整 */
       }
       .breadcrumb__list-item + .breadcrumb__list-item:before {
         content: "/";
@@ -240,6 +238,10 @@
       .breadcrumb--floating {
         inset-block-start: 1.25rem;
         inset-inline-start: var(--container-gutter);
+      }
+      .link-faded-reverse {
+        text-overflow: ellipsis;
+        max-width: 100px;
       }
       @media screen and (max-width: 989px) {
         .breadcrumb {
