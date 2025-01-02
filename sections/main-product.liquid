@@ -742,7 +742,7 @@
     {%- endif -%}
     {%- if product.metafields.custom.is_purchasable -%}
       <div class="divider"></div>
-      {%- assign bought_tag = 'bought:' | append: product.id -%}
+      {%- assign bought_tag = 'bought:' | append: product.id | strip -%}
       {%- unless customer.tags contains bought_tag -%}
       <div class="buy-buttons-wrapper">
         <p>ご購入（すべて¥0です）いただくと、サンプルコードをご覧いただけるようになります。</p>
