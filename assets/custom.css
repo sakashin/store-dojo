@@ -116,7 +116,7 @@ product-info .product-main-contents .link-card .content h2 {
   margin: 0;
 }
 product-info .product-main-contents .link-card .content p {
-  margin: 0;
+  margin-block: .5rem;
 }
 @media screen and (max-width: 989px) {
   
