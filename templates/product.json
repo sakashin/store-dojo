@@ -16,16 +16,6 @@
           "type": "published_at",
           "settings": {}
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "share_PVpaaF": {
-          "type": "share",
-          "settings": {
-            "share_label": "共有"
-          }
-        },
         "product_tags_k9tnNY": {
           "type": "product_tags",
           "settings": {
@@ -44,6 +34,16 @@
             "tag_2_bgcolor": ""
           }
         },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "share_PVpaaF": {
+          "type": "share",
+          "settings": {
+            "share_label": "共有"
+          }
+        },
         "summary_yrRjbb": {
           "type": "summary",
           "settings": {}
@@ -51,9 +51,9 @@
       },
       "block_order": [
         "published_at_FjDyKF",
+        "product_tags_k9tnNY",
         "title",
         "share_PVpaaF",
-        "product_tags_k9tnNY",
         "summary_yrRjbb"
       ],
       "settings": {
