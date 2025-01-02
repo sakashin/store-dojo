@@ -30,7 +30,7 @@
           "type": "product_tags",
           "settings": {
             "tag_padding_top": 1,
-            "tag_padding_side": 5,
+            "tag_padding_side": 12,
             "tag_gap": 2,
             "show_tag_1": true,
             "tag_1": "オンラインツール",

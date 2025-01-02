@@ -708,6 +708,7 @@
                     .product-tags li {
                       list-style: none;
                       padding: {{ block.settings.tag_padding_top }}px {{ block.settings.tag_padding_side }}px;
+                      border-radius: {{ block.settings.tag_radius }}px;
                     }
                   </style>              
                 {%- endif -%}
@@ -2187,6 +2188,14 @@
           "type": "range",
           "id": "tag_padding_side",
           "label": "タグの左右余白余白（px）",
+          "min": 1,
+          "max": 20,
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "tag_radius",
+          "label": "タグの角半径（px）",
           "min": 1,
           "max": 20,
           "default": 5
