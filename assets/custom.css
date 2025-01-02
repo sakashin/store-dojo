@@ -156,6 +156,9 @@ product-info .product-main-contents .link-card .content p {
   );
   pointer-events: none;
 }
+.bought-codes h2 {
+  margin-top: 0;
+}
 @media screen and (max-width: 989px) {
   product-info .product-main-contents .link-card {
     padding: .8rem;
