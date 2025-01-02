@@ -709,7 +709,7 @@
     {%- if product.metafields.custom.related_post != blank -%}
       <div class="divider"></div>
       <div class="related-post" {{ block.shopify_attributes }}>
-        <a href="{{ product.metafields.custom.related_post }}" class="list-social__link link">
+        <a href="{{ product.metafields.custom.related_post }}" target="_blank" class="list-social__link link">
           <span class="svg-wrapper">
             {{- 'icon-twitter.svg' | inline_asset_content -}}
           </span>
