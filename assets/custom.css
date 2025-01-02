@@ -97,6 +97,7 @@ product-info .product-main-contents {
 }
 product-info .product-main-contents img {
   width: 100%;
+  border: 1px solid #ccc;
 }
 product-info .product-main-contents .link-card {
  border: 1px solid #ddd;
