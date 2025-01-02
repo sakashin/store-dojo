@@ -93,6 +93,7 @@ product-info .related-post .list-social__link {
   font-size: 1.4rem;
   font-family: inherit;
   width: max-content;
+  margin-inline: auto;
 }
 product-info .product-main-contents {
   width: 800px;
