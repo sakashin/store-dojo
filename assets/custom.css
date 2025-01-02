@@ -91,6 +91,9 @@ product-info .related-post .list-social__link {
     font-family: inherit;
     width: max-content;
 }
+product-info .product-main-contents {
+  
+}
 
 .product-grid .grid__item .card__information .published-at {
   color: #999;
