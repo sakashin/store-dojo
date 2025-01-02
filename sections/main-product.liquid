@@ -764,6 +764,14 @@
         .bought-codes {
           height: 400px;
           overflow: hidden;
+          /* テキスト選択を無効化 */
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        
+          /* 右クリックメニューの無効化（任意） */
+          -webkit-touch-callout: none;
         }
         .bought-codes::after {
           content: '';
