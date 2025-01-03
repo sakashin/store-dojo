@@ -287,7 +287,7 @@ product-info .product__info-container .product-tags,
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   gap: 8px;
 }
 product-info .product__info-container .product-tags,
