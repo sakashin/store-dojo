@@ -243,6 +243,7 @@ product-info .product__accordion .accordion__content ul li {
     background-clip: text;
     /* テキストを透明にしてグラデーションを表示 */
     color: transparent;
+    font-weight: 900;
   }
   product-info .product-main-contents {
     margin: 3rem auto;
