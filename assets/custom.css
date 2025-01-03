@@ -136,6 +136,9 @@ product-info .product-main-contents .link-card .content h2 {
 product-info .product-main-contents .link-card .content p {
   margin-block: .5rem;
 }
+product-info .product__accordion {
+  margin-top: 0;
+}
 product-info .product__accordion .accordion__content ul {
   display: flex;
   flex-wrap: wrap;
