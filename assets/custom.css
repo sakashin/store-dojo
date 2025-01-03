@@ -5,12 +5,6 @@ div.divider {
   border-top: 1px dashed #CCC;
   margin-block: 4rem;
 }
-.collection-hero__image-container {
-  border: none !important;
-}
-.collection-hero__image-container img {
-    object-fit: contain;
-}
 sticky-header {
   background: transparent;
   padding: 16px;
@@ -76,6 +70,17 @@ product-info .page-width,
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
+
+.collection-hero.collection-hero--with-image {
+  padding: 0 !important;
+}
+.collection-hero__image-container {
+  border: none !important;
+}
+.collection-hero__image-container img {
+    object-fit: contain;
+}
+
 .product-grid .grid__item .card__media {
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
@@ -228,6 +233,9 @@ product-info .product__accordion .accordion__content ul li {
   }
   .collection-hero--with-image .collection-hero__text-wrapper {
     padding: 0 !important;
+  }
+  .collection-hero--with-image .collection-hero__title {
+    
   }
   product-info .product-main-contents {
     margin: 3rem auto;
