@@ -740,7 +740,7 @@
         {{ product.description }}
       </div>
     {%- endif -%}
-    {%- if product.metafields.custom.is_purchasable -%}
+    {%- if product.metafields.custom.is_purchasable or customer.tags contains 'staff' -%}
       <div class="divider"></div>
       {%- assign bought_tag = 'bought:' | append: product.id -%}
       {%- unless customer.tags contains bought_tag -%}
@@ -759,18 +759,15 @@
         <h2>サンプルコード{%- if customer.tags contains bought_tag -%}<span>購入済</span>{%- endif -%}</h2>
         <div class="codes">{{ product.metafields.custom.protected_code }}</div>
       </div>
-      {%- unless customer.tags contains bought_tag -%}
+      {%- unless customer.tags contains bought_tag or customer.tags contains 'staff' -%}
       <style>
         .bought-codes {
           height: 400px;
           overflow: hidden;
-          /* テキスト選択を無効化 */
           user-select: none;
           -webkit-user-select: none;
           -moz-user-select: none;
           -ms-user-select: none;
-        
-          /* 右クリックメニューの無効化（任意） */
           -webkit-touch-callout: none;
         }
         .bought-codes::after {
