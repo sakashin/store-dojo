@@ -10,6 +10,8 @@
     {%- assign styles = 'color: #ffffff; background-color: #54c495;' -%}
   {%- when 'liquid-customize' -%}
     {%- assign styles = 'color: #ffffff; background-color: #5050b2;' -%}
+  {%- when 'discount-coupon' -%}
+    {%- assign styles = 'color: #ffffff; background-color: #91d85f;' -%}
 {%- endcase -%}
   <li style="{{ styles }}">
     <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
