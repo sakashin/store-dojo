@@ -44,7 +44,7 @@
                           aria-current="page"
                         {% endif %}
                       >
-                        {{ childlink.type }}{{ childlink.title | escape }}
+                        {%- if childlink.type == 'collection_link' -%}{%- endif -%}{{ childlink | json }}{{ childlink.title | escape }}
                       </a>
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
