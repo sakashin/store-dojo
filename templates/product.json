@@ -32,6 +32,7 @@
         },
         "summary_yrRjbb": {
           "type": "summary",
+          "disabled": true,
           "settings": {}
         },
         "collapsible_tab_3NCWcN": {
