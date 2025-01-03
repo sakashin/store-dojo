@@ -3,12 +3,13 @@
 {%- assign parent_collection_handle = collections[target_product.metafields.custom.parent_collection].handle -%}
 {%- case parent_collection_handle -%}
   {%- when 'product-management' -%}
-    <li style="color: #ffffff; background-color: #7ABEB2;">
-      <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
-    </li>
+    {%- assign styles = 'color: #ffffff; background-color: #7ABEB2;' -%}
   {%- when 'online-tool' -%}
-    <li style="color: #ffffff; background-color: #7ABEB2;">
-      <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
-    </li>
+    {%- assign styles = 'color: #ffffff; background-color: #60bcdb;' -%}
+  {%- when 'shopiry-theme' -%}
+    {%- assign styles = 'color: #ffffff; background-color: #54c495;' -%}
 {%- endcase -%}
+  <li style="{{ styles }}">
+    <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
+  </li>
 </ul> 
