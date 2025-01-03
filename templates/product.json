@@ -33,6 +33,24 @@
         "summary_yrRjbb": {
           "type": "summary",
           "settings": {}
+        },
+        "collapsible_tab_3NCWcN": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "用途",
+            "icon": "clipboard",
+            "content": "{{ product.metafields.custom.usage | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_BikiKQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "使用技術",
+            "icon": "check_mark",
+            "content": "{{ product.metafields.custom[\"tech-stack\"] | metafield_tag }}",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -40,7 +58,9 @@
         "title",
         "parent_collection_KkzwNU",
         "share_PVpaaF",
-        "summary_yrRjbb"
+        "summary_yrRjbb",
+        "collapsible_tab_3NCWcN",
+        "collapsible_tab_BikiKQ"
       ],
       "settings": {
         "enable_sticky_info": false,
