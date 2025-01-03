@@ -1,3 +1,4 @@
+{% comment %} デスクトップ画面の「垂直」表示フィルターを、最初から全て展開しておく {% endcomment %}
 (() => {
     const initFacets = () => {
         document.querySelector('.facets-vertical')
