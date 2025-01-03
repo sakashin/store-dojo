@@ -5,7 +5,9 @@ div.divider {
   border-top: 1px dashed #CCC;
   margin-block: 4rem;
 }
-
+.media>img {
+    object-fit: contain;
+}
 sticky-header {
   background: transparent;
   padding: 16px;
