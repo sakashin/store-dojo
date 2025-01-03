@@ -51,6 +51,7 @@ product-info .page-width,
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
 }
+.page-content .page-width,
 product-info .page-width {
   margin-inline: 1.6rem;
   padding: 3rem 3rem 6rem;
