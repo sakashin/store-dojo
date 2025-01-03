@@ -236,7 +236,7 @@ product-info .product__accordion .accordion__content ul li {
   }
   .collection-hero--with-image .collection-hero__title {
     /* グラデーションの定義 */
-  background: linear-gradient(45deg, #ff0000, #00ff00);
+  background: linear-gradient(45deg, #FFA48C, #FD3C84);
   
   /* テキストをマスクとしてグラデーションを適用 */
   -webkit-background-clip: text;
