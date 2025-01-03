@@ -46,10 +46,10 @@ header.header:not(.drawer-menu).page-width {
   display: block;
 }
 .mega-menu__list .mega-menu__link .icon {
-  margin-right: .5rem;
+  margin-right: 5px;
 }
 .mega-menu__list .mega-menu__link .text {
-  padding-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 footer {
