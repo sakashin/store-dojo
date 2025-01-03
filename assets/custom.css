@@ -144,7 +144,6 @@ product-info .product__accordion .accordion__content ul {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin: 1rem 0 .5rem;
   gap: 8px;
   padding-left: 0;
 }
@@ -153,6 +152,8 @@ product-info .product__accordion .accordion__content ul li {
   padding: 1px 8px 2px;
   border-radius: 4px;
   font-size: 11px;
+  backgroud-color: #000;
+  color : #FFF;
 }
 .bought-codes {
   margin-top: 2rem;
