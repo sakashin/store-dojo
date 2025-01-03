@@ -331,6 +331,7 @@ product-info .product__info-container .product-tags li a,
   }
   .page-content,
   .cart-content{
+    margin-inline: 1.6rem;
     padding: 3rem 3rem 6rem;
   }
 }
