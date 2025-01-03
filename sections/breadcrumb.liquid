@@ -138,6 +138,10 @@
                 </li>
             {% endunless %}
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
+        {% when "list-collections" %}
+            <li class="breadcrumb__list-item">
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ collections.title }}</span>
+            </li>
         {% when "cart" %}
             <li class="breadcrumb__list-item">
                 <span class="smallcaps link-faded-reverse" aria-current="page">{{ 'templates.cart.cart' | t }}</span>
@@ -467,7 +471,7 @@
         </script>
     {% endif %}
 {% endunless %}
-request.page_type:{{ request.page_type }}
+
 {% schema %}
 {
     "name": "パンくずリスト",
