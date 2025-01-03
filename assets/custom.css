@@ -223,6 +223,9 @@ product-info .product__accordion .accordion__content ul li {
   .collection-hero__inner {
     flex-direction: column-reverse !important;
   }
+  .collection-hero--with-image .collection-hero__inner {
+    padding-bottom: 0;
+  }
   product-info .product-main-contents {
     margin: 3rem auto;
   }
