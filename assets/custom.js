@@ -10,7 +10,7 @@
   };
 
   const runIfMobile = () => {
-    if (window.innerWidth <= 750) {
+    if (window.innerWidth >= 750) {
       initFacets();
     }
   };
