@@ -35,6 +35,10 @@ header.header:not(.drawer-menu).page-width {
   top: 94% !important;
 }
 
+.mega-menu__list {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 footer {
   margin-top: 4rem !important;
 }
@@ -108,6 +112,8 @@ product-info .product-main-contents img {
   width: 100%;
   border: 1px solid #ccc;
 }
+
+/* link-card */
 product-info .product-main-contents .link-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -120,6 +126,7 @@ product-info .product-main-contents .link-card a {
   padding: 1rem;
   align-items: center;
 }
+product-info .product-main-contents .link-card .img,
 product-info .product-main-contents .link-card img {
   width: 120px;
   height: 120px;
