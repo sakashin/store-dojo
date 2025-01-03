@@ -200,9 +200,9 @@
                   </div>
                 {%- endif -%}
               {%- when 'summary' -%}
-                {%- if product.metafields.custom.summary != blank -%}
+                {%- if product.metafields.global.description_tag != blank -%}
                   <div class="product__summary" {{ block.shopify_attributes }}>
-                    {{ product.metafields.custom.summary | newline_to_br }}
+                    {{ product.metafields.global.description_tag }}
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
