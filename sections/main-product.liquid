@@ -740,10 +740,10 @@
         {{ product.description }}
       </div>
     {%- endif -%}
-    {%- if product.metafields.custom.is_purchasable or customer.tags contains 'staff' -%}
+    {%- if product.metafields.custom.is_purchasable -%}
       <div class="divider"></div>
       {%- assign bought_tag = 'bought:' | append: product.id -%}
-      {%- unless customer.tags contains bought_tag -%}
+      {%- unless customer.tags contains bought_tag or customer.tags contains 'staff' -%}
       <div class="buy-buttons-wrapper">
         <p>ご購入（すべて¥0です）いただくと、サンプルコードをご覧いただけるようになります。</p>
         {%- render 'buy-buttons',
