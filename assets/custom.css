@@ -6,7 +6,7 @@ div.divider {
   margin-block: 4rem;
 }
 .collection-hero__image-container {
-  border: none;
+  border: none !important;
 }
 .collection-hero__image-container img {
     object-fit: contain;
