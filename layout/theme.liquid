@@ -273,6 +273,10 @@
       {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- elsif request.page_type == 'page' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {%- elsif request.page_type ==  "customers/register" or "customers/login" or "customers/reset_password" or "customers/activate_account" or "customers/account" or "customers/addresses" or "customers/order" %}
+      {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {%- elsif request.page_type == 'policy' -%}
+      {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     request.page_type:{{ request.page_type }}
 
