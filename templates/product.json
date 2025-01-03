@@ -24,17 +24,6 @@
           "type": "parent_collection",
           "settings": {}
         },
-        "share_PVpaaF": {
-          "type": "share",
-          "settings": {
-            "share_label": "共有"
-          }
-        },
-        "summary_yrRjbb": {
-          "type": "summary",
-          "disabled": true,
-          "settings": {}
-        },
         "collapsible_tab_3NCWcN": {
           "type": "collapsible_tab",
           "settings": {
@@ -52,16 +41,21 @@
             "content": "{{ product.metafields.custom[\"tech-stack\"] | metafield_tag }}",
             "page": ""
           }
+        },
+        "share_PVpaaF": {
+          "type": "share",
+          "settings": {
+            "share_label": "共有"
+          }
         }
       },
       "block_order": [
         "published_at_FjDyKF",
         "title",
         "parent_collection_KkzwNU",
-        "share_PVpaaF",
-        "summary_yrRjbb",
         "collapsible_tab_3NCWcN",
-        "collapsible_tab_BikiKQ"
+        "collapsible_tab_BikiKQ",
+        "share_PVpaaF"
       ],
       "settings": {
         "enable_sticky_info": false,
