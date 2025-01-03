@@ -13,7 +13,7 @@
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
+    {%- endunless %}
 
     <title>
       {{- page_title -}}
@@ -265,7 +265,11 @@
       {{ 'component-price.css' | asset_url | stylesheet_tag }}
       {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {%- if request.page_type == 'index' -%}
+        {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {%- elsif request.page_type == 'product' -%}
+      
+    {%- endif -%}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
