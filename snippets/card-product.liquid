@@ -161,7 +161,7 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
-            
+          
           {%- unless card_product.metafields.custom.parent_collection == blank -%}
           <div class="card-tags">
             {%- render 'product-tags', target_product: card_product -%}
