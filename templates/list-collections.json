@@ -12,7 +12,7 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "カテゴリ",
+        "title": "カテゴリ一覧",
         "sort": "alphabetical",
         "image_ratio": "adapt",
         "columns_desktop": 3,
