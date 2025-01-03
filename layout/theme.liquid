@@ -267,7 +267,7 @@
     {%- endif -%}
     {%- if request.page_type == 'index' -%}
         {{ 'custom.css' | asset_url | stylesheet_tag }}
-    {%- elsif request.page_type == 'product' and template.suffix != blank -%}
+    {%- elsif request.page_type == 'product' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     template:{{ template.suffix }}
