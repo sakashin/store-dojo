@@ -43,7 +43,7 @@
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
-                      >
+                      >{{ childlink.object.metafields.custom.icon }}
                         {%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon.value | image_tag }}{%- endif -%}{{ childlink.title | escape }}
                       </a>
                       {%- if childlink.links != blank -%}
