@@ -101,7 +101,7 @@
         "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "discount-coupon",
+        "collection": "online-tool",
         "products_to_show": 24,
         "columns_desktop": 3,
         "full_width": false,
