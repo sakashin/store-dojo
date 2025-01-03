@@ -235,10 +235,15 @@ product-info .product__accordion .accordion__content ul li {
     padding: 0 !important;
   }
   .collection-hero--with-image .collection-hero__title {
-    background-color: #EEE;
-    padding: 4px 16px;
-    border-radius: 4px;
-    text-align: center;
+    /* グラデーションの定義 */
+  background: linear-gradient(45deg, #ff0000, #00ff00);
+  
+  /* テキストをマスクとしてグラデーションを適用 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* テキストを透明にしてグラデーションを表示 */
+  color: transparent;
   }
   product-info .product-main-contents {
     margin: 3rem auto;
