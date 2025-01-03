@@ -139,6 +139,13 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "policies": {
+        "type": "policies",
+        "settings": {
+          "padding_top": 12,
+          "padding_bottom": 32
+        }
       }
     },
     "content_for_index": [],
