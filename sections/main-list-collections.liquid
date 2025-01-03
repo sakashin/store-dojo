@@ -1,6 +1,6 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
-aaaa
+
 <div class="page-width">
   <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ section.settings.title }}
@@ -28,7 +28,7 @@ aaaa
       class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
       role="list"
     >
-      {%- for collection in collections -%}
+      {%- for collection in collections -%}{%- unless collection.handle != 'shopify-tips' -%}
         <li
           class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
@@ -42,7 +42,7 @@ aaaa
             columns: 3
           %}
         </li>
-      {%- endfor -%}
+      {%- endunless -%}{%- endfor -%}
     </ul>
     {% render 'pagination', paginate: paginate %}
   {%- endpaginate -%}
