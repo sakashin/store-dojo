@@ -44,7 +44,7 @@
                           aria-current="page"
                         {% endif %}
                       >
-                        {%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon | image_tag }}{%- endif -%}{{ childlink.title | escape }}
+                        {%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon.value | image_tag }}{%- endif -%}{{ childlink.title | escape }}
                       </a>
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
