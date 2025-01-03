@@ -47,7 +47,9 @@ header.header:not(.drawer-menu).page-width {
 .mega-menu__list .mega-menu__link span {
   display: block;
 }
-.menu-drawer__menu .menu-drawer__menu-item .icon,
+.menu-drawer__menu .menu-drawer__menu-item .icon {
+  margin-right: 10px;
+}
 .mega-menu__list .mega-menu__link .icon {
   margin-right: 5px;
 }
