@@ -328,7 +328,7 @@ product-info .product__info-container .product-tags li a,
   }
   .page-width:has(.page-content),
   .page-width:has(.cart-content) {
-    margin-inline: 1.6rem;
+    margin-inline: 0;
   }
   .page-content,
   .cart-content{
