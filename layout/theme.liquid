@@ -269,6 +269,8 @@
         {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- elsif request.page_type == 'product' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {%- elsif request.page_type == 'collection' and template.suffix == blank -%}
+      {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     template:{{ template.suffix }}
 
