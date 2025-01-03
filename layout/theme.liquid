@@ -268,8 +268,9 @@
     {%- if request.page_type == 'index' -%}
         {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- elsif request.page_type == 'product' -%}
-      template:{{ template.suffix }}
+      
     {%- endif -%}
+    template:{{ template.suffix }}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
