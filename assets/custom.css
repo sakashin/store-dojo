@@ -51,9 +51,6 @@ product-info .page-width,
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
 }
-.page-width:has(.page-content) {
-  margin-inline: 1.6rem;
-}
 product-info .page-width {
   margin-inline: 1.6rem;
   padding: 3rem 3rem 6rem;
@@ -238,6 +235,7 @@ product-info .product__info-container .product-tags li a,
 }
 .page-content,
 .cart-content{
+  margin-inline: 1.6rem;
   padding: 6rem;
 }
 .page-content h1,
