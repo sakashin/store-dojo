@@ -274,6 +274,7 @@
     {%- elsif request.page_type == 'page' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
+    request.page_type:{{ request.page_type }}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
