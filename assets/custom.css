@@ -38,16 +38,20 @@ header.header:not(.drawer-menu).page-width {
 .mega-menu__list {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
+.menu-drawer__menu .menu-drawer__menu-item,
 .mega-menu__list .mega-menu__link {
   display: flex;
   align-items: center;
 }
+.menu-drawer__menu .menu-drawer__menu-item span,
 .mega-menu__list .mega-menu__link span {
   display: block;
 }
+.menu-drawer__menu .menu-drawer__menu-item .icon,
 .mega-menu__list .mega-menu__link .icon {
   margin-right: 5px;
 }
+.menu-drawer__menu .menu-drawer__menu-item .text,
 .mega-menu__list .mega-menu__link .text {
   padding-bottom: 4px;
 }
