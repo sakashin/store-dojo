@@ -5,6 +5,9 @@ div.divider {
   border-top: 1px dashed #CCC;
   margin-block: 4rem;
 }
+.collection-hero__image-container {
+  border: none;
+}
 .collection-hero__image-container img {
     object-fit: contain;
 }
