@@ -220,6 +220,9 @@ product-info .product__accordion .accordion__content ul li {
   padding: 2rem;
 }
 @media screen and (max-width: 989px) {
+  .collection-hero__inner {
+    flex-direction: column-reverse;
+  }
   product-info .product-main-contents {
     margin: 3rem auto;
   }
