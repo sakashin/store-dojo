@@ -140,7 +140,7 @@ product-info .product__accordion {
   margin-top: 0;
 }
 product-info .product__accordion .accordion__content {
-  padding: 2rem;
+  padding: 0 2rem;
 }
 product-info .product__accordion .accordion__content ul {
   display: flex;
