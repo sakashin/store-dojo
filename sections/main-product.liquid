@@ -756,7 +756,7 @@
       </div>
       {%- endunless -%}
       <div class="bought-codes">
-        <h2>サンプルコード{%- if customer.tags contains bought_tag -%}<span>購入済</span>{%- endif -%}</h2>
+        <h2>サンプルコード{%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}<span>購入済</span>{%- endif -%}</h2>
         <div class="codes">{{ product.metafields.custom.protected_code }}</div>
       </div>
       {%- unless customer.tags contains bought_tag or customer.tags contains 'staff' -%}
