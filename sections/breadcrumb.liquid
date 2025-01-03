@@ -140,7 +140,7 @@
             {% comment %} #指定されたコレクションフィルターが適用されている場合：ここまで {% endcomment %}
         {% when "list-collections" %}
             <li class="breadcrumb__list-item">
-                <span class="smallcaps link-faded-reverse" aria-current="page">{{ collections.title }}</span>
+                <span class="smallcaps link-faded-reverse" aria-current="page">{{ collections | json }}</span>
             </li>
         {% when "cart" %}
             <li class="breadcrumb__list-item">
