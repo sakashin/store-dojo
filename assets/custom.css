@@ -97,6 +97,10 @@ product-info .page-width,
 .collection-hero:not(collection-hero--with-image) .collection-hero__title {
   margin: 0;
 }
+.collection-hero:not(collection-hero--with-image) .collection-hero__wrapper {
+    padding-inline: 0;
+    padding-bottom: 0;
+}
 .collection-hero__title {
   /* グラデーションの定義 */
   background: linear-gradient(45deg, #93D6B8, #6CC8E2);  
