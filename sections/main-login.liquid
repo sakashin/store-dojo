@@ -20,13 +20,21 @@
 
 <div class="page-width section-{{ section.id }}-padding"><div class="page-content">
 <div class="customer login">
+  <div class="before-login-message"></div>
+  <style>
+    .before-login-message {
+      display: none;
+    }
+  </style>
   <script>
     try {
         const url = new URL(window.location.href);
         const params = new URLSearchParams(url.search);
+        const beforeLoginMessage = document.querySelector('.before-login-message');
         if (params.has('checkout_url')) {
             const message = "Thank you for checking out!";
-            alert(message);
+          beforeLoginMessage.innerText = message;
+          beforeLoginMessage.style.display = 'block';
         }
     } catch (error) {
         console.error('Invalid referrer URL:', error);
