@@ -77,6 +77,7 @@ product-info .page-width,
 }
 .collection-hero__wrapper .collection-hero__inner {
   margin-block: 16px;
+  flex-direction: row-reverse !important;
 }
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
@@ -233,7 +234,7 @@ product-info .product__accordion .accordion__content ul li {
   padding: 2rem;
 }
 @media screen and (max-width: 989px) {
-  .collection-hero__inner {
+  .collection-hero__wrapper .collection-hero__inner {
     flex-direction: column-reverse !important;
   }
   .collection-hero--with-image .collection-hero__inner {
