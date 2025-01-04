@@ -81,6 +81,17 @@ product-info .page-width,
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
 }
+.collection-hero--with-image .collection-hero__title {
+  text-align: center;
+  /* グラデーションの定義 */
+  background: linear-gradient(45deg, #FFA48C, #FD3C84);  
+  /* テキストをマスクとしてグラデーションを適用 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* テキストを透明にしてグラデーションを表示 */
+  color: transparent;
+  font-weight: 900;
+}
 .collection-hero__image-container {
   border: none !important;
 }
@@ -240,17 +251,6 @@ product-info .product__accordion .accordion__content ul li {
   }
   .collection-hero--with-image .collection-hero__text-wrapper {
     padding: 0 !important;
-  }
-  .collection-hero--with-image .collection-hero__title {
-    text-align: center;
-    /* グラデーションの定義 */
-    background: linear-gradient(45deg, #FFA48C, #FD3C84);  
-    /* テキストをマスクとしてグラデーションを適用 */
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* テキストを透明にしてグラデーションを表示 */
-    color: transparent;
-    font-weight: 900;
   }
   product-info .product-main-contents {
     margin: 3rem auto;
