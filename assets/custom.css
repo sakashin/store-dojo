@@ -1,3 +1,4 @@
+/* common */
 div.divider:empty {
   display: block;
 }
@@ -5,6 +6,16 @@ div.divider {
   border-top: 1px dashed #CCC;
   margin-block: 4rem;
 }
+.break-sp {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .break-sp {
+    display: block;
+  }
+}
+
+/* header */
 sticky-header {
   background: transparent;
   padding: 16px;
