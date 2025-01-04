@@ -71,8 +71,8 @@ product-info .page-width,
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
-.collection-hero__inner.page-width {
-  
+.collection-hero__wrapper {
+  padding-inline: 1.6rem;
 }
 .collection-hero__inner {
   flex-direction: row-reverse !important;
