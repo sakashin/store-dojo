@@ -24,6 +24,9 @@
   <style>
     .before-login-message {
       display: none;
+      font-size: 1.2rem;
+      color: #FD4A85;
+      font-weight: 700;
     }
   </style>
   <script>
@@ -32,7 +35,7 @@
         const params = new URLSearchParams(url.search);
         const beforeLoginMessage = document.querySelector('.before-login-message');
         if (params.has('checkout_url')) {
-            const message = "Thank you for checking out!";
+            const message = "ご購入（サンプルコードの閲覧）には会員登録が必要です。";
           beforeLoginMessage.innerText = message;
           beforeLoginMessage.style.display = 'block';
         }
