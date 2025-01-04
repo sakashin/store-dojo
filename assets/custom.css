@@ -61,7 +61,7 @@ footer {
   margin-top: 4rem !important;
 }
 
-.collection-hero__inner .page-width,
+.page-width .collection-hero__wrapper,
 .collection-list .grid__item,
 .product-grid .grid__item,
 product-info .page-width,
@@ -71,7 +71,9 @@ product-info .page-width,
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
-
+.collection-hero__inner.page-width {
+  
+}
 .collection-hero__inner {
   flex-direction: row-reverse !important;
 }
