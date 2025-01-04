@@ -237,7 +237,6 @@ product-info .product__accordion .accordion__content ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1xp dashed #CCC;
 }
 .bought-codes h2 span {
   display: inline-block;
