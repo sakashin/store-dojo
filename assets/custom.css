@@ -74,7 +74,8 @@ product-info .page-width,
 .collection-hero__wrapper {
   padding-inline: 1.6rem;
 }
-.collection-hero__inner {
+.collection-hero__wrapper .collection-hero__inner {
+  margin-block: 1rem;
   flex-direction: row-reverse !important;
 }
 .collection-hero.collection-hero--with-image {
