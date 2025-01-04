@@ -749,6 +749,7 @@
           section_id: section.id,
           show_pickup_availability: true
         -%}
+        <p>すでにご購入済みの方は<a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/account/login">こちらからログイン</a>してください。</p>
       </div>
       {%- endunless -%}
       <div class="bought-codes">
