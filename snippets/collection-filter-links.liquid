@@ -1,0 +1,100 @@
+{%- comment -%} #20240501 StoreHero新規作成：ここから {%- endcomment -%}
+{%- liquid
+  assign filter_params = ""
+  assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'
+  if page_url contains "?"
+    assign url_params = page_url | split:'?' | last | url_decode | split:'&'
+    for url_param in url_params
+        assign url_param_key = url_param | split: "=" | first
+        unless url_param_key == 'sort_by' or url_param_key == '_fd' or url_param_key == 'pb' or url_param_key == 'section_id' or url_param_key == 'page' or url_param_key == url_param_value
+            assign filter_params = filter_params | append: '&' | append: url_param | url_decode
+        endunless
+    endfor
+    unless filter_params == ""
+        assign filter_params = filter_params | remove_first: '&'
+    endunless
+  endif
+-%}
+
+<div class="rte filter-links">
+{%- for filter in collection.filters -%}
+    {%- unless filter.type == 'price_range' -%}
+        {%- unless filter.values.size == 1 and filter.values[0].count == 0 -%}
+            <div class="filter-links-row">
+                <h4 class="filter-links-name">{{ filter.label | escape }}</h4>
+                <div class="rte filter-links-items">
+                    {%- for value in filter.values -%}
+                        {%- if value.count > 0 -%}
+                            {%- capture param_name_and_value -%}{{ filter.param_name }}={{ value.value }}{%- endcapture -%}
+                            {%- if filter_params contains param_name_and_value -%}
+                                <span class="selected">{{ value.label | escape }}({{ value.count }})</span>
+                            {%- else -%}
+                                {% unless filter_params contains filter.param_name %}
+                                    <a href="/collections/{{ collection.handle }}?{{ filter_params }}{%- unless filter_params == "" -%}&{%- endunless -%}{{ filter.param_name }}={{ value.value }}" class="link-url">{{ value.label | escape }}</a>({{ value.count }}){% unless forloop.last %} / {% endunless %}
+                                {% endunless %}
+                            {%- endif -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            </div>
+        {%- endunless -%}
+    {%- endunless -%}
+{%- endfor -%}
+</div>
+
+<style>
+  .filter-links {
+    margin: 5rem auto;
+  }
+  .filter-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  .filter-links-name {
+    width: 150px;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    line-height: 2;
+  }
+  .filter-links-items {
+    width: calc(100% - 150px);
+    font-size: 12px;
+    line-height: 2;
+  }
+  .filter-links-items .selected {
+    color: #999;
+  }
+  .link-url {
+    color: #000;
+    font-weight: bold;
+  }
+  .link-url:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  @media only screen and (max-width: 1023px) {
+    .filter-links {
+      margin: 3rem auto;
+    }
+    .filter-links-row {
+      display: block;
+      padding: 10px 5px;
+    }
+    .filter-links-name {
+      width: 100%;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .filter-links-items {
+      width: 100%;
+      padding-top: 2px;
+    }
+    .link-url {
+      font-weight: normal;
+    }
+  }
+</style>
+{%- comment -%} #20240501 StoreHero新規作成：ここまで {%- endcomment -%}
