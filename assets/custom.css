@@ -132,6 +132,9 @@ product-info .product__summary {
 product-info .buy-buttons-wrapper {
   text-align: center;
 }
+product-info .buy-buttons-wrapper a {
+  color: inherit;
+}
 product-info product-form form {
   text-align: center;
 }
