@@ -71,7 +71,23 @@ product-info .page-width,
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
-
+.collection-hero__wrapper {
+  padding-inline: 1.6rem;
+  padding-bottom: 1rem;
+}
+.collection-hero__wrapper .collection-hero__inner {
+  margin-block: 16px;
+}
+.collection-hero.collection-hero--with-image {
+  padding: 0 !important;
+}
+.collection-hero__image-container {
+  border: none !important;
+  background-color: #FFF !important;
+}
+.collection-hero__image-container img {
+    object-fit: contain;
+}
 
 .product-grid .grid__item .card__media {
   border-top-left-radius: 1rem 1rem !important;
