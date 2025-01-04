@@ -149,8 +149,8 @@
         "featured_collection_K9hkHD"
       ],
       "settings": {
-        "title": "コレクション",
-        "heading_size": "h1",
+        "title": "カテゴリ",
+        "heading_size": "h2",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "color_scheme": "",
