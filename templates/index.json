@@ -93,7 +93,7 @@
         "show_description": true,
         "description_style": "subtitle",
         "collection": "shopify-app",
-        "products_to_show": 24,
+        "products_to_show": 6,
         "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
