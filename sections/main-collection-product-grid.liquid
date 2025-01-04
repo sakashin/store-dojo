@@ -186,7 +186,9 @@
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
 
+            {% comment %} # 一時的にコメントアウト
             {%- render 'collection-filter-links' -%}
+            {% endcomment %}
           </div>
         {%- endif -%}
       </div>
