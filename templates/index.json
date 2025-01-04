@@ -152,7 +152,7 @@
         "title": "カテゴリ",
         "heading_size": "h2",
         "image_ratio": "adapt",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "2",
