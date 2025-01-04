@@ -61,7 +61,7 @@ footer {
   margin-top: 4rem !important;
 }
 
-.page-width .collection-hero__wrapper,
+.collection-hero__wrapper .page-width,
 .collection-list .grid__item,
 .product-grid .grid__item,
 product-info .page-width,
