@@ -79,6 +79,16 @@ product-info .page-width,
   margin-block: 16px;
   flex-direction: row-reverse !important;
 }
+.collection-hero.collection-hero--with-image {
+  padding: 0 !important;
+}
+.collection-hero__image-container {
+  border: none !important;
+  background-color: #FFF !important;
+}
+.collection-hero__image-container img {
+    object-fit: contain;
+}
 
 .product-grid .grid__item .card__media {
   border-top-left-radius: 1rem 1rem !important;
