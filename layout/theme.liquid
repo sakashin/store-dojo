@@ -271,7 +271,7 @@
       {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- elsif request.page_type == 'collection' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
-      
+      {{ 'custom.js' | asset_url | script_tag }}
     {%- elsif request.page_type == 'page' and template.suffix == blank -%}
       {{ 'custom.css' | asset_url | stylesheet_tag }}
     {%- elsif request.page_type ==  "customers/register" or "customers/login" or "customers/reset_password" or "customers/activate_account" or "customers/account" or "customers/addresses" or "customers/order" %}
