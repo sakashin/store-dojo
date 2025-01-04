@@ -71,6 +71,9 @@ product-info .page-width,
   box-shadow: 2px 4px 12px #00000014;
 }
 
+.collection-hero__inner {
+  flex-direction: row-reverse !important;
+}
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
 }
