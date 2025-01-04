@@ -81,6 +81,8 @@ product-info .page-width,
   border-radius: 1rem;
   box-shadow: 2px 4px 12px #00000014;
 }
+
+/* collection*/
 .collection-hero__wrapper {
   padding-inline: 1.6rem;
   padding-bottom: 1rem;
@@ -92,7 +94,10 @@ product-info .page-width,
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
 }
-.collection-hero--with-image .collection-hero__title {
+.collection-hero:not(collection-hero--with-image) {
+  
+}
+.collection-hero__title {
   /* グラデーションの定義 */
   background: linear-gradient(45deg, #93D6B8, #6CC8E2);  
   /* テキストをマスクとしてグラデーションを適用 */
