@@ -94,11 +94,11 @@ product-info .page-width,
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
 }
-.collection-hero:not(collection-hero--with-image) .collection-hero__title {
+.collection-hero:not(.collection-hero--with-image) .collection-hero__title {
   margin: 2.5rem 0;
   text-align: center;
 }
-.collection-hero:not(collection-hero--with-image) .collection-hero__wrapper {
+.collection-hero:not(.collection-hero--with-image) .collection-hero__wrapper {
     padding-inline: 0;
     padding-bottom: 0;
 }
