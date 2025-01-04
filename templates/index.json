@@ -101,7 +101,7 @@
         "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "online-tool",
+        "collection": "discount-coupon",
         "products_to_show": 24,
         "columns_desktop": 3,
         "full_width": false,
@@ -120,12 +120,53 @@
         "padding_top": 24,
         "padding_bottom": 24
       }
+    },
+    "collection_list_rFEKfY": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_efNjhW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "liquid-customize"
+          }
+        },
+        "featured_collection_8PpGaA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shopiry-theme"
+          }
+        },
+        "featured_collection_K9hkHD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "discount-coupon"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_efNjhW",
+        "featured_collection_8PpGaA",
+        "featured_collection_K9hkHD"
+      ],
+      "settings": {
+        "title": "コレクション",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "all-products",
     "featured_collection_YYPhrL",
     "featured_collection_JqkKTc",
-    "featured_collection_8xQWhR"
+    "featured_collection_8xQWhR",
+    "collection_list_rFEKfY"
   ]
 }
