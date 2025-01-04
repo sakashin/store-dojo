@@ -73,6 +73,7 @@ product-info .page-width,
 }
 .collection-hero__wrapper {
   padding-inline: 1.6rem;
+  padding-bottom: 1rem;
 }
 .collection-hero__wrapper .collection-hero__inner {
   margin-block: 16px;
