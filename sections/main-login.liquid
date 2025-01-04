@@ -20,6 +20,18 @@
 
 <div class="page-width section-{{ section.id }}-padding"><div class="page-content">
 <div class="customer login">
+  <script>
+    try {
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        if (params.has('checkout_url')) {
+            const message = "Thank you for checking out!";
+            alert(message);
+        }
+    } catch (error) {
+        console.error('Invalid referrer URL:', error);
+    }
+  </script>
   <h1 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
   </h1>
