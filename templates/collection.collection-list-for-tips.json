@@ -41,16 +41,16 @@
     "collection_list_MAP9G9": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_wgrtWp": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "shopify-app"
-          }
-        },
         "featured_collection_N7F8PQ": {
           "type": "featured_collection",
           "settings": {
             "collection": "shopiry-theme"
+          }
+        },
+        "featured_collection_wgrtWp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shopify-app"
           }
         },
         "featured_collection_PhPkhz": {
@@ -85,8 +85,8 @@
         }
       },
       "block_order": [
-        "featured_collection_wgrtWp",
         "featured_collection_N7F8PQ",
+        "featured_collection_wgrtWp",
         "featured_collection_PhPkhz",
         "featured_collection_appX6q",
         "featured_collection_FPkjqk",
