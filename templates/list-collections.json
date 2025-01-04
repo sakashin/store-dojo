@@ -15,7 +15,7 @@
         "title": "TIPSカテゴリ一覧",
         "sort": "alphabetical",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "columns_mobile": "2"
       }
     }
