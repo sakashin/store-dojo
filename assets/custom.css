@@ -83,6 +83,7 @@ product-info .page-width,
 }
 .collection-hero__image-container {
   border: none !important;
+  background-color: #FFF !important;
 }
 .collection-hero__image-container img {
     object-fit: contain;
