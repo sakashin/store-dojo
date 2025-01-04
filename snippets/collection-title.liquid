@@ -1,0 +1,75 @@
+{%- comment -%} #20240501 StoreHero新規作成：ここから {%- endcomment -%}
+{%- if request.page_type == 'collection' -%}
+    {%- liquid
+        assign filter_params = ''
+        assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'
+        if page_url contains "?"
+            assign url_params = page_url | split:'?' | last | url_decode | split:'&'
+            for url_param in url_params
+                assign url_param_key = url_param | split: "=" | first
+                assign url_param_value = url_param | split: "=" | last
+                unless url_param_key == 'sort_by' or url_param_key == '_fd' or url_param_key == 'pb' or url_param_key == url_param_value
+                    case url_param_key
+                        when 'filter.p.m.spec.mfr'
+                            unless collection.handle == 'apple' or collection.handle == 'dell' or collection.handle == 'dynabook' or collection.handle == 'fujitsu' or collection.handle == 'hp' or collection.handle == 'lenovo' or collection.handle == 'nec' or collection.handle == 'panasonic' or collection.handle == 'vaio'
+                                assign filter_params = filter_params | append: '&' | append: url_param
+                            endunless
+                        else
+                            assign filter_params = filter_params | append: '&' | append: url_param
+                    endcase
+                endunless
+                endfor
+        endif
+    -%}
+    {%- if filter_params != '' -%}
+        {%- assign filter_params = filter_params | remove_first: '&' | split: '&' -%}
+        {%- assign title_mfr = null -%}
+        {%- assign title_ram = null -%}
+        {%- assign title_camera = null -%}
+        {%- assign title_drive = null -%}
+        {%- assign title_screen = null -%}
+        {%- assign title_tenkey = null -%}
+        {%- for param in filter_params -%}
+            {%- assign param_key = param | split: "=" | first -%}
+            {%- assign param_value = param | split: "=" | last -%}
+            {%- if param_key == 'filter.p.m.spec.mfr' -%}
+                {%- unless collection.handle == 'apple' or collection.handle == 'dell' or collection.handle == 'dynabook' or collection.handle == 'fujitsu' or collection.handle == 'hp' or collection.handle == 'lenovo' or collection.handle == 'nec' or collection.handle == 'panasonic' or collection.handle == 'vaio' -%}
+                    {%- assign title_mfr = param_value | url_decode -%}
+                {%- endunless -%}
+            {%- elsif param_key == 'filter.p.m.spec.ram' -%}
+                {%- assign title_ram = 'メモリ' | append: param_value | url_decode -%}
+            {%- elsif param_key == 'filter.p.m.spec.camera' -%}
+                {%- assign title_camera = 'webカメラ' | append: param_value | url_decode -%}
+            {%- elsif param_key == 'filter.p.m.spec.drive' -%}
+                {%- assign title_drive = '光学ドライブ' | append: param_value | url_decode -%}
+            {%- elsif param_key == 'filter.p.m.spec.screen' -%}
+                {%- assign title_screen = '画面サイズ' | append: param_value | url_decode -%}
+            {%- elsif param_key == 'filter.p.m.spec.tenkey' -%}
+                {%- assign title_tenkey = 'テンキー' | append: param_value | url_decode -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- capture param_titles -%}
+            {%- unless title_mfr == null -%}{{- title_mfr -}}、{%- endunless -%}
+            {%- unless title_ram == null -%}{{- title_ram -}}、{%- endunless -%}
+            {%- unless title_camera == null -%}{{- title_camera -}}、{%- endunless -%}
+            {%- unless title_drive == null -%}{{- title_drive -}}、{%- endunless -%}
+            {%- unless title_screen == null -%}{{- title_screen -}}、{%- endunless -%}
+            {%- unless title_tenkey == null -%}{{- title_tenkey -}}、{%- endunless -%}
+        {%- endcapture -%}
+        {% unless param_titles == '' %}
+            {%- assign param_titles = param_titles | remove_last: '、' | append: 'の' -%}
+        {% endunless %}
+    {%- endif -%}
+
+    {%- if content_type == 'header' -%}
+        {%- if page_title contains "】" -%}
+            {{- page_title | split: '】' | first -}}】{{- param_titles -}}{{- page_title | split: '】' | last -}}
+        {%- else -%}
+            {{- param_titles -}}{{- page_title -}}
+        {%- endif -%}
+    {%- elsif content_type == 'body' -%}
+        {{- param_titles -}}{{ collection.title | escape -}}
+    {%- endif -%}
+    
+{%- endif -%}
+{%- comment -%} #20240501 StoreHero新規作成：ここまで {%- endcomment -%}
