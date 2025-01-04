@@ -272,6 +272,9 @@ product-info .product__accordion .accordion__content ul li {
   .bought-codes .codes {
     padding: 1rem;
   }
+  .collection-list-wrapper .grid--3-col-tablet-down .card__heading:last-child {
+    font-size: 12px;
+  }
 }
 
 /* product grid */
