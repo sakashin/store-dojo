@@ -37,7 +37,7 @@
         const params = new URLSearchParams(url.search);
         const beforeLoginMessage = document.querySelector('.before-login-message');
         if (params.has('checkout_url')) {
-            const message = `ご購入(サンプルコードの閲覧)には<br>会員登録(匿名可)/ログインが必要です`;
+            const message = `ご購入(サンプルコードの閲覧)には<br>会員登録(匿名可)/ログイン<br class="mobile">が必要です`;
           beforeLoginMessage.innerHTML = message;
           beforeLoginMessage.style.display = 'block';
         }
