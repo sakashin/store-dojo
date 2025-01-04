@@ -94,8 +94,8 @@ product-info .page-width,
 .collection-hero.collection-hero--with-image {
   padding: 0 !important;
 }
-.collection-hero:not(collection-hero--with-image) {
-  
+.collection-hero:not(collection-hero--with-image) .collection-hero__title {
+  margin: 0;
 }
 .collection-hero__title {
   /* グラデーションの定義 */
