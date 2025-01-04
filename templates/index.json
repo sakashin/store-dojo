@@ -40,12 +40,6 @@
     "collection_list_rFEKfY": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_efNjhW": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "liquid-customize"
-          }
-        },
         "featured_collection_8PpGaA": {
           "type": "featured_collection",
           "settings": {
@@ -63,13 +57,19 @@
           "settings": {
             "collection": "management"
           }
+        },
+        "featured_collection_efNjhW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shopify-app"
+          }
         }
       },
       "block_order": [
-        "featured_collection_efNjhW",
         "featured_collection_8PpGaA",
         "featured_collection_K9hkHD",
-        "featured_collection_UhyPV9"
+        "featured_collection_UhyPV9",
+        "featured_collection_efNjhW"
       ],
       "settings": {
         "title": "カテゴリ",
@@ -92,7 +92,7 @@
         "description": "",
         "show_description": true,
         "description_style": "subtitle",
-        "collection": "liquid-customize",
+        "collection": "shopify-app",
         "products_to_show": 24,
         "columns_desktop": 3,
         "full_width": false,
