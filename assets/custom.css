@@ -252,6 +252,9 @@ product-info .product__accordion .accordion__content ul li {
 .bought-codes .codes {
   padding: 2rem;
 }
+.bought-codes h3 {
+  border-bottom: 1px dashed #CCC;
+}
 @media screen and (max-width: 989px) {
   .collection-hero--with-image .collection-hero__title {
     text-align: center;
