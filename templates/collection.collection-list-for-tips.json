@@ -13,7 +13,7 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": false,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
     },
@@ -44,25 +44,43 @@
         "featured_collection_wgrtWp": {
           "type": "featured_collection",
           "settings": {
-            "collection": "liquid-customize"
+            "collection": "shopify-app"
           }
         },
         "featured_collection_N7F8PQ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "html-css"
+            "collection": "shopiry-theme"
           }
         },
         "featured_collection_PhPkhz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "javascript"
+            "collection": "notification"
           }
         },
         "featured_collection_appX6q": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "management"
+          }
+        },
+        "featured_collection_FPkjqk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "discount-coupon"
+          }
+        },
+        "featured_collection_DhtLXe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "reference"
+          }
+        },
+        "featured_collection_UUCE7w": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "others"
           }
         }
       },
@@ -70,7 +88,10 @@
         "featured_collection_wgrtWp",
         "featured_collection_N7F8PQ",
         "featured_collection_PhPkhz",
-        "featured_collection_appX6q"
+        "featured_collection_appX6q",
+        "featured_collection_FPkjqk",
+        "featured_collection_DhtLXe",
+        "featured_collection_UUCE7w"
       ],
       "settings": {
         "title": "",
