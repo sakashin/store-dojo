@@ -57,12 +57,19 @@
           "settings": {
             "collection": "discount-coupon"
           }
+        },
+        "featured_collection_UhyPV9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "management"
+          }
         }
       },
       "block_order": [
         "featured_collection_efNjhW",
         "featured_collection_8PpGaA",
-        "featured_collection_K9hkHD"
+        "featured_collection_K9hkHD",
+        "featured_collection_UhyPV9"
       ],
       "settings": {
         "title": "カテゴリ",
