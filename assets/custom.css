@@ -231,6 +231,7 @@ product-info .product__accordion .accordion__content ul li {
 }
 .bought-codes h2 {
   margin: 0;
+  background-color: #EEE;
   text-align: center;
   padding: .5rem 0 1rem;
   position: relative;
