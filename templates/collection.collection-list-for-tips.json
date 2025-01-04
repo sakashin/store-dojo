@@ -41,6 +41,12 @@
     "collection_list_MAP9G9": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_aVcyXz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bounce-rate-reduction_and_user-journey-optimization"
+          }
+        },
         "featured_collection_N7F8PQ": {
           "type": "featured_collection",
           "settings": {
@@ -85,6 +91,7 @@
         }
       },
       "block_order": [
+        "featured_collection_aVcyXz",
         "featured_collection_N7F8PQ",
         "featured_collection_wgrtWp",
         "featured_collection_PhPkhz",
