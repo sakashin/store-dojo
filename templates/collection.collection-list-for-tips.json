@@ -47,6 +47,12 @@
             "collection": "ui-ux"
           }
         },
+        "featured_collection_WWtiFL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "product-boost"
+          }
+        },
         "featured_collection_aVcyXz": {
           "type": "featured_collection",
           "settings": {
@@ -98,6 +104,7 @@
       },
       "block_order": [
         "featured_collection_P4xFA6",
+        "featured_collection_WWtiFL",
         "featured_collection_aVcyXz",
         "featured_collection_N7F8PQ",
         "featured_collection_wgrtWp",
