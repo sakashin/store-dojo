@@ -343,7 +343,9 @@ product-info .product__info-container .product-tags,
   gap: 8px;
 }
 .product-grid .grid__item .card__information .protected_code {
-  padding: .1rem .6rem .2rem;
+  padding: 1px 8px 2px;
+  border-radius: 4px;
+  font-size: 11px;
   background-color: #89D2BF;
   letter-spacing: -0.1rem;
 }
