@@ -139,8 +139,6 @@
               >
                 {{- 'products.product.on_sale' | t -}}
               </span>
-            {%- elsif card_product.metafields.custom.is_purchasable and card_product.metafields.custom.protected_code != blank -%}
-              <span class="badge badge--bottom-left protected_code">ソースコード有</span>
             {%- endif -%}
           </div>
         </div>
