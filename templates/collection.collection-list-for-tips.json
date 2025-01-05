@@ -47,6 +47,12 @@
             "collection": "ui-ux"
           }
         },
+        "featured_collection_xWJBg6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sales-promotion"
+          }
+        },
         "featured_collection_WWtiFL": {
           "type": "featured_collection",
           "settings": {
@@ -116,6 +122,7 @@
       },
       "block_order": [
         "featured_collection_P4xFA6",
+        "featured_collection_xWJBg6",
         "featured_collection_WWtiFL",
         "featured_collection_Acxepr",
         "featured_collection_aVcyXz",
