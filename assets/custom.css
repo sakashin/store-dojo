@@ -249,11 +249,11 @@ product-info .product__accordion .accordion__content ul li {
   background: #6CC8E2;
   color : #FFF;
 }
-product-info .share-button {
+product-info share-button {
   display: flex;
   align-items: center;
 }
-product-info .share-button .inquiry-button {
+product-info share-button .inquiry-button {
   display: inline-block;
   font-size: 1.4rem;
 }
