@@ -10,7 +10,7 @@ div.divider {
   display: none;
 }
 .collection__view-all a:not(.link) {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
   margin-bottom: 2rem;
 }
 @media screen and (max-width: 767px) {
