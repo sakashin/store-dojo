@@ -167,6 +167,10 @@
             {%- render 'product-tags', target_product: card_product -%}
           </div>
           {%- endunless -%}
+
+          {%- if card_product.metafields.custom.is_purchasable and card_product.metafields.custom.protected_code != blank -%}
+          <div class="protected_code">サンプルコード有</div>
+          {%- endif -%}
           
           <div class="card-information">
             {%- if show_vendor -%}
