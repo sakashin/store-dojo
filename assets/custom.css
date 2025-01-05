@@ -132,6 +132,10 @@ product-info .page-width,
 .cart-content .cart-item .cart-item__image-container {
   background: linear-gradient(135deg, #E2F4EB, #ABE0F0); 
 }
+.badge.protected_code {
+  padding: .1rem .6rem .2rem;
+  background-color: #999;
+}
 
 product-info .page-width {
   margin-inline: 1.6rem;
