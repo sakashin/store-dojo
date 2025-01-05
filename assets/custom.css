@@ -294,7 +294,7 @@ product-info .share-button .inquiry-btn {
 }
 .bought-codes .codes .attension {
   background-color: #F8E1DF;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   margin: 1.5rem 0;
   font-size: 1.4rem;
   line-height: 1.4;
@@ -310,7 +310,7 @@ product-info .share-button .inquiry-btn {
   font-weight: 700;
 }
 .bought-codes .codes .attension p {
-  margin-block: 0;
+  margin-block: .5rem;
 }
 .bought-codes h3 {
   border-bottom: 1px dashed #CCC;
