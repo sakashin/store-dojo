@@ -123,6 +123,7 @@ product-info .page-width,
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
 }
+.product-media-container.constrain-height .media,
 .product-grid .grid__item .card__media .media {
   background: linear-gradient(135deg, #E2F4EB, #ABE0F0); 
 }
