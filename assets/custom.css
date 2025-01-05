@@ -123,6 +123,10 @@ product-info .page-width,
   border-top-left-radius: 1rem 1rem !important;
   border-top-right-radius: 1rem 1rem !important;
 }
+.product-grid .grid__item .card__media .media {
+  background: linear-gradient(45deg, #E2F4EB, #ABE0F0); 
+}
+
 product-info .page-width {
   margin-inline: 1.6rem;
   padding: 3rem 3rem 6rem;
