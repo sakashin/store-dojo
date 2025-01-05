@@ -293,13 +293,12 @@ product-info .share-button .inquiry-btn {
   padding: 2rem;
 }
 .bought-codes .codes .attension {
-  background-color: #f8f8f8; /* 背景色 */
-  border-left: 4px solid #ccc; /* 左側のライン */
-  padding: 1rem 1.5rem;        /* 内側余白 */
-  margin: 1.5rem 0;           /* 外側余白 */
-  font-size: 0.95rem;         /* 文字サイズ (任意調整) */
-  line-height: 1.6;           /* 行間 */
-  color: #333;                /* 文字色 (任意調整) */
+  background-color: #F8E1DF;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #C00;
 }
 .bought-codes h3 {
   border-bottom: 1px dashed #CCC;
