@@ -251,9 +251,10 @@ product-info .product__accordion .accordion__content ul li {
 }
 product-info .share-button {
   display: flex;
+  align-items: center;
 }
-product-info .inquiry-button {
-  
+product-info .share-button .inquiry-button {
+  display: inline-block;
 }
 .bought-codes {
   margin-top: 2rem;
