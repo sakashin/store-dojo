@@ -292,6 +292,10 @@ product-info .share-button .inquiry-btn {
 .bought-codes .codes {
   padding: 2rem;
 }
+.bought-codes .codes .attension {
+  font-size: 1rem;
+  color: #C00;
+}
 .bought-codes h3 {
   border-bottom: 1px dashed #CCC;
 }
