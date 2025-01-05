@@ -297,8 +297,9 @@ product-info .share-button .inquiry-btn {
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #C00;
+  font-weight: 700;
 }
 .bought-codes h3 {
   border-bottom: 1px dashed #CCC;
