@@ -9,6 +9,9 @@ div.divider {
 .break-sp {
   display: none;
 }
+.collection__view-all a:not(.link) {
+  margin-block: 2rem;
+}
 @media screen and (max-width: 767px) {
   .break-sp {
     display: block;
