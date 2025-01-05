@@ -104,7 +104,7 @@ product-info .page-width,
 }
 .collection-hero__title {
   /* グラデーションの定義 */
-  background: linear-gradient(45deg, #93D6B8, #6CC8E2);  
+  background: linear-gradient(90deg, #93D6B8, #6CC8E2);  
   /* テキストをマスクとしてグラデーションを適用 */
   -webkit-background-clip: text;
   background-clip: text;
