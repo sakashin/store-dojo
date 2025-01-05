@@ -24,6 +24,8 @@
     {%- assign styles = 'color: #ffffff; background-color: #59a3e0;' -%}
   {%- when 'product-boost' -%}
     {%- assign styles = 'color: #ffffff; background-color: #f9668b;' -%}
+  {%- when 'seo' -%}
+    {%- assign styles = 'color: #ffffff; background-color: #956edd;' -%}
 {%- endcase -%}
   <li style="{{ styles }}">
     <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
