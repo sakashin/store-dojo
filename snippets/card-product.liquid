@@ -139,7 +139,7 @@
               >
                 {{- 'products.product.on_sale' | t -}}
               </span>
-            {%- elsif product.metafields.custom.is_purchasable and product.metafields.custom.protected_code != blank -%}
+            {%- elsif card_product.metafields.custom.is_purchasable and card_product.metafields.custom.protected_code != blank -%}
               <span
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
               >
