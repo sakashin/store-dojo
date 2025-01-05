@@ -71,6 +71,12 @@
             "collection": "shopiry-theme"
           }
         },
+        "featured_collection_gnLby8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fulfillment"
+          }
+        },
         "featured_collection_wgrtWp": {
           "type": "featured_collection",
           "settings": {
@@ -114,6 +120,7 @@
         "featured_collection_Acxepr",
         "featured_collection_aVcyXz",
         "featured_collection_N7F8PQ",
+        "featured_collection_gnLby8",
         "featured_collection_wgrtWp",
         "featured_collection_PhPkhz",
         "featured_collection_appX6q",
