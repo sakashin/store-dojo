@@ -138,6 +138,20 @@
     </div>
   </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // URLパラメータを取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const productTItle = urlParams.get('product-title');
+        const productUrl = urlParams.get('product-url');
+
+        const inquiryTextarea = document.getElementById('ContactForm-body');
+        if (productTItle) {
+            const productInfo = `商品「${productTItle}（${productUrl}）」に関するお問い合わせ\n\n`;
+            inquiryTextarea.value = productInfo;
+        }
+    });
+</script>
 
 {% schema %}
 {
