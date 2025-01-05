@@ -135,6 +135,7 @@ product-info .page-width,
 .badge.protected_code {
   padding: .1rem .6rem .2rem;
   background-color: #999;
+  letter-spacing: -0.1rem;
 }
 
 product-info .page-width {
