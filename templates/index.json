@@ -52,28 +52,28 @@
             "collection": "sales-promotion"
           }
         },
-        "featured_collection_ckaaxV": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bounce-rate-reduction_and_user-journey-optimization"
-          }
-        },
         "featured_collection_iAkXxE": {
           "type": "featured_collection",
           "settings": {
             "collection": "product-boost"
           }
         },
-        "featured_collection_UhyPV9": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "notification"
-          }
-        },
         "featured_collection_8PpGaA": {
           "type": "featured_collection",
           "settings": {
             "collection": "shopiry-theme"
+          }
+        },
+        "featured_collection_ckaaxV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bounce-rate-reduction_and_user-journey-optimization"
+          }
+        },
+        "featured_collection_UhyPV9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "notification"
           }
         },
         "featured_collection_K9hkHD": {
@@ -92,10 +92,10 @@
       "block_order": [
         "featured_collection_T8CR8x",
         "featured_collection_Pqh4aq",
-        "featured_collection_ckaaxV",
         "featured_collection_iAkXxE",
-        "featured_collection_UhyPV9",
         "featured_collection_8PpGaA",
+        "featured_collection_ckaaxV",
+        "featured_collection_UhyPV9",
         "featured_collection_K9hkHD",
         "featured_collection_efNjhW"
       ],
