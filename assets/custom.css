@@ -301,6 +301,11 @@ product-info .share-button .inquiry-btn {
   color: #C00;
   font-weight: 700;
 }
+.bought-codes .codes .attension h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #C00;
+}
 .bought-codes h3 {
   border-bottom: 1px dashed #CCC;
 }
