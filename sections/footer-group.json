@@ -14,23 +14,23 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "brand_information_dncWgC": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": false
-          }
-        },
         "link_list_haKde3": {
           "type": "link_list",
           "settings": {
             "heading": "メニュー",
             "menu": "main-menu"
           }
+        },
+        "brand_information_dncWgC": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
         }
       },
       "block_order": [
-        "brand_information_dncWgC",
-        "link_list_haKde3"
+        "link_list_haKde3",
+        "brand_information_dncWgC"
       ],
       "custom_css": [],
       "settings": {
