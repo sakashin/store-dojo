@@ -296,6 +296,9 @@ product-info .share-button .inquiry-btn {
   border-bottom: 1px dashed #CCC;
 }
 @media screen and (max-width: 989px) {
+  .text-area {
+    min-height: 30rem;
+  }
   .collection-hero--with-image .collection-hero__title {
     text-align: center;
   }
