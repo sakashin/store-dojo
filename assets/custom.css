@@ -255,6 +255,7 @@ product-info .share-button {
 }
 product-info .share-button .inquiry-button {
   display: inline-block;
+  font-size: 1.4rem;
 }
 .bought-codes {
   margin-top: 2rem;
