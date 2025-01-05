@@ -9,6 +9,9 @@ div.divider {
 .break-sp {
   display: none;
 }
+.text-area {
+  min-height: 20rem;
+}
 .collection__view-all a:not(.link) {
   margin-top: 2rem !important;
   margin-bottom: 2rem;
