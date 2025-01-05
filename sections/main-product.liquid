@@ -475,8 +475,6 @@
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
                   render 'share-button', block: block, share_link: share_url
                 %}
-                <a href="/pages/contact?product-title={{ product.title }}&product-url={{ shop.url }}{{ product.url }}" 
-                  class="inquiry-btn" id="inquiryButton" style="line-height: 1.4; text-align: center; font-size: 0.8em;">この記事について問い合わせ</a>
               
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
