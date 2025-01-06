@@ -765,15 +765,38 @@
       </div>
       {%- endunless -%}
       <div class="bought-codes">
-        <h2>サンプルコード{%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}<span>購入済</span>{%- endif -%}</h2>
+        <h2>
+          {%- if localization.language.iso_code == 'ja' -%}
+            サンプルコード
+          {%- elsif localization.language.iso_code == 'en' -%}
+            Sample Codes
+          {%- endif -%}
+          {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
+            <span>
+            {%- if localization.language.iso_code == 'ja' -%}
+              購入済
+            {%- elsif localization.language.iso_code == 'en' -%}
+              Already purchased
+            {%- endif -%}
+            </span>
+          {%- endif -%}
+        </h2>
         <div class="codes">
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           <div class="attension">
+          {%- if localization.language.iso_code == 'ja' -%}
             <h4>免責事項</h4>
             <ul>
             <li>当サイトで公開しているサンプルコードは、あくまで参考例として提供しております。正確性・最新性を保証するものではなく、コードの使用により生じたいかなる損害や不具合に関しても、当サイトおよび運営者は一切の責任を負いません。</li>
             <li>本コードの改修や問題解決に関する回答責務も負わないものとします。実際の運用・実装にあたっては、必ずご自身の環境や要件に合わせてテスト・検証を行ったうえでご利用ください。</li>
             </ul>
+          {%- elsif localization.language.iso_code == 'en' -%}
+            <h4>Disclaimer</h4>
+            <ul>
+            <li>The sample code published on this site is provided solely as a reference example. We do not guarantee its accuracy or currency, and neither this site nor its operators shall bear any responsibility for any damages or malfunctions that may arise from the use of the code.</li>
+            <li>We also do not assume any obligation to respond to code modifications or problem-solving inquiries. When implementing this code in practice, please be sure to test and verify it according to your own environment and requirements before use.</li>
+            </ul>
+          {%- endif -%}
           </div>
           {%- endif -%}
           {{ product.metafields.custom.protected_code }}
@@ -815,7 +838,13 @@
           <span class="svg-wrapper">
             {{- 'icon-twitter.svg' | inline_asset_content -}}
           </span>
-          <span class="text">関連ポスト</span>
+          <span class="text">
+            {%- if localization.language.iso_code == 'ja' -%}
+              関連ポスト
+            {%- elsif localization.language.iso_code == 'en' -%}
+              Related Post
+            {%- endif -%}
+          </span>
         </a>
       </div>
     {%- endif -%}

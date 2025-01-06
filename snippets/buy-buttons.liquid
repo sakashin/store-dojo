@@ -90,7 +90,12 @@
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
-              <br>（カートに追加する）
+              <br>
+              {%- if localization.language.iso_code == 'ja' -%}
+                （カートに追加する）
+              {%- elsif localization.language.iso_code == 'en' -%}
+                (Add to cart)
+              {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
           </button>

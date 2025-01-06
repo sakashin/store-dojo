@@ -51,5 +51,11 @@
     </div>
   </details>
   <a href="/pages/contact?product-title={{ product.title }}&product-url={{ shop.url }}{{ product.url }}" 
-    class="inquiry-btn" id="inquiry-button">この記事について問い合わせ</a>
+    class="inquiry-btn" id="inquiry-button">
+    {%- if localization.language.iso_code == 'ja' -%}
+      この記事について問い合わせ
+    {%- elsif localization.language.iso_code == 'en' -%}
+      Contact us about this article
+    {%- endif -%}
+  </a>
 </share-button>

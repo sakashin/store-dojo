@@ -169,7 +169,13 @@
           {%- endunless -%}
 
           {%- if card_product.metafields.custom.is_purchasable and card_product.metafields.custom.protected_code != blank -%}
-          <div class="protected_code">サンプルコード有</div>
+          <div class="protected_code">
+            {%- if localization.language.iso_code == 'ja' -%}
+              サンプルコード有
+            {%- elsif localization.language.iso_code == 'en' -%}
+              Sample code included
+            {%- endif -%}
+          </div>
           {%- endif -%}
           
           <div class="card-information">
