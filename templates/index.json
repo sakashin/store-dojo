@@ -67,24 +67,28 @@
         },
         "featured_collection_ckaaxV": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "bounce-rate-reduction_and_user-journey-optimization"
           }
         },
         "featured_collection_UhyPV9": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "notification"
           }
         },
         "featured_collection_K9hkHD": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "discount-coupon"
           }
         },
         "featured_collection_efNjhW": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "shopify-app"
           }
