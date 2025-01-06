@@ -96,7 +96,7 @@
                       {%- if localization.language.iso_code == 'ja' -%}
                         公開日：
                       {%- elsif localization.language.iso_code == 'en' -%}
-                        Publication date:
+                        Published:
                       {%- endif -%}
                     </span><span>{{ product.metafields.custom.published_at | date: '%Y.%m.%d' }}</span>
                     {%- unless product.metafields.custom.updated_at == blank -%}
