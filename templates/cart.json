@@ -23,7 +23,7 @@
         "custom_liquid_6F9DfY": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<p>次のチェックアウト画面でご入力頂くご購入者様情報は匿名でも問題ありません。</p>"
+            "custom_liquid": "{%- if localization.language.iso_code == 'ja' -%}\n    <p>次のチェックアウト画面でご入力頂くご購入者様情報は匿名でも問題ありません。</p>\n{%- elsif localization.language.iso_code == 'en' -%}\n    <p>The purchaser information you enter on the next checkout screen can be anonymous.</p>\n{%- endif -%}"
           }
         },
         "buttons": {
