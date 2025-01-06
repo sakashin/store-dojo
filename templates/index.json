@@ -11,6 +11,7 @@
   "sections": {
     "all-products": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "最新TIPS",
         "heading_size": "h2",
