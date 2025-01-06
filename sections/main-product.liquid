@@ -741,7 +741,13 @@
       {%- assign bought_tag = 'bought:' | append: product.id -%}
       {%- unless customer.tags contains bought_tag or customer.tags contains 'staff' -%}
       <div class="buy-buttons-wrapper">
-        <p>ご購入（すべて¥0です）いただくと、サンプルコードをご覧いただけるようになります。</p>
+        <p>
+          {%- if localization.language.iso_code == 'ja' -%}
+            ご購入（すべて¥0です）いただくと、サンプルコードをご覧いただけるようになります。
+          {%- elsif localization.language.iso_code == 'en' -%}
+            After making a purchase (all items are ¥0), you will be able to view the sample code.
+          {%- endif -%}
+          </p>
         {%- render 'buy-buttons',
           block: block,
           product: product,
@@ -749,7 +755,13 @@
           section_id: section.id,
           show_pickup_availability: true
         -%}
-        <p>すでにご購入済みの方は<a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/account/login">こちらからログイン</a>してください。</p>
+        <p>
+          {%- if localization.language.iso_code == 'ja' -%}
+            すでにご購入済みの方は<a href="/account/login">こちらからログイン</a>してください。
+          {%- elsif localization.language.iso_code == 'en' -%}
+            If you have already made a purchase, please <a href="/{{ localization.language.iso_code }}/account/login">login here</a>.
+          {%- endif -%}
+        </p>
       </div>
       {%- endunless -%}
       <div class="bought-codes">
