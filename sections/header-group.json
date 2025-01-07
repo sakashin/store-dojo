@@ -37,10 +37,35 @@
         "show_filter_keyname": false,
         "filter_separator": ":"
       }
+    },
+    "announcement_bar_tKPHYV": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_B7hJka": {
+          "type": "announcement",
+          "settings": {
+            "text": "現在、過去の投稿データを移行中です。最新状態にアップデートされるまでしばらくお待ちください。",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_B7hJka"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     }
   },
   "order": [
     "header",
-    "breadcrumb_gpWAwk"
+    "breadcrumb_gpWAwk",
+    "announcement_bar_tKPHYV"
   ]
 }
