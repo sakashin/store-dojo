@@ -86,7 +86,7 @@ product-info .page-width,
 .page-width .cart-content{
   background-color: #FFF;
   border-radius: 1rem;
-  box-shadow: 0px 0px 8px  rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 8px  rgba(0, 0, 0, 0.1);
 }
 
 /* collection*/
@@ -288,6 +288,9 @@ product-info .share-button .inquiry-btn {
   color: #FFF;
   height: max-content;
   margin-left: 1rem;
+}
+.bought-codes .attention {
+  color: #C00;
 }
 .bought-codes .codes {
   padding: 2rem;
