@@ -292,10 +292,13 @@ product-info .share-button .inquiry-btn {
 .bought-codes .attention {
   color: #C00;
 }
+.bought-codes .test-theme {
+  
+}
 .bought-codes .codes {
   padding: 2rem;
 }
-.bought-codes .codes .attension {
+.bought-codes .codes .attention {
   background-color: #F8E1DF;
   padding: 1.5rem;
   margin: 0 0 4rem;
@@ -304,7 +307,7 @@ product-info .share-button .inquiry-btn {
   color: #C00;
   font-weight: 700;
 }
-.bought-codes .codes .attension h4 {
+.bought-codes .codes .attention h4 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.6rem;
@@ -312,7 +315,7 @@ product-info .share-button .inquiry-btn {
   text-align: center;
   font-weight: 700;
 }
-.bought-codes .codes .attension p {
+.bought-codes .codes .attention p {
   margin-block: .5rem;
 }
 .bought-codes h3 {
