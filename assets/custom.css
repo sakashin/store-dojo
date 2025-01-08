@@ -310,9 +310,11 @@ product-info .share-button .inquiry-btn {
 }
 .bought-codes .validation-environment ul {
   margin: 0;
+  padding: 0;
+  width: max-content;
+  max-width: 100%;
 }
 .bought-codes .validation-environment li {
-  list-style-type: none;
 }
 .bought-codes .codes h3 {
   border-bottom: 1px dashed #CCC;
