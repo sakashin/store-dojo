@@ -273,7 +273,7 @@ product-info .share-button .inquiry-btn {
   margin: 0;
   background-color: #EEE;
   text-align: center;
-  padding: .5rem 0 1rem;
+  padding: .5rem 0 0;
   position: relative;
   display: flex;
   justify-content: center;
@@ -282,7 +282,7 @@ product-info .share-button .inquiry-btn {
 .bought-codes h2 span {
   display: inline-block;
   font-size: 11px;
-  padding: .5rem 0;
+  padding: .5rem 1rem;
   background-color: #0076DF;
   border-radius: 4px;
   color: #FFF;
