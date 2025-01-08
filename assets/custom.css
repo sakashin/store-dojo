@@ -289,14 +289,14 @@ product-info .share-button .inquiry-btn {
   height: max-content;
   margin-left: 1rem;
 }
-.bought-codes .attention {
-  color: #C00;
-}
-.bought-codes .test-theme {
-  
-}
 .bought-codes .codes {
   padding: 2rem;
+}
+.bought-codes .codes h3 {
+  border-bottom: 1px dashed #CCC;
+}
+.bought-codes .codes .test-theme {
+  
 }
 .bought-codes .codes .attention {
   background-color: #F8E1DF;
@@ -318,9 +318,7 @@ product-info .share-button .inquiry-btn {
 .bought-codes .codes .attention p {
   margin-block: .5rem;
 }
-.bought-codes h3 {
-  border-bottom: 1px dashed #CCC;
-}
+
 @media screen and (max-width: 989px) {
   .text-area {
     min-height: 30rem;
