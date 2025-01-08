@@ -311,6 +311,8 @@ product-info .share-button .inquiry-btn {
 }
 .bought-codes .validation-environment ul {
   margin: 0 auto;
+  padding: 0;
+  
   width: max-content;
   max-width: 100%;
 }
