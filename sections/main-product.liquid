@@ -820,6 +820,11 @@
           {%- endif -%}
           </div>
           {%- endif -%}
+          {%- unless product.metafields.custom.test_theme == blank -%}
+          <div class="test-theme">
+            {%- if localization.language.iso_code == 'ja' -%}動作検証テーマ：{%- else -%}Test Theme :{%- endif -%}
+          </div>
+          {%- endunless -%}
           {{ product.metafields.custom.protected_code }}
         </div>
       </div>
