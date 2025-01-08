@@ -296,7 +296,10 @@ product-info .share-button .inquiry-btn {
   border-bottom: 1px dashed #CCC;
 }
 .bought-codes .codes .test-theme {
-  
+  background-color: #EEE;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
 }
 .bought-codes .codes .attention {
   background-color: #F8E1DF;
