@@ -802,6 +802,11 @@
             </span>
           {%- endif -%}
         </h2>
+        {%- unless product.metafields.custom.test_theme == blank -%}
+        <div class="test-theme">
+          {%- if localization.language.iso_code == 'ja' -%}動作検証済テーマ：{%- else -%}Test Theme :{%- endif -%}{{ product.metafields.custom.test_theme }}
+        </div>
+        {%- endunless -%}
         <div class="codes">
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           <div class="attention">
@@ -820,11 +825,6 @@
           {%- endif -%}
           </div>
           {%- endif -%}
-          {%- unless product.metafields.custom.test_theme == blank -%}
-          <div class="test-theme">
-            {%- if localization.language.iso_code == 'ja' -%}動作検証済テーマ：{%- else -%}Test Theme :{%- endif -%}{{ product.metafields.custom.test_theme }}
-          </div>
-          {%- endunless -%}
           {{ product.metafields.custom.protected_code }}
         </div>
       </div>
