@@ -810,7 +810,7 @@
         {%- if product.metafields.custom.validation_environment != blank and customer.tags contains 'staff' -%}
         <ul class="validation-environment">
           {%- for link in product.metafields.custom.validation_environment.value -%}
-            <li>{{ link }}</li>
+            <li><a href="{{ link.url }}" target="_blank">{%- unless link.text == blank -%}{{ link.text }}{%- else -%}{{ link.url }}{%- endunless -%}</a></li>
           {%- endfor -%}
         </ul>
         {%- endif -%}
