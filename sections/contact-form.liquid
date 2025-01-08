@@ -147,7 +147,11 @@
 
         const inquiryTextarea = document.getElementById('ContactForm-body');
         if (productTItle) {
+          {%- if localization.language.iso_code == 'ja' -%}
             const productInfo = `商品「${productTItle}（${productUrl}）」に関するお問い合わせ\n\n`;
+          {%- elsif localization.language.iso_code == 'en' -%}
+            const productInfo = `Inquiry regarding the product '${productTItle}' (${productUrl})\n\n`;
+          {%- endif -%}
             inquiryTextarea.value = productInfo;
         }
     });
