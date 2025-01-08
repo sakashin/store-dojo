@@ -304,6 +304,10 @@ product-info .share-button .inquiry-btn {
   border-radius: 4px;
   border: 1px dashed #CCC;
 }
+.bought-codes .validation-environment h3 {
+  text-align: center;
+  margin: 0;
+}
 .bought-codes .codes h3 {
   border-bottom: 1px dashed #CCC;
 }
