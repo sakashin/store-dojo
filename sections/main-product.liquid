@@ -807,6 +807,13 @@
           {%- if localization.language.iso_code == 'ja' -%}動作検証済テーマ：{%- else -%}Test Theme :{%- endif -%}{{ product.metafields.custom.test_theme }}
         </div>
         {%- endunless -%}
+        {%- if product.metafields.custom.validation_environment != blank and customer.tags contains 'staff' -%}
+        <ul class="validation-environment">
+          {%- for link in product.metafields.custom.validation_environment.value -%}
+            <li>{{ link }}</li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
         <div class="codes">
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           <div class="attention">
