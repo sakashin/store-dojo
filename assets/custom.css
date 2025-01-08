@@ -315,6 +315,7 @@ product-info .share-button .inquiry-btn {
   max-width: 100%;
 }
 .bought-codes .validation-environment li {
+  list-style-type: none;
 }
 .bought-codes .codes h3 {
   border-bottom: 1px dashed #CCC;
