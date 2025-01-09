@@ -322,6 +322,7 @@ product-info .share-button .inquiry-btn {
 .bought-codes .codes h3 {
   border-bottom: 1px dashed #CCC;
 }
+.product-main-contents .attention,
 .bought-codes .codes .attention {
   background-color: #F8E1DF;
   padding: 1.5rem;
