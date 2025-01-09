@@ -42,12 +42,12 @@
             "page": ""
           }
         },
-        "complementary_eidxCc": {
+        "complementary_agmzE8": {
           "type": "complementary",
           "settings": {
-            "block_heading": "相性が良い",
-            "make_collapsible_row": true,
-            "icon": "price_tag",
+            "block_heading": "関連TIPS",
+            "make_collapsible_row": false,
+            "icon": "none",
             "product_list_limit": 10,
             "products_per_page": 3,
             "pagination_style": "counter",
@@ -68,7 +68,7 @@
         "parent_collection_KkzwNU",
         "collapsible_tab_3NCWcN",
         "collapsible_tab_BikiKQ",
-        "complementary_eidxCc",
+        "complementary_agmzE8",
         "share_PVpaaF"
       ],
       "settings": {
