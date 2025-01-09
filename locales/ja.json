@@ -205,12 +205,12 @@
       },
       "max_price": "最高価格は{{ price }}です",
       "product_count": {
-        "one": "{{ count }}個の商品の{{ product_count }}",
-        "other": "{{ count }}個の商品の{{ product_count }}"
+        "one": "{{ count }}件のTIPSの{{ product_count }}",
+        "other": "{{ count }}件のTIPSの{{ product_count }}"
       },
       "product_count_simple": {
-        "one": "{{ count }}個の商品",
-        "other": "{{ count }}個の商品"
+        "one": "{{ count }}件のTIPS",
+        "other": "{{ count }}件のTIPS"
       },
       "reset": "リセット",
       "sort_button": "並び替え",
@@ -247,8 +247,8 @@
         "other": "{{ count }}件の候補"
       },
       "results_products_with_count": {
-        "one": "{{ count }}個の商品",
-        "other": "{{ count }}個の商品"
+        "one": "{{ count }}件のTIPS",
+        "other": "{{ count }}件のTIPS"
       },
       "suggestions": "候補",
       "pages": "ページ"
