@@ -58,7 +58,7 @@ header.header:not(.drawer-menu).page-width {
   header header-drawer {
     display: flex;
   }
-  .header__icon--favorite.small-hide {
+  .header__icon--favorite-left.small-hide {
     display: flex !important;
   }
 }

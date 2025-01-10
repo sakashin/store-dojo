@@ -323,4 +323,11 @@
         </a>
       {%- endif -%}
   </details>
+  <a 
+    href="https://store-dojo.com/apps/favhero/favorites"
+    class="header__icon header__icon--favorite-left link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+    rel="nofollow"
+  >
+    <span class="svg-wrapper favorite-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+  </a>
 </header-drawer>
