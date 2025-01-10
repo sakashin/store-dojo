@@ -136,6 +136,7 @@ product-info .page-width,
   background: linear-gradient(135deg, #E2F4EB, #ABE0F0); 
 }
 
+/* product-info */
 product-info .page-width {
   margin-inline: 1.6rem;
   padding: 3rem 3rem 6rem;
@@ -197,6 +198,9 @@ product-info .product-main-contents h3 {
 product-info .product-main-contents img {
   width: 100%;
   border: 1px solid #ccc;
+}
+product-info classic-favorite-hero-button {
+  padding: 0;
 }
 
 /* link-card */
