@@ -226,6 +226,15 @@
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
+      <a 
+        href=""
+        class="header__icon header__icon--favorite link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+        rel="nofollow"
+      >
+        <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+      </a>
+      
+      
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
