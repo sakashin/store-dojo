@@ -62,7 +62,7 @@ header.header:not(.drawer-menu).page-width {
     display: flex !important;
   }
   .header__icon {
-    width: 3.8rem;
+    width: 4.0rem;
   }
   .header__icon--cart .icon {
     width: 4.4rem;
