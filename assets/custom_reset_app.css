@@ -1,0 +1,251 @@
+/* header */
+.header {
+  column-gap: 8px;
+  row-gap: 8px;
+  padding-block-start: 8px;
+  padding-block-end: 8px;
+  padding-inline-start: 8px;
+  padding-inline-end: 8px;
+}
+.header__nav-icon.icon-hamburger {
+  width: 26px;
+}
+.header__secondary-nav {
+  gap: 10px 12px;
+}
+.header__primary-nav-item {
+  font-size: 12px;
+}
+@media screen and (max-width: 1023px) {
+  .header__nav-icon {
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    column-gap: 20px;
+    padding-block-start: 8px;
+    padding-block-end: 8px;
+    padding-inline-start: 48px;
+    padding-inline-end: 48px;
+    min-height: 80px;
+  }
+  .header__secondary-nav {
+    column-gap: 8px;
+  }
+  .header__secondary-nav {
+    gap: 10px 14px;
+  }
+}
+
+/* announcement-bar */
+.announcement-bar {
+  --announcement-bar-gutter: 10px;
+  font-size: 14px;
+  column-gap: 12px;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .announcement-bar {
+    --announcement-bar-gutter: 48px;
+    column-gap: 40px;
+  }
+}
+
+/* drawer */
+.drawer--sm {
+  --drawer-max-width: min(92vw, 400px);
+}
+.header-sidebar.drawer::part(header-sidebar__top_btn) {
+  height: 40px;
+  font-size: 12px;
+}
+.header-sidebar__main-panel {
+  padding-block-start: 4px;
+}
+.header-sidebar__btn_area {
+  padding-block-end: 24px;
+}
+.header-sidebar__title {
+  font-size: 12px;
+}
+.header-sidebar__half_btnbox {
+  margin-block-start: 8px;
+  gap: 4px;
+}
+.header-sidebar__half_btn a {
+  height: 40px;
+  font-size: 12px;
+}
+.header-sidebar__half_btn a:after {
+  width: 6px;
+  height: 6px;
+  margin-inline-start: 4px;
+}
+.header-sidebar__free_search {
+  margin-block-start: 8px;
+  margin-block-end: 8px;
+  font-size: 14px;
+}
+.header-sidebar__free_search:after {
+  width: 6px;
+  height: 6px;
+  margin-inline-start: 4px;
+}
+.header-sidebar__btn:not(:first-child) {
+  margin-block-start: 8px !important;
+}
+.header-sidebar__btn a {
+  height: 40px;
+  padding-inline: 24px;
+  font-size: 12px;
+}
+.header-sidebar__btn a:after {
+  width: 6px;
+  height: 6px;
+  margin-inline-start: 4px;
+}
+.header-sidebar__link_container {
+  margin-block-start: 8px;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.header-sidebar__linkbox:not(:first-child) {
+  margin-block-start: 30px;
+};@p
+.header-sidebar__link a {
+  font-size: 12px;
+}
+.header-sidebar__footer {
+  padding-block-start: 6px;
+  padding-block-end: 20px;
+}
+.header-sidebar__sns {
+  width: 16px;
+}
+.header-sidebar__sns.youtube {
+  width: 54px;
+}
+.header-sidebar__sns:not(:first-child) {
+  margin-inline-start: 12px;
+}
+
+/* footer container */
+@media screen and (min-width: 1200px) {
+  .shopify-section-group-footer-group .container {
+    margin-inline-start: max(48px, 50% - 992px / 2);
+    margin-inline-end: max(48px, 50% - 992px / 2);
+  }
+}
+
+/* footer linklist */
+.shopify-section-group-footer-group .linklist {
+  padding: 6px 0 60px;
+}
+.shopify-section-group-footer-group .linklist__title {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.shopify-section-group-footer-group .linklist__content {
+  font-size: 12px;
+}
+.shopify-section-group-footer-group .linklist__content.is-open {
+  margin-block-start: 10px;
+}
+.shopify-section-group-footer-group .linklist__links {
+  gap: 4px 8px;
+  font-size: 11px;
+}
+@media screen and (min-width: 1024px) {
+  .shopify-section-group-footer-group .linklist {
+    padding: 24px 0;
+  }
+  .shopify-section-group-footer-group .linklist__block {
+    margin-block-end: 24px;
+  }
+  .shopify-section-group-footer-group .linklist__title {
+    margin-block-end: 8px;
+    font-size: 14px;
+  }
+  .shopify-section-group-footer-group .linklist__links {
+    gap: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+.shopify-section-group-footer-group .copyright {
+  padding-block: 8px;
+  & small {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .shopify-section-group-footer-group .copyright {
+    & small {
+      font-size: 14px;
+    }
+  }
+}
+
+/* footer__block */
+.shopify-section-group-footer-group .footer__block {
+  & > dl {
+    & > dt {
+      margin-block-end: 10px;
+      padding-block: 8px;
+      font-size: 14px;
+    }
+    & > dd {
+      font-size: 13px;
+    }
+  }
+}
+.shopify-section-group-footer-group .footer__block-list {
+  margin-block-end: 24px;
+  gap: 16px;
+}
+.shopify-section-group-footer-group .footer__block-text {
+  & dt {
+    font-size: 12px;
+  }
+  & dd {
+    margin-block-start: 4px;
+    font-size: 10px;
+  }
+}
+.shopify-section-group-footer-group .footer__block-links {
+  & li {
+    margin-block-end: 8px;
+  }
+}
+.shopify-section-group-footer-group .footer__logo {
+  padding-block: 24px;
+}
+.shopify-section-group-footer-group .footer__logo-shop {
+  max-width: 96px;
+  margin-block: 0 16px;
+}
+.shopify-section-group-footer-group .footer__logo-furyu {
+  max-width: 94px;
+  margin-block: 24px 0;
+}
+.shopify-section-group-footer-group .footer__aside {
+  gap: 24px;
+}
+.shopify-section-group-footer-group .footer__aside .payment-methods {
+  max-width: 480px;
+}
+@media screen and (min-width: 1024px) {
+  .shopify-section-group-footer-group .footer__block-list {
+    gap: 16px;
+  }
+
+  .shopify-section-group-footer-group .footer__block--newsletter {
+    flex-basis: 224px;
+    max-width: 288px;
+  }
+  .shopify-section-group-footer-group .footer__block--text {
+    flex-basis: 224px;
+    max-width: 284px;
+  }
+}
