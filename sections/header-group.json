@@ -61,11 +61,22 @@
         "show_filter_keyname": false,
         "filter_separator": ":"
       }
+    },
+    "custom_liquid_e9pTQQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "title": "favorite hero用スタイル",
+        "custom_liquid": "{% if request.path == '/apps/favhero/favorites' %}\n{{ 'custom_reset_app.css' | asset_url | stylesheet_tag }}\n<style>\n.favhero-product a .chakra-aspect-ratio.css-d8bwgd {\n    background: linear-gradient(135deg,#e2f4eb,#abe0f0);   \n}\n</style>\n{%- endif -%}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "header",
     "announcement_bar_tKPHYV",
-    "breadcrumb_gpWAwk"
+    "breadcrumb_gpWAwk",
+    "custom_liquid_e9pTQQ"
   ]
 }
