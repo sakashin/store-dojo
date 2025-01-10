@@ -65,7 +65,7 @@ header.header:not(.drawer-menu).page-width {
     width: 4rem;
   }
   .header__icon .svg-wrapper {
-    40px;
+    width: 40px;
   }
   .header__icon--cart .icon {
     width: 4.4rem;
