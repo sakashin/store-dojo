@@ -51,6 +51,23 @@ header.header:not(.drawer-menu).page-width {
   border-radius: 36px !important;
   top: 94% !important;
 }
+.favorite-icon .icon {
+  fill: inherit;
+}
+@media screen and (max-width: 749px) {
+  header header-drawer {
+    display: flex;
+  }
+  .header__icon--favorite-left.small-hide {
+    display: flex !important;
+  }
+  .header__icon {
+    width: 4.0rem;
+  }
+  .header__icon--cart .icon {
+    width: 4.4rem;
+  }
+}
 
 .mega-menu__list {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -201,6 +218,8 @@ product-info .product-main-contents img {
 }
 product-info classic-favorite-hero-button {
   padding: 0;
+  max-width: 100%;
+  width: max-content;
 }
 
 /* link-card */

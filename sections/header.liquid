@@ -226,6 +226,14 @@
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
+      <a 
+        href="https://store-dojo.com/apps/favhero/favorites"
+        class="header__icon header__icon--favorite-right link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+        rel="nofollow"
+      >
+        <span class="svg-wrapper favorite-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+      </a>
+      
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
