@@ -61,12 +61,14 @@ header.header:not(.drawer-menu).page-width {
   .header__icon--favorite-left.small-hide {
     display: flex !important;
   }
+  /*
   .header__icon {
     width: 3.4rem;
   }
   .header__icon--cart .icon {
     width: 4.4rem;
   }
+  */
 }
 
 .mega-menu__list {
