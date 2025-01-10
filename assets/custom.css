@@ -51,6 +51,9 @@ header.header:not(.drawer-menu).page-width {
   border-radius: 36px !important;
   top: 94% !important;
 }
+.header__icon .favorite-icon .icon {
+  fill: inherit;
+}
 
 .mega-menu__list {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
