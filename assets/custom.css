@@ -54,7 +54,10 @@ header.header:not(.drawer-menu).page-width {
 .favorite-icon .icon {
   fill: inherit;
 }
-.header-drawer {
+@media screen and (max-width: 749px) {
+    .header-drawer .favorite-icon .icon {
+        display: block !important;
+    }
 }
 
 .mega-menu__list {
