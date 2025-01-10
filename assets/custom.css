@@ -55,7 +55,7 @@ header.header:not(.drawer-menu).page-width {
   fill: inherit;
 }
 @media screen and (max-width: 749px) {
-  .favorite-icon.small-hide {
+  .header__icon--favorite.small-hide {
     display: flex !important;
   }
 }
