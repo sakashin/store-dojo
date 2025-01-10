@@ -16,6 +16,13 @@
         {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>
+    <a 
+        href="https://store-dojo.com/apps/favhero/favorites"
+        class="header__icon header__icon--favorite link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+        rel="nofollow"
+      >
+        <span class="svg-wrapper favorite-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+      </a>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
