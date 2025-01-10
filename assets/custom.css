@@ -51,7 +51,7 @@ header.header:not(.drawer-menu).page-width {
   border-radius: 36px !important;
   top: 94% !important;
 }
-.header__icon.favorite-icon .icon {
+.favorite-icon .icon {
   fill: inherit;
 }
 .header-drawer {
