@@ -71,6 +71,12 @@
             "collection": "bounce-rate-reduction_and_user-journey-optimization"
           }
         },
+        "featured_collection_Wn9Jgi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sign-up-promotion"
+          }
+        },
         "featured_collection_N7F8PQ": {
           "type": "featured_collection",
           "settings": {
@@ -126,6 +132,7 @@
         "featured_collection_WWtiFL",
         "featured_collection_Acxepr",
         "featured_collection_aVcyXz",
+        "featured_collection_Wn9Jgi",
         "featured_collection_N7F8PQ",
         "featured_collection_gnLby8",
         "featured_collection_wgrtWp",
