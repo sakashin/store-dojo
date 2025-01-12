@@ -286,6 +286,9 @@ product-info .share-button .inquiry-btn {
   margin-bottom: 2px;
   margin-left: 2rem;
 }
+product-info .hidden {
+  display: hidden;
+}
 .bought-codes {
   margin-top: 2rem;
   position: relative;
