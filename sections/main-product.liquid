@@ -786,7 +786,7 @@
         </p>
       </div>
       {%- endunless -%}
-      <div class="bought-codes">
+      <div class="bought-codes{% unless customer.tags contains bought_tag or customer.tags contains 'staff' %} default{% endunless %}">
         <h2>
           {%- if localization.language.iso_code == 'ja' -%}
             サンプルコード
@@ -818,7 +818,7 @@
           </ul>
         </div>
         {%- endif -%}
-        <div class="codes{% unless customer.tags contains bought_tag or customer.tags contains 'staff' %} default{% endunless %}}">
+        <div class="codes">
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           <div class="attention">
           {%- if localization.language.iso_code == 'ja' -%}
