@@ -839,7 +839,7 @@
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           {{ product.metafields.custom.protected_code }}</script></div>
           {%- else -%}
-          {{ product.metafields.custom.protected_code | truncate: 600 }}/script></div>
+          {{ product.metafields.custom.protected_code | truncate: 100 }}/script></div>
           {%- endif -%}
         </div>
       </div>
