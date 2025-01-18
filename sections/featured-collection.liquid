@@ -40,7 +40,7 @@
 
 {%- liquid
   if request.page_type == 'product' and product.metafields.custom.related_tips != blank
-   assign products_to_display = product.metafields.custom.related_tips.value.size
+   assign products_to_display = product.metafields.custom.related_tips.value.count
   else
    assign products_to_display = section.settings.collection.all_products_count
   endif
@@ -61,9 +61,8 @@
     assign show_desktop_slider = true
   endif
 -%}
-product.metafields.custom.related_tips.value:{{ product.metafields.custom.related_tips.value.count }}<br>
-products_to_display:{{ products_to_display }}
 
+{%- if products_to_display > 0 -%}
 <div
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
@@ -202,6 +201,7 @@ products_to_display:{{ products_to_display }}
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
