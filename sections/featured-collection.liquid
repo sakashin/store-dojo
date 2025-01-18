@@ -39,7 +39,11 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign products_to_display = section.settings.collection.all_products_count
+  if request.page_type == 'product' and product.metafields.custom.related_tips != blank
+   assign products_to_display = product.metafields.custom.related_tips.value.count
+  else
+   assign products_to_display = section.settings.collection.all_products_count
+  endif
 
   if section.settings.collection.all_products_count > section.settings.products_to_show
     assign products_to_display = section.settings.products_to_show
@@ -58,6 +62,7 @@
   endif
 -%}
 
+{%- if products_to_display > 0 -%}
 <div
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
@@ -95,7 +100,13 @@
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {% assign skip_card_product_styles = false %}
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+        {%- liquid
+          assign section_settings_collection_products = section.settings.collection.products
+          if request.page_type == 'product' and product.metafields.custom.related_tips != blank
+           assign section_settings_collection_products = product.metafields.custom.related_tips.value
+          endif
+        -%}
+        {%- for product in section_settings_collection_products limit: section.settings.products_to_show -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -196,6 +207,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
