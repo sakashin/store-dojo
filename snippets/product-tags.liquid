@@ -30,6 +30,8 @@
     {%- assign styles = 'color: #ffffff; background-color: #59a3e0;' -%}
   {%- when 'fulfillment' -%}
     {%- assign styles = 'color: #ffffff; background-color: #c1b76c;' -%}
+  {%- when 'sign-up-promotion' -%}
+    {%- assign styles = 'color: #ffffff; background-color: #59a3e0;' -%}
 {%- endcase -%}
   <li style="{{ styles }}">
     <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
