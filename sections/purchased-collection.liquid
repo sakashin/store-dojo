@@ -39,16 +39,6 @@
 {%- endstyle -%}
 
 {%- liquid
-  if request.page_type == 'product' and product.metafields.custom.related_tips != blank
-   assign products_to_display = product.metafields.custom.related_tips.value.count
-  else
-   assign products_to_display = section.settings.collection.all_products_count
-  endif
-
-  if section.settings.collection.all_products_count > section.settings.products_to_show
-    assign products_to_display = section.settings.products_to_show
-    assign more_in_collection = true
-  endif
 
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
