@@ -20,7 +20,7 @@
     "purchased_collection_TyV9RH": {
       "type": "purchased-collection",
       "settings": {
-        "title": "ご購入済みのTIPS",
+        "title": "購入済みTIPS",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
