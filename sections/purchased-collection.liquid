@@ -81,7 +81,11 @@
 
     {%- unless customer -%}
       <div class="page-width">
-        <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
+        {%- if localization.language.iso_code == 'ja' -%}
+          <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
+        {%- elsif localization.language.iso_code == 'en' -%}
+          <p>Once you log in, a list of your purchased products will be displayed here.</p>
+        {%- endif -%}
       </div>
     {%- else -%}
       {%- assign bought_product_ids = nil -%}
