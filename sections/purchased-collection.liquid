@@ -80,7 +80,9 @@
     </div>
 
     {%- unless customer -%}
-      <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
+      <div class="page-width">
+        <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
+      </div>
     {%- else -%}
       {%- assign bought_product_ids = nil -%}
       {%- for tag in customer.tags -%}
