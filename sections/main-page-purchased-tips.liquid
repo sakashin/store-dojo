@@ -34,8 +34,8 @@
         {%- if bought_variant_ids.size > 0 -%}
             <ul>
             {%- for bought_variant_id in bought_variant_ids -%}
-                {%- assign is_variant = false -%}
-                {% for product in all_products %}product:{{ product }}
+                {%- assign is_variant = false -%}is_variant:{{ is_variant }}
+                {% for product in all_products %}
                     {%- if is_variant -%}
                         {%- break -%}
                     {%- endif -%}
