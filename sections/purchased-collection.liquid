@@ -82,9 +82,9 @@
     {%- unless customer -%}
       <div class="page-width">
         {%- if localization.language.iso_code == 'ja' -%}
-          <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
+          <p><a href="/account/login">ログイン</a>頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
         {%- elsif localization.language.iso_code == 'en' -%}
-          <p>Once you log in, a list of your purchased products will be displayed here.</p>
+          <p>Once you <a href="/account/login">log in</a>, a list of your purchased products will be displayed here.</p>
         {%- endif -%}
       </div>
     {%- else -%}
