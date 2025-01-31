@@ -13,14 +13,14 @@
     }
   }
 {%- endstyle -%}
-aaaaa
+
 <div class="page-width section-{{ section.id }}-padding">
   <div class="page-content">
   <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ page.title | escape }}
   </h1>
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {%- if customer -%}
+    {%- unless customer -%}
         <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
     {%- else -%}
         {%- assign bought_variant_ids = '' -%}
@@ -52,7 +52,7 @@ aaaaa
             {%- endfor -%}
             </ul>
         {%- endif -%}
-    {%- endif -%}
+    {%- endunless -%}
   </div>
   </div>
 </div>
