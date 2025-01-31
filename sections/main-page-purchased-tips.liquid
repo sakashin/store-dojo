@@ -29,8 +29,9 @@
                 {%- assign variant_id = tag | remove: 'bought:' -%}
                 {%- assign bought_variant_ids = bought_variant_ids | append: ',' | append: variant_id -%}
             {%- endif -%}
-        {%- endfor -%}bought_variant_ids:{{ bought_variant_ids }}
-        {%- assign bought_variant_ids = bought_variant_ids | remove_first: ',' -%}
+        {%- endfor -%}
+        {%- assign bought_variant_ids = bought_variant_ids | remove_first: ',' | split: ',' -%}
+      bought_variant_ids:{{ bought_variant_ids }}
         {%- if bought_variant_ids.size > 0 -%}
             <ul>
             {%- for bought_variant_id in bought_variant_ids -%}
