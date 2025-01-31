@@ -34,13 +34,14 @@
         {%- if bought_variant_ids.size > 0 -%}
             <ul>
             {%- for bought_variant_id in bought_variant_ids -%}
+                {%- assign int_bought_variant_id = bought_variant_id | plus: 0 -%}
                 {%- assign is_variant = false -%}
                 {% for product in collections.all.products %}
                     {%- if is_variant -%}
                         {%- break -%}
                     {%- endif -%}
                     {% for variant in product.variants %}
-                        {% if variant.id == bought_variant_id %}{{ variant }}
+                        {% if variant.id == int_bought_variant_id %}
                             <li>
                                 <a href="{{ product.url }}">{{ product.title }}</a>
                             </li>
