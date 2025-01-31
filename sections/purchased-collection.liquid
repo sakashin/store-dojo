@@ -83,7 +83,6 @@
       <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
     {%- else -%}
       {%- assign bought_product_ids = nil -%}
-      {%- assign collections_all_products = nil -%}
       {%- for tag in customer.tags -%}
           {%- if tag contains 'bought:' -%}
               {%- assign product_id = tag | remove: 'bought:' -%}
@@ -92,10 +91,6 @@
       {%- endfor -%}
       bought_product_ids:{{ bought_product_ids }}
       {%- assign bought_product_ids = bought_product_ids | remove_first: ',' | split: ',' -%}
-      {%- paginate collections.all.products by 1000 -%}
-      bought_product:{{ collections.all.products | where: 'id', 8916858274043 | json }}
-      {%- endpaginate -%}
-      
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
@@ -106,7 +101,9 @@
       >
         {% assign skip_card_product_styles = false %}
         {%- for product_id in bought_product_ids -%}
+          {%- paginate collections.all.products by 1000 -%}
           {%- assign bought_product = collections.all.products | where: 'id', product_id -%}
+          {%- endpaginate -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
