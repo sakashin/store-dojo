@@ -39,8 +39,8 @@
                     {%- if is_variant -%}
                         {%- break -%}
                     {%- endif -%}
-                    {% for variant in product.variants %}{{ variant }}
-                        {% if variant.id == bought_variant_id %}
+                    {% for variant in product.variants %}
+                        {% if variant.id == bought_variant_id %}{{ variant }}
                             <li>
                                 <a href="{{ product.url }}">{{ product.title }}</a>
                             </li>
