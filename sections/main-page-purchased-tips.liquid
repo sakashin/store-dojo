@@ -23,13 +23,13 @@
     {%- unless customer -%}
         <p>ログイン頂きますと、こちらにご購入済の商品一覧が表示されます。</p>
     {%- else -%}
-        {%- assign bought_variant_ids = '' -%}bought_variant_ids:{{ bought_variant_ids }}
+        {%- assign bought_variant_ids = '' -%}
         {%- for tag in customer.tags -%}
             {%- if tag contains 'bought:' -%}
                 {%- assign variant_id = tag | remove: 'bought:' -%}
                 {%- assign bought_variant_ids = bought_variant_ids | append: ',' | append: variant_id -%}
             {%- endif -%}
-        {%- endfor -%}
+        {%- endfor -%}bought_variant_ids:{{ bought_variant_ids }}
         {%- assign bought_variant_ids = bought_variant_ids | remove_first: ',' -%}
         {%- if bought_variant_ids.size > 0 -%}
             <ul>
