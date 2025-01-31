@@ -35,11 +35,11 @@
             <ul>
             {%- for bought_variant_id in bought_variant_ids -%}
                 {%- assign is_variant = false -%}
-                {% for product in collections.all.products %}{{ product }}
+                {% for product in collections.all.products %}
                     {%- if is_variant -%}
                         {%- break -%}
                     {%- endif -%}
-                    {% for variant in product.variants %}
+                    {% for variant in product.variants %}{{ variant }}
                         {% if variant.id == bought_variant_id %}
                             <li>
                                 <a href="{{ product.url }}">{{ product.title }}</a>
