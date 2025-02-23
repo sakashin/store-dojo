@@ -30,9 +30,10 @@
           TIPS Category List
         {%- endif -%}
       {%- elsif request.page_type == 'collection' -%}
+        {{- page_title -}}
         {% assign collection_parent_collection = collection.metafields.custom.parent_collection.value %}
         {% unless collection_parent_collection == blank %}
-          {{- page_title -}} | {{ collection_grand_parent_collection.title }}
+          &nbsp;|&nbsp;{{ collection_grand_parent_collection.title }}
         {% endunless %}
       {%- else -%}
         {{- page_title -}}
