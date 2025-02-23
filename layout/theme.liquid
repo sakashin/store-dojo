@@ -23,7 +23,15 @@
     {%- endunless %}
 
     <title>
-      {{- page_title -}}
+      {%- if request.page_type = 'list-collections' -%}
+        {%- if localization.language.iso_code == 'ja' -%}
+          TIPSカテゴリ一覧
+        {%- elsif localization.language.iso_code == 'en' -%}
+          TIPS Category List
+        {%- endif -%}
+      {%- else -%}
+        {{- page_title -}}
+      {%- endif -%}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{- shop.name -}} | {{- shop.metafields.global.store_subtitle -}}{% endunless -%}
