@@ -33,7 +33,13 @@
         {{- page_title -}}
         {%- assign collection_parent_collection = collection.metafields.custom.parent_collection.value -%}
         {%- unless collection_parent_collection == blank -%}
-          &nbsp;|&nbsp;{{ collection_parent_collection.title }}
+          {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
+          {% unless collection_grand_parent_collection == blank %}
+            {% assign collection_great_grand_parent_collection = collection_grand_parent_collection.metafields.custom.parent_collection.value %}
+            &nbsp;|&nbsp;{{ collection_parent_collection.title }}&nbsp;|&nbsp;{{ collection_great_grand_parent_collection.title }}
+          {%- else -%}
+            &nbsp;|&nbsp;{{ collection_parent_collection.title }}
+          {%- endunless -%}
         {%- endunless -%}
       {%- else -%}
         {{- page_title -}}
