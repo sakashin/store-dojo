@@ -205,6 +205,17 @@
         "padding_top": 24,
         "padding_bottom": 24
       }
+    },
+    "custom_liquid_JFftq7": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "title": "全商品handleリストを表示する",
+        "custom_liquid": "<ul>\n{% paginate collections.all.products by 1000 %}\n  {% for product in collections.all.products %}\n    <li>{{ product.handle }}</li>\n  {% endfor %}\n{% endpaginate %}\n</ul>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -213,6 +224,7 @@
     "collection_list_rFEKfY",
     "featured_collection_YYPhrL",
     "featured_collection_JqkKTc",
-    "featured_collection_8xQWhR"
+    "featured_collection_8xQWhR",
+    "custom_liquid_JFftq7"
   ]
 }
