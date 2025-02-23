@@ -23,27 +23,31 @@
     {%- endunless %}
 
     <title>
-      {%- if request.page_type == 'list-collections' -%}
-        {%- if localization.language.iso_code == 'ja' -%}
-          TIPSカテゴリ一覧
-        {%- elsif localization.language.iso_code == 'en' -%}
-          TIPS Category List
-        {%- endif -%}
-      {%- elsif request.page_type == 'collection' -%}
-        {{- page_title -}}
-        {%- assign collection_parent_collection = collection.metafields.custom.parent_collection.value -%}
-        {%- unless collection_parent_collection == blank -%}
-          {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
-          {% unless collection_grand_parent_collection == blank %}
-            {% assign collection_great_grand_parent_collection = collection_grand_parent_collection.metafields.custom.parent_collection.value %}
-            &nbsp;|&nbsp;{{ collection_parent_collection.title }}&nbsp;|&nbsp;{{ collection_great_grand_parent_collection.title }}
-          {%- else -%}
-            &nbsp;|&nbsp;{{ collection_parent_collection.title }}
+      {%- case request.page_type -%}
+        
+        {%- when 'list-collections' -%}
+          {%- if localization.language.iso_code == 'ja' -%}
+            TIPSカテゴリ一覧
+          {%- elsif localization.language.iso_code == 'en' -%}
+            TIPS Category List
+          {%- endif -%}
+        
+        {%- when 'collection' -%}
+          {{- page_title -}}
+          {%- assign collection_parent_collection = collection.metafields.custom.parent_collection.value -%}
+          {%- unless collection_parent_collection == blank -%}
+            {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
+            {% unless collection_grand_parent_collection == blank %}
+              {% assign collection_great_grand_parent_collection = collection_grand_parent_collection.metafields.custom.parent_collection.value %}
+              &nbsp;|&nbsp;{{ collection_parent_collection.title }}&nbsp;|&nbsp;{{ collection_great_grand_parent_collection.title }}
+            {%- else -%}
+              &nbsp;|&nbsp;{{ collection_parent_collection.title }}
+            {%- endunless -%}
           {%- endunless -%}
-        {%- endunless -%}
-      {%- else -%}
-        {{- page_title -}}
-      {%- endif -%}
+        
+        {%- else -%}
+          {{- page_title -}}
+      {%- endcase -%}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{- shop.name -}} | {{- shop.metafields.global.store_subtitle -}}{% endunless -%}
