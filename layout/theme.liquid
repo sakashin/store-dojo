@@ -31,10 +31,10 @@
         {%- endif -%}
       {%- elsif request.page_type == 'collection' -%}
         {{- page_title -}}
-        {% assign collection_parent_collection = collection.metafields.custom.parent_collection.value %}
-        {% unless collection_parent_collection == blank %}
+        {%- assign collection_parent_collection = collection.metafields.custom.parent_collection.value -%}
+        {%- unless collection_parent_collection == blank -%}
           &nbsp;|&nbsp;{{ collection_parent_collection.title }}
-        {% endunless %}
+        {%- endunless -%}
       {%- else -%}
         {{- page_title -}}
       {%- endif -%}
