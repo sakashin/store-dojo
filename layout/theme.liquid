@@ -47,17 +47,17 @@
 
         {%- when 'product' -%}
           {{- page_title -}}
-          {% assign product_parent_collection = product.metafields.custom.parent_collection.value %}
-          {% unless product_parent_collection == blank %}
-            {% assign collection_parent_collection = product_parent_collection.metafields.custom.parent_collection.value %}
-            {% unless collection_parent_collection == blank %}
-              {% assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value %}
-              {% unless collection_grand_parent_collection == blank %}
+          {%- assign product_parent_collection = product.metafields.custom.parent_collection.value -%}
+          {%- unless product_parent_collection == blank -%}
+            {%- assign collection_parent_collection = product_parent_collection.metafields.custom.parent_collection.value -%}
+            {%- unless collection_parent_collection == blank -%}
+              {%- assign collection_grand_parent_collection = collection_parent_collection.metafields.custom.parent_collection.value -%}
+              {%- unless collection_grand_parent_collection == blank -%}
                 &nbsp;|&nbsp;{{ product_parent_collection.title }}&nbsp;|&nbsp;{{ collection_parent_collection.title }}&nbsp;|&nbsp;{{ collection_grand_parent_collection.title }}
-              {% else %}
+              {%- else -%}
                 &nbsp;|&nbsp;{{ product_parent_collection.title }}&nbsp;|&nbsp;{{ collection_parent_collection.title }}
               {%- endunless -%}
-            {% else %}
+            {%- else -%}
               &nbsp;|&nbsp;{{ product_parent_collection.title }}
             {%- endunless -%}
           {%- endunless -%}
