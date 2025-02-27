@@ -214,6 +214,7 @@ product-info .product-main-contents h3 {
 }
 product-info .product-main-contents img {
   width: 100%;
+  height: 100%;
   border: 1px solid #ccc;
 }
 product-info classic-favorite-hero-button {
