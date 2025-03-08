@@ -11,6 +11,13 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "takeover_referrer_and_urlparam_to_order_aVTpkm": {
+      "type": "takeover_referrer_and_urlparam_to_order",
+      "settings": {
+        "excluded_param_name": "",
+        "excluded_referrer_domain": ""
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -50,6 +57,7 @@
     }
   },
   "order": [
+    "takeover_referrer_and_urlparam_to_order_aVTpkm",
     "footer"
   ]
 }
