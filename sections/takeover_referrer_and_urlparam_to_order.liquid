@@ -1,0 +1,67 @@
+{% assign last_visit_count = 0 %}
+{% for attribute in cart.attributes %}
+    {% assign key = attribute | first %}
+    {% if key contains 'traffic-source_' %}
+        {% assign temp_count = key | split: "_" | last | plus: 0 %}
+        {% if temp_count > last_visit_count %}
+            {% assign last_visit_count = temp_count %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+<script>
+    const referrerHostName = (document.referrer !== "") ? (new URL(document.referrer)).host : null;
+    const currentHostName = window.location.hostname;
+    if (!referrerHostName || referrerHostName != currentHostName){
+      let traffic_source_values = '';
+      let excluded_referrer = false;
+      {% assign excluded_eferrer_domains = section.settings.excluded_referrer_domain | split: ',' -%}
+    {%- for domain in excluded_eferrer_domains %}
+      if (referrerHostName && referrerHostName.indexOf('{{ domain | strip }}') > -1) {excluded_referrer = true;}
+    {%- endfor %}
+      if (excluded_referrer) { traffic_source_values = 'referrer:' + 'excluded' ;
+      } else { traffic_source_values = 'referrer:' + ((document.referrer != "" ? document.referrer:'direct'));}
+      const params = new URLSearchParams(window.location.search);
+    {%- assign rexcluded_param_names = section.settings.excluded_param_name | split: ',' -%}
+    {%- for param in rexcluded_param_names %}
+      params.delete('{{ param }}');
+    {%- endfor %}
+      for (const [key, value] of params) {
+          traffic_source_values += ',' + key + ':' + value ;
+      }
+      console.log(traffic_source_values);
+      fetch('/cart/update.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({attributes: {'traffic-source_{{ last_visit_count | plus: 1 }}': traffic_source_values}}),
+          keepalive: true
+      });
+    }
+</script>
+{% schema %}
+  {
+    "name": "注文情報にリファラ＆パラメータを付与",
+    "limit": 1,
+    "enabled_on": {
+        "groups": ["footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "excluded_param_name",
+        "label": "除外パラメータ名",
+        "info": "対象から除外するパラメータ名をカンマ区切りで指定してください。"
+      },
+      {
+        "type": "text",
+        "id": "excluded_referrer_domain",
+        "label": "除外リファラドメイン",
+        "info": "対象から除外するドメイン名をカンマ区切りで指定してください。"
+      }
+    ],
+    "presets": [
+        {
+        "name": "注文情報にリファラ＆パラメータを付与"
+        }
+    ]
+  }
+{% endschema %} 
