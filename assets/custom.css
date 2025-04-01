@@ -129,7 +129,7 @@ product-info .page-width,
 .collection-hero__title {
   /* グラデーションの定義 */
   /* background: linear-gradient(45deg, #93D6B8, #6CC8E2); */ 
-  background: linear-gradient(45deg, #666, #333);
+  background: linear-gradient(45deg, #333, #999);
   /* テキストをマスクとしてグラデーションを適用 */
   -webkit-background-clip: text;
   background-clip: text;
@@ -151,7 +151,8 @@ product-info .page-width,
 .product-media-container.constrain-height .media,
 .product-grid .grid__item .card__media .media,
 .cart-content .cart-item .cart-item__image-container {
-  background: linear-gradient(135deg, #E2F4EB, #ABE0F0); 
+  /* background: linear-gradient(135deg, #E2F4EB, #ABE0F0); */
+  background: linear-gradient(135deg, #FAFAFA, #F0F0F0); 
 }
 
 /* product-info */
