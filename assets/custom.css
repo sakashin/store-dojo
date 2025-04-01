@@ -152,7 +152,7 @@ product-info .page-width,
 .product-grid .grid__item .card__media .media,
 .cart-content .cart-item .cart-item__image-container {
   /* background: linear-gradient(135deg, #E2F4EB, #ABE0F0); */
-  background: linear-gradient(135deg, #EAEAEA, #FAFAFA); 
+  background: linear-gradient(135deg, #F0F0F0, #FAFAFA); 
 }
 
 /* product-info */
