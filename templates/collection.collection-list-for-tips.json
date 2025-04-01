@@ -77,6 +77,12 @@
             "collection": "sign-up-promotion"
           }
         },
+        "featured_collection_6gknca": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "blog-boost"
+          }
+        },
         "featured_collection_N7F8PQ": {
           "type": "featured_collection",
           "settings": {
@@ -133,6 +139,7 @@
         "featured_collection_Acxepr",
         "featured_collection_aVcyXz",
         "featured_collection_Wn9Jgi",
+        "featured_collection_6gknca",
         "featured_collection_N7F8PQ",
         "featured_collection_gnLby8",
         "featured_collection_wgrtWp",
