@@ -112,6 +112,7 @@ product-info .page-width,
   padding-bottom: 1rem;
 }
 .collection-hero__wrapper .collection-hero__inner {
+  gap: 16px;
   margin-block: 16px;
   flex-direction: row-reverse !important;
 }
@@ -406,7 +407,6 @@ product-info .share-button .inquiry-btn {
   }
   .collection-hero--with-image .collection-hero__inner {
     padding-bottom: 0 !important;
-    gap: 16px;
   }
   .collection-hero--with-image .collection-hero__text-wrapper {
     padding: 0 !important;
