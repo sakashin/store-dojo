@@ -141,7 +141,7 @@ product-info .page-width,
   border: none !important;
 }
 .collection-hero__image-container img {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .product-grid .grid__item .card__media {
