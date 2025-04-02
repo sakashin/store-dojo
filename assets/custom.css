@@ -406,6 +406,7 @@ product-info .share-button .inquiry-btn {
   }
   .collection-hero--with-image .collection-hero__inner {
     padding-bottom: 0 !important;
+    gap: 16px;
   }
   .collection-hero--with-image .collection-hero__text-wrapper {
     padding: 0 !important;
