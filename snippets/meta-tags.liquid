@@ -22,7 +22,9 @@
 {%- if request.page_type == 'product' -%}
   {%- liquid
      assign product_ogp_image = nil
-     if product.metafields.custom.ogp != blank
+     if product.metafields.custom.thumb_nail != blank
+       assign product_ogp_image = product.metafields.custom.thumb_nail
+     elsif product.metafields.custom.ogp != blank
        assign product_ogp_image = product.metafields.custom.ogp
      else
        assign product_ogp_image = page_image
