@@ -62,6 +62,7 @@
       role="list"
     >
       {%- if product.metafields.custom.thumb_nail != null or product.selected_or_first_available_variant.featured_media != null -%}
+        product.metafields.custom.thumb_nail:{{ product.metafields.custom.thumb_nail }}
         {%- assign featured_media = product.metafields.custom.thumb_nail | default: product.selected_or_first_available_variant.featured_media -%}
         <li
           id="Slide-{{ section.id }}-{{ featured_media.id }}"
