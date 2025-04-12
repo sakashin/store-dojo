@@ -62,7 +62,7 @@
                                     {% endif %}
                                   >
                                     <span class="icon">{%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon.value | image_url: width: 32 | image_tag }}{%- endif -%}</span>
-                                    <span class="text">{{ childlink.title | escape }}{%- if childlink.type == 'collection_link' -%}({{ collections[childlink.object.handle] | json }}{{ {{ childlink.object.products.count }} }}){%- endif -%}</span>
+                                    <span class="text">{{ childlink.title | escape }}{%- if childlink.type == 'collection_link' -%}({{ childlink.object.products.size }}{{ childlink.object.products.count }}){%- endif -%}</span>
                                   </a>
                                 {%- else -%}
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
