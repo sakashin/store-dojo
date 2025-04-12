@@ -31,7 +31,7 @@
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
-    assign card_product_featured_media = product.metafields.custom.thumb_nail.value | default: card_product.featured_media
+    assign card_product_featured_media = card_product.metafields.custom.thumb_nail.value | default: card_product.featured_media
     if card_product_featured_media and media_aspect_ratio == 'portrait'
       assign ratio = 0.8
     elsif card_product_featured_media and media_aspect_ratio == 'adapt'
