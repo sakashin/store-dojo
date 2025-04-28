@@ -54,13 +54,13 @@
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}bbb"
+                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                     href="{{ childlink.url }}"
                                     class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                     {% if childlink.current %}
                                       aria-current="page"
                                     {% endif %}
-                                  >
+                                  >{{ childlink.handle }}
                                     <span class="icon">{%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon.value | image_url: width: 32 | image_tag }}{%- endif -%}</span>
                                     <span class="text">{{ childlink.title | escape }}{%- if childlink.type == 'collection_link' -%}({{ childlink.object.products_count }}){%- endif -%}</span>
                                   </a>
