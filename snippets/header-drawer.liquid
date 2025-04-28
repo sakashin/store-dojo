@@ -4,7 +4,7 @@
   Usage:
   {% render 'header-drawer' %}
 {% endcomment %}
-aaa
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -52,7 +52,7 @@ aaa
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
-                                {%- if childlink.links == blank -%}
+                                {%- if childlink.links == blank -%}childlink.handle:{{ childlink.handle }}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                     href="{{ childlink.url }}"
