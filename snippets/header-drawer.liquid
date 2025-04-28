@@ -54,7 +54,7 @@
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
+                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}bbb"
                                     href="{{ childlink.url }}"
                                     class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                     {% if childlink.current %}
@@ -65,7 +65,7 @@
                                     <span class="text">{{ childlink.title | escape }}{%- if childlink.type == 'collection_link' -%}({{ childlink.object.products_count }}){%- endif -%}</span>
                                   </a>
                                 {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}a">
+                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
                                     <summary
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
