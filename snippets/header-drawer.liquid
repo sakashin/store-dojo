@@ -60,7 +60,7 @@
                                     {% if childlink.current %}
                                       aria-current="page"
                                     {% endif %}
-                                  >{{ childlink.handle }}
+                                  >
                                     <span class="icon">{%- if childlink.type == 'collection_link' and childlink.object.metafields.custom.icon != blank -%}{{ childlink.object.metafields.custom.icon.value | image_url: width: 32 | image_tag }}{%- endif -%}</span>
                                     <span class="text">{{ childlink.title | escape }}{%- if childlink.type == 'collection_link' -%}({{ childlink.object.products_count }}){%- endif -%}</span>
                                   </a>
