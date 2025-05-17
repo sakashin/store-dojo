@@ -781,7 +781,7 @@
           {%- if localization.language.iso_code == 'ja' -%}
             すでにご購入済みの方は<a href="/account/login">こちらからログイン</a>してください。
           {%- else -%}
-            If you have already made a purchase, please <a href="/{{ localization.language.iso_code }}-{{ localization.country.iso_code }}/account/login">login here</a>.
+            If you have already made a purchase, please <a href="/{{ localization.language.iso_code }}-{{ localization.country.iso_code | downcase }}/account/login">login here</a>.
           {%- endif -%}
         </p>
       </div>
