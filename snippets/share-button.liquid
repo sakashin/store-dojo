@@ -55,7 +55,7 @@
     <a href="/pages/contact?product-title={{ product.title }}&product-url={{ shop.url }}{{ product.url }}" 
   class="inquiry-btn" id="inquiry-button">この記事について問い合わせ</a>
   {%- elsif localization.language.iso_code == 'en' -%}
-    <a href="/{{ localization.language.iso_code }}/pages/contact?product-title={{ product.title }}&product-url={{ shop.url }}{{ product.url }}" 
+    <a href="/{{ localization.language.iso_code }}-{{ localization.country.iso_code | downcase }}/pages/contact?product-title={{ product.title }}&product-url={{ shop.url }}{{ product.url }}" 
   class="inquiry-btn" id="inquiry-button">Contact us about this article</a>
   {%- endif -%}
 </share-button>
