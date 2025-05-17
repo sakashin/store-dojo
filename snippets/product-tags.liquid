@@ -34,6 +34,6 @@
     {%- assign styles = 'color: #ffffff; background-color: #59a3e0;' -%}
 {%- endcase -%}
   <li style="{{ styles }}">
-    <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
+    <a href="{%- if localization.language.iso_code != 'ja' -%}/{{ localization.language.iso_code }}-{{ localization.country.iso_code | downcase }}{%- endif -%}/collections/{{ parent_collection_handle }}">{{ parent_collection_name }}</a>
   </li>
 </ul> 
