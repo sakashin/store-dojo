@@ -85,7 +85,7 @@
           %}
         </li>
       {%- endif -%}
-      {% comment %} # 複数の画像は掲載しない前提のためこのコードは外す（商品画像を設定する必要があるのでメイン画像自体は設定したい）
+      {% comment %} # 複数の画像は掲載しない前提のためこのコードは外す（商品画像を設定する必要があるのでメイン画像自体は設定したい）：ここから
       {%- for media in product.media -%}
         {% if media_position >= limit
           or media_position >= 1
@@ -123,7 +123,7 @@
               lazy_load: lazy_load
             %}
           </li>
-        {%- endunless -%}
+        ：ここまで {%- endunless -%}
       {%- endfor -%}
       {% endcomment %}
     </ul>
