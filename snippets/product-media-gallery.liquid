@@ -62,7 +62,7 @@
       role="list"
     >
       product.metafields.custom.thumb_nail:{{ product.metafields.custom.thumb_nail }}<br>
-      product.selected_or_first_available_variant.featured_media:{{ product.selected_or_first_available_variant.featured_media }}
+      product.selected_or_first_available_variant.featured_media:{{ product.selected_or_first_available_variant }}
       {%- if product.metafields.custom.thumb_nail != null or product.selected_or_first_available_variant.featured_media != null -%}
         {%- assign featured_media = product.metafields.custom.thumb_nail.value | default: product.selected_or_first_available_variant.featured_media -%}
         <li
