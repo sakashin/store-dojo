@@ -60,7 +60,7 @@
       id="Slider-Gallery-{{ section.id }}"
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list"
-    >{{ product.featured_image.value }}
+    >{{ product.featured_image.src }}
       {%- if product.metafields.custom.thumb_nail != null or product.featured_image != null -%}
         {%- assign featured_media = product.metafields.custom.thumb_nail.value | default: product.featured_image.value -%}
         <li
