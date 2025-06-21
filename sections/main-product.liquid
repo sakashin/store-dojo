@@ -758,6 +758,16 @@
         {{ product.description }}
       </div>
     {%- endif -%}
+    {%- if product.metafields.custom.validation_environment != blank and customer.tags contains 'staff' -%}
+    <div class="validation-environment">
+      <h3>開発環境</h3>
+      <ul>
+        {%- for link in product.metafields.custom.validation_environment.value -%}
+          <li><a href="{{ link.url }}" target="_blank">{%- unless link.text == blank -%}{{ link.text }}{%- else -%}{{ link.url }}{%- endunless -%}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
     {%- if product.metafields.custom.is_purchasable -%}
       <div class="divider"></div>
       {%- assign bought_tag = 'bought:' | append: product.id -%}
@@ -808,16 +818,6 @@
           {%- if localization.language.iso_code == 'ja' -%}動作検証済テーマ：{%- else -%}Test Theme :{%- endif -%}{{ product.metafields.custom.test_theme }}
         </div>
         {%- endunless -%}
-        {%- if product.metafields.custom.validation_environment != blank and customer.tags contains 'staff' -%}
-        <div class="validation-environment">
-          <h3>開発環境</h3>
-          <ul>
-            {%- for link in product.metafields.custom.validation_environment.value -%}
-              <li><a href="{{ link.url }}" target="_blank">{%- unless link.text == blank -%}{{ link.text }}{%- else -%}{{ link.url }}{%- endunless -%}</a></li>
-            {%- endfor -%}
-          </ul>
-        </div>
-        {%- endif -%}
         <div class="codes">
           {%- if customer.tags contains bought_tag or customer.tags contains 'staff' -%}
           <div class="attention">
