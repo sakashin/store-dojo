@@ -350,8 +350,8 @@ product-info .share-button .inquiry-btn {
   padding: 2rem;
 }
 .validation-environment {
-  margin: 2rem;
-  padding: 1rem 0;
+  margin: 2rem 0;
+  padding: 1rem;
   border-radius: 4px;
   border: 1px dashed #CCC;
   text-align: center;
