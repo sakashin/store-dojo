@@ -349,25 +349,25 @@ product-info .share-button .inquiry-btn {
 .bought-codes .codes {
   padding: 2rem;
 }
-.bought-codes .validation-environment {
+.validation-environment {
   margin: 2rem;
   padding: 1rem;
   border-radius: 4px;
   border: 1px dashed #CCC;
   text-align: center;
 }
-.bought-codes .validation-environment h3 {
+.validation-environment h3 {
   text-align: center;
   margin: 0;
 }
-.bought-codes .validation-environment ul {
+.validation-environment ul {
   margin: 0 auto;
   padding: 0;
   
   width: max-content;
   max-width: 100%;
 }
-.bought-codes .validation-environment li {
+.validation-environment li {
   list-style-type: none;
 }
 .bought-codes .codes h3 {
