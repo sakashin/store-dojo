@@ -108,7 +108,7 @@
         {%- for product_id in bought_product_ids -%}
           {%-assign int_product_id = product_id | plus: 0  -%}
           {%- paginate collections.all.products by 1000 -%}
-          {%- assign bought_product = collections.all.products | where: 'id', int_product_id | first -%}
+          {%- assign bought_product = collections.all.products | where: 'id', int_product_id | first -%}bought_product:{{ bought_product }}
           {%- endpaginate -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
