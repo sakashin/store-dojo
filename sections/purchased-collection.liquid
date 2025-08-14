@@ -88,9 +88,14 @@
         {%- endif -%}
       </div>
     {%- else -%}
+      customer.orders.size:{{ customer.orders.size }}
+      {%- if customer.orders.size == 0 -%}
 
+      {%- endif -%}
       {%- for customer_order in customer.orders -%}
-        {{ customer_order }}
+        {%- for line_item in order.line_items -%}
+        
+        {%- endfor -%}
       {%- endfor -%}
 
 
