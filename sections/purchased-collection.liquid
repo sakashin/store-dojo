@@ -89,7 +89,9 @@
       </div>
     {%- else -%}
 
-      {{ customer.orders }}
+      {%- for customer_order in customer.orders -%}
+        {{ customer_order }}
+      {%- endfor -%}
 
 
       {%- assign bought_product_ids = nil -%}
