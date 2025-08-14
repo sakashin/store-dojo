@@ -100,7 +100,7 @@
           {% assign skip_card_product_styles = false %}
           {%- assign product_count = 0 -%}
           {%- for customer_order in customer.orders -%}
-            {%- for line_item in customer_order.line_items -%}
+            {%- for line_item in customer_order.line_items -%}{{ line_item.product.available }}
               {%- assign product_count = product_count | plus: 1 -%}
               <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
