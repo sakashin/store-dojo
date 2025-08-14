@@ -98,7 +98,7 @@
             aria-label="{{ 'general.slider.name' | t }}"
           >
           {% assign skip_card_product_styles = false %}
-          {%- for customer_order in customer.orders -%}
+          {%- for customer_order in customer.orders -%}customer_order:{{ customer_order }}
             {%- for line_item in order.line_items -%}
               <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
