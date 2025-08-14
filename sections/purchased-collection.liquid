@@ -107,7 +107,9 @@
         {% assign skip_card_product_styles = false %}
         {%- for product_id in bought_product_ids -%}
           {%-assign int_product_id = product_id | plus: 0  -%}
-          {%- paginate collections.all.products by 1000 -%}{{ collections.all.products.count }}
+
+          {{ shop.products[int_product_id].handle }}
+          {%- paginate collections.all.products by 250 -%}
           {%- assign bought_product = collections.all.products | where: 'id', int_product_id | first -%}
           {%- endpaginate -%}
           <li
