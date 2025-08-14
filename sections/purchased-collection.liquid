@@ -88,6 +88,10 @@
         {%- endif -%}
       </div>
     {%- else -%}
+
+      {{ customer.orders }}
+
+
       {%- assign bought_product_ids = nil -%}
       {%- for tag in customer.tags -%}
           {%- if tag contains 'bought:' -%}
@@ -107,9 +111,7 @@
         {% assign skip_card_product_styles = false %}
         {%- for product_id in bought_product_ids -%}
           {%-assign int_product_id = product_id | plus: 0  -%}
-
-          {{ shop.products[int_product_id].handle }}
-          {%- paginate collections.all.products by 250 -%}
+          {%- paginate collections.all.products by 1000 -%}
           {%- assign bought_product = collections.all.products | where: 'id', int_product_id | first -%}
           {%- endpaginate -%}
           <li
